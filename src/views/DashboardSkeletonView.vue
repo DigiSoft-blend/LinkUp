@@ -408,7 +408,7 @@ export default {
   animation: pulse-bg 1s infinite;
   border-radius: 20px;
   height: 23px;
-  width: 339px;
+  width: 200px;
 }
 
 .p-see-all{

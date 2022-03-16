@@ -7,7 +7,7 @@
      <nav class="navbar navbar-expand-lg navbar-light" aria-label="Eleventh navbar example" style="background-color:white">
       <div class="container-fluid">
         <img class="logo" src="/assets/images/zhivago-logo.png" alt="logo" height="40px" width="270px" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -503,6 +503,13 @@ export default {
   width: 676px !important;
   border: none !important;
   background-color: #ecf3fa;
+}
+
+@media( max-width: 400px){
+    .logo{
+        width: 180px;
+        height: 30px;
+    }
 }
 
 .page-body{
