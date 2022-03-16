@@ -143,7 +143,7 @@
                  <div class="preview-list">
                       <div class="preview-item">
                         <div class="preview-thumbnail">
-                          <img src="assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
@@ -160,7 +160,7 @@
               <div class="preview-list">
                       <div class="preview-item">
                         <div class="preview-thumbnail">
-                          <img src="assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
@@ -177,7 +177,7 @@
              <div class="preview-list">
                       <div class="preview-item">
                         <div class="preview-thumbnail">
-                          <img src="assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
@@ -195,7 +195,7 @@
               <div class="preview-list">
                       <div class="preview-item">
                         <div class="preview-thumbnail">
-                          <img src="assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
