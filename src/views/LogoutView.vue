@@ -244,7 +244,7 @@
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Leonard</h6>
+                              <h6 class="preview-subject p-user-name">Silas Udofia</h6>
                             </div>
                              <span class="badge rounded-pill bg-primary">Admin</span>
                              <span class="mx-1 badge rounded-pill bg-primary">now</span>
@@ -295,7 +295,7 @@
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Leonard</h6>
+                              <h6 class="preview-subject p-user-name">Silas Udofia</h6>
                             </div>
                             <span class="badge rounded-pill bg-primary">5 days ago</span>
                             <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
@@ -306,7 +306,7 @@
                   <p class="text-muted mt-2 small p-share p-1">Share</p>
           </div>
           <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body">hello there</p>
+            <p class="p-card-body">Beautiful and cold out here</p>
             <img src="/assets/images/carousel\banner_7.jpg" class="img-fluid" alt="...">
           </div>
           <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
@@ -345,7 +345,7 @@
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Leonard</h6>
+                              <h6 class="preview-subject p-user-name">Silas Udofia</h6>
                             </div>
                             <span class="badge rounded-pill bg-primary">3 days ago</span>
                             <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
@@ -356,7 +356,7 @@
                   <p class="text-muted mt-2 small p-share p-1">Share</p>
           </div>
           <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body">hello there</p>
+            <p class="p-card-body">fun filled place, really had lots of fun here</p>
             <img src="/assets/images/carousel\banner_8.jpg" class="img-fluid" alt="...">
           </div>
           <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
@@ -383,7 +383,7 @@
           </div>
        </div>
       
- <div class="card text-dark mt-4">
+ <div class="card text-dark mt-4 p-0 m-0">
             <div class="card-header  d-flex  d-xl-flex justify-content-between">
                   <div class="preview-list">
                       <div class="preview-item">
@@ -394,7 +394,7 @@
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Leonard</h6>
+                              <h6 class="preview-subject p-user-name">Silas Udofia</h6>
                             </div>
                             <span class="badge rounded-pill bg-primary">2 days ago</span>
                             <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
@@ -405,11 +405,11 @@
                   <p class="text-muted mt-2 small p-share p-1">Share</p>
           </div>
           <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body">hello there</p>
+            <p class="p-card-body">Nature is amazing</p>
             <img src="/assets/images/carousel\banner_9.jpg" class="img-fluid" alt="...">
           </div>
           <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
-               <div class="row">
+               <div class="row row-footer">
                   <div class="col-4">
                     <div class="col-12 footer-div">
                       <i class="mdi mdi-thumb-up-outline"></i>
