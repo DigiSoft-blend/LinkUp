@@ -264,7 +264,7 @@
                  <div class="col-4">
                     <div class="col-12 footer-div">
                       <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>3k</p>
+                      <p>7m</p>
                     </div>
                  </div>
                  <div class="col-4">
@@ -314,7 +314,7 @@
                   <div class="col-4">
                     <div class="col-12 footer-div">
                       <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>3k</p>
+                      <p>10k</p>
                     </div>
                  </div>
                  <div class="col-4">
@@ -364,7 +364,7 @@
                   <div class="col-4">
                     <div class="col-12 footer-div">
                       <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>3k</p>
+                      <p>20k</p>
                     </div>
                  </div>
                  <div class="col-4">
