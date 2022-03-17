@@ -516,8 +516,8 @@ export default {
 
 @media( max-width: 400px){
     .logo{
-        width: 180px;
-        height: 30px;
+        width: 190px;
+        height: 40px;
     }
 }
 
