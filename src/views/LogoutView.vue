@@ -228,7 +228,7 @@
             <h4 class="card-title">Home</h4>
             <ul class="ul-list mx-2 list-inline">
               <li class="list-inline-item"><p class="text-muted mb-1 small p-view-all p-1">Latest</p> </li>
-              <li class="list-inline-item"><i class="mdi mdi-arrow-down-drop-circle-outline ul-list-icon"></i></li>
+              <li class="list-inline-item"><i class="mdi mdi-chevron-down ul-list-icon"></i></li>
             </ul>
           </div>
         </div>
@@ -257,8 +257,9 @@
           </div>
           <div class="card-body m-0 p-0 mx-3">
             <p class="p-card-body">hello there</p>
+            <img src="/assets/images/carousel\banner_6.jpg" class="img-fluid" alt="...">
           </div>
-          <div class="card-footer border-top" style="background-color:white; border:none">
+          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
                <div class="row row-footer">
                  <div class="col-4">
                     <div class="col-12 footer-div">
@@ -306,24 +307,25 @@
           </div>
           <div class="card-body m-0 p-0 mx-3">
             <p class="p-card-body">hello there</p>
+            <img src="/assets/images/carousel\banner_7.jpg" class="img-fluid" alt="...">
           </div>
-          <div class="card-footer border-top" style="background-color:white; border:none">
+          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
                <div class="row row-footer">
-                 <div class="col-4">
-                    <div class="col-12  footer-div">
-                      <i class="mdi mdi-web"></i>
+                  <div class="col-4">
+                    <div class="col-12 footer-div">
+                      <i class="mdi mdi-thumb-up-outline"></i>
                       <p>3k</p>
                     </div>
                  </div>
                  <div class="col-4">
                      <div class="col-12 footer-div">
-                      <i class="mdi mdi-message"></i>
+                      <i class="mdi mdi-message-outline"></i>
                       <p>12</p>
                      </div>
                  </div>
                  <div class="col-4">
                     <div class="col-12 footer-div">
-                        <i class="mdi mdi-web"></i>
+                        <i class="mdi mdi-share-outline"></i>
                         <p class="">4</p>
                     </div>
                  </div>
@@ -355,24 +357,25 @@
           </div>
           <div class="card-body m-0 p-0 mx-3">
             <p class="p-card-body">hello there</p>
+            <img src="/assets/images/carousel\banner_8.jpg" class="img-fluid" alt="...">
           </div>
-          <div class="card-footer border-top" style="background-color:white; border:none">
+          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
                <div class="row row-footer">
-                 <div class="col-4">
-                    <div class="col-12  footer-div">
-                      <i class="mdi mdi-web"></i>
+                  <div class="col-4">
+                    <div class="col-12 footer-div">
+                      <i class="mdi mdi-thumb-up-outline"></i>
                       <p>3k</p>
                     </div>
                  </div>
                  <div class="col-4">
                      <div class="col-12 footer-div">
-                      <i class="mdi mdi-message"></i>
+                      <i class="mdi mdi-message-outline"></i>
                       <p>12</p>
                      </div>
                  </div>
                  <div class="col-4">
                     <div class="col-12 footer-div">
-                        <i class="mdi mdi-web"></i>
+                        <i class="mdi mdi-share-outline"></i>
                         <p class="">4</p>
                     </div>
                  </div>
@@ -403,24 +406,25 @@
           </div>
           <div class="card-body m-0 p-0 mx-3">
             <p class="p-card-body">hello there</p>
+            <img src="/assets/images/carousel\banner_9.jpg" class="img-fluid" alt="...">
           </div>
-          <div class="card-footer border-top" style="background-color:white; border:none">
+          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
                <div class="row">
-                 <div class="col-4">
-                    <div class="col-12  footer-div">
-                      <i class="mdi mdi-web"></i>
+                  <div class="col-4">
+                    <div class="col-12 footer-div">
+                      <i class="mdi mdi-thumb-up-outline"></i>
                       <p>3k</p>
                     </div>
                  </div>
                  <div class="col-4">
                      <div class="col-12 footer-div">
-                      <i class="mdi mdi-message"></i>
+                      <i class="mdi mdi-message-outline"></i>
                       <p>12</p>
                      </div>
                  </div>
                  <div class="col-4">
                     <div class="col-12 footer-div">
-                        <i class="mdi mdi-web"></i>
+                        <i class="mdi mdi-share-outline"></i>
                         <p class="">4</p>
                     </div>
                  </div>
