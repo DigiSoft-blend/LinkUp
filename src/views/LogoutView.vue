@@ -6,7 +6,7 @@
     <div class="fixed-top p-0 ">
      <nav class="navbar navbar-expand-lg navbar-light" aria-label="Eleventh navbar example" style="background-color:white">
       <div class="container-fluid">
-        <img class="logo" src="/logo/Black logo - no background.png" alt="logo" height="50px" width="270px" />
+        <img class="logo" src="/logo/logo.png" alt="logo" height="50px" width="270px" />
         <button class="navbar-toggler" type="button" data-bs-toggle="" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
