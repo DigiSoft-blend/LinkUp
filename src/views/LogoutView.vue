@@ -15,7 +15,7 @@
           <form style="margin-left:43px">
              <div class="search">
                <input class="nav-form-input form-control" type="text" placeholder="Search" aria-label="Search">
-               <i class="mdi mdi-arrow-top-left icon"></i> 
+               <i class="mdi mdi-magnify icon"></i> 
              </div>
           </form>
             <button class="btn btn-transparent border mx-4" type="button">log in</button>
@@ -222,9 +222,9 @@
   <div class="main-view col-md-6  container bg-light">
     <div class="row content gy-2">
 
-      <div class="card bg-light p-0 m-0 mb-1 px-2">
+      <div class="card bg-light p-0 m-0  px-3">
         <div class="card-body bg-light p-0 m-0">
-          <div class="d-flex flex-row justify-content-between">
+          <div class="d-flex flex-row justify-content-between mt-3">
             <h4 class="card-title">Home</h4>
             <ul class="ul-list mx-2 list-inline">
               <li class="list-inline-item"><p class="text-muted mb-1 small p-view-all p-1">Latest</p> </li>
@@ -233,8 +233,8 @@
           </div>
         </div>
       </div>
-      <div class="card text-dark mb-2 box-shadow">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
+      <div class="card text-dark mb-2 box-shadow p-0 m-0">
+            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
                   <div class="preview-list">
                       <div class="preview-item">
                         <div class="preview-thumbnail">
@@ -258,22 +258,71 @@
           <div class="card-body m-0 p-0 mx-3">
             <p class="p-card-body">hello there</p>
           </div>
-          <div class="card-footer" style="background-color:white; border:none">
-               <div class="row">
+          <div class="card-footer border-top" style="background-color:white; border:none">
+               <div class="row row-footer">
                  <div class="col-4">
-                    <div class="col-12 bg-light footer-div">
+                    <div class="col-12 footer-div">
+                      <i class="mdi mdi-thumb-up-outline"></i>
+                      <p>3k</p>
+                    </div>
+                 </div>
+                 <div class="col-4">
+                     <div class="col-12 footer-div">
+                      <i class="mdi mdi-message-outline"></i>
+                      <p>12</p>
+                     </div>
+                 </div>
+                 <div class="col-4">
+                    <div class="col-12 footer-div">
+                        <i class="mdi mdi-share-outline"></i>
+                        <p class="">4</p>
+                    </div>
+                 </div>
+               </div>
+          </div>
+       </div>
+
+
+       <div class="card text-dark mt-3 box-shadow p-0 m-0">
+            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
+                  <div class="preview-list">
+                      <div class="preview-item">
+                        <div class="preview-thumbnail">
+                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                         <div class="active"></div>
+                        </div>
+                        <div class="preview-item-content d-flex flex-grow">
+                          <div class="flex-grow">
+                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                              <h6 class="preview-subject p-user-name">Leonard</h6>
+                            </div>
+                            <span class="badge rounded-pill bg-primary">5 days ago</span>
+                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+          </div>
+          <div class="card-body m-0 p-0 mx-3">
+            <p class="p-card-body">hello there</p>
+          </div>
+          <div class="card-footer border-top" style="background-color:white; border:none">
+               <div class="row row-footer">
+                 <div class="col-4">
+                    <div class="col-12  footer-div">
                       <i class="mdi mdi-web"></i>
                       <p>3k</p>
                     </div>
                  </div>
                  <div class="col-4">
-                     <div class="col-12 bg-light footer-div">
-                      <i class="mdi mdi-message text-muted"></i>
+                     <div class="col-12 footer-div">
+                      <i class="mdi mdi-message"></i>
                       <p>12</p>
                      </div>
                  </div>
                  <div class="col-4">
-                    <div class="col-12 bg-light footer-div">
+                    <div class="col-12 footer-div">
                         <i class="mdi mdi-web"></i>
                         <p class="">4</p>
                     </div>
@@ -283,7 +332,55 @@
        </div>
 
 
-       <div class="card text-dark mb-2 box-shadow">
+<div class="card text-dark mt-4 box-shadow p-0 m-0">
+            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
+                  <div class="preview-list">
+                      <div class="preview-item">
+                        <div class="preview-thumbnail">
+                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                         <div class="active"></div>
+                        </div>
+                        <div class="preview-item-content d-flex flex-grow">
+                          <div class="flex-grow">
+                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                              <h6 class="preview-subject p-user-name">Leonard</h6>
+                            </div>
+                            <span class="badge rounded-pill bg-primary">3 days ago</span>
+                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+          </div>
+          <div class="card-body m-0 p-0 mx-3">
+            <p class="p-card-body">hello there</p>
+          </div>
+          <div class="card-footer border-top" style="background-color:white; border:none">
+               <div class="row row-footer">
+                 <div class="col-4">
+                    <div class="col-12  footer-div">
+                      <i class="mdi mdi-web"></i>
+                      <p>3k</p>
+                    </div>
+                 </div>
+                 <div class="col-4">
+                     <div class="col-12 footer-div">
+                      <i class="mdi mdi-message"></i>
+                      <p>12</p>
+                     </div>
+                 </div>
+                 <div class="col-4">
+                    <div class="col-12 footer-div">
+                        <i class="mdi mdi-web"></i>
+                        <p class="">4</p>
+                    </div>
+                 </div>
+               </div>
+          </div>
+       </div>
+      
+ <div class="card text-dark mt-4">
             <div class="card-header  d-flex  d-xl-flex justify-content-between">
                   <div class="preview-list">
                       <div class="preview-item">
@@ -296,7 +393,8 @@
                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
                               <h6 class="preview-subject p-user-name">Leonard</h6>
                             </div>
-                            <p class="text-muted p-card-header">Well, it seems to be working now.</p>
+                            <span class="badge rounded-pill bg-primary">2 days ago</span>
+                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
                           </div>
                         </div>
                       </div>
@@ -306,134 +404,33 @@
           <div class="card-body m-0 p-0 mx-3">
             <p class="p-card-body">hello there</p>
           </div>
-          <div class="card-footer" style="background-color:white; border:none">
+          <div class="card-footer border-top" style="background-color:white; border:none">
                <div class="row">
                  <div class="col-4">
-                    <div class="col-12 bg-light footer-div">
+                    <div class="col-12  footer-div">
                       <i class="mdi mdi-web"></i>
                       <p>3k</p>
                     </div>
                  </div>
                  <div class="col-4">
-                     <div class="col-12 bg-light footer-div">
-                      <i class="mdi mdi-message text-muted"></i>
+                     <div class="col-12 footer-div">
+                      <i class="mdi mdi-message"></i>
                       <p>12</p>
                      </div>
                  </div>
                  <div class="col-4">
-                    <div class="col-12 bg-light footer-div">
+                    <div class="col-12 footer-div">
                         <i class="mdi mdi-web"></i>
                         <p class="">4</p>
                     </div>
                  </div>
                </div>
           </div>
-       </div>
+       </div> 
 
-
-<div class="card text-dark mb-2 box-shadow">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
-                          <div class="active"></div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Leonard</h6>
-                            </div>
-                            <p class="text-muted p-card-header">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
-          </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body">hello there</p>
-          </div>
-          <div class="card-footer" style="background-color:white; border:none">
-               <div class="row">
-                 <div class="col-4">
-                    <div class="col-12 bg-light footer-div">
-                      <i class="mdi mdi-web"></i>
-                      <p>3k</p>
-                    </div>
-                 </div>
-                 <div class="col-4">
-                     <div class="col-12 bg-light footer-div">
-                      <i class="mdi mdi-message text-muted"></i>
-                      <p>12</p>
-                     </div>
-                 </div>
-                 <div class="col-4">
-                    <div class="col-12 bg-light footer-div">
-                        <i class="mdi mdi-web"></i>
-                        <p class="">4</p>
-                    </div>
-                 </div>
-               </div>
-          </div>
-       </div>
-
-       <div class="card text-dark mb-2 box-shadow">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
-                          <div class="active"></div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Leonard</h6>
-                            </div>
-                            <p class="text-muted p-card-header">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
-          </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body">hello there</p>
-          </div>
-          <div class="card-footer" style="background-color:white; border:none">
-               <div class="row">
-                 <div class="col-4">
-                    <div class="col-12 bg-light footer-div">
-                      <i class="mdi mdi-web"></i>
-                      <p>3k</p>
-                    </div>
-                 </div>
-                 <div class="col-4">
-                     <div class="col-12 bg-light footer-div">
-                      <i class="mdi mdi-message text-muted"></i>
-                      <p>12</p>
-                     </div>
-                 </div>
-                 <div class="col-4">
-                    <div class="col-12 bg-light footer-div">
-                        <i class="mdi mdi-web"></i>
-                        <p class="">4</p>
-                    </div>
-                 </div>
-               </div>
-          </div>
-       </div>
-
-      
-    </div>
-  </div>
-
-
-
-  
-    
-
+     
+      </div>
+     </div>
     </div>
   </div>
 </template>
@@ -462,6 +459,14 @@ export default {
 </script>
 
 <style>
+
+.time-text{
+    padding-top:3px;
+}
+
+.row-footer{
+    color: rgb(158, 157, 157);
+}
 
 .footer-div{
   border-radius: 30px;
@@ -545,7 +550,7 @@ export default {
 
 .main-view{
   padding: 10px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .main-view .content {
