@@ -1,16 +1,22 @@
 <template>
-  <div class="container-fluid page-body">
+  <div class="container-fluid page-body bg-light">
 
 <div class="row">
+
   <div class="col-md-12  bg-secondary">
     <div class="fixed-top p-0 ">
      <nav class="navbar navbar-expand-lg navbar-light" aria-label="Eleventh navbar example" style="background-color:white">
       <div class="container-fluid">
         <img class="logo" src="/logo/logo.png" alt="logo" height="50px" width="270px" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+        
+        
         <div class="collapse navbar-collapse" id="navbarsExample09">
           <form style="margin-left:43px">
              <div class="search">
@@ -20,6 +26,7 @@
           </form>
             <button class="btn btn-transparent border mx-4" type="button">log in</button>
             <button class="btn btn-primary" type="button" >sign up</button>
+             
         </div>  
       </div>
     </nav>
@@ -28,7 +35,8 @@
  </div>
 
     <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 sidebar-left p-4 d-md-block bg-light collapse">
+               
+    <nav id="sidebarMenu" class="col-md-3 sidebar-left p-4 d-md-block bg-light">
       <div class="position-sticky pt-5">
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item mb-3">
@@ -132,6 +140,8 @@
       </div>
     </nav> 
 
+    
+ 
 
   <nav id="sidebarMenu" class="col-md-3 sidebar-right p-4 d-md-block bg-light collapse">
       <div class="position-sticky pt-5">
@@ -255,9 +265,13 @@
                  </div>
                   <p class="text-muted mt-2 small p-share p-1">Share</p>
           </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body">hello there</p>
-            <img src="/assets/images/carousel\banner_6.jpg" class="img-fluid" alt="...">
+          <div class="card-body m-0 p-0">
+            <div class="mx-3">
+               <p class="p-card-body">hello there</p>
+            </div>
+             <div class="d-flex justify-content-center py-1">
+                <img src="/assets/images/carousel\banner_6.jpg" class="img-fluid" alt="...">
+             </div>
           </div>
           <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
                <div class="row row-footer">
@@ -305,9 +319,13 @@
                  </div>
                   <p class="text-muted mt-2 small p-share p-1">Share</p>
           </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body">Beautiful and cold out here</p>
-            <img src="/assets/images/carousel\banner_7.jpg" class="img-fluid" alt="...">
+          <div class="card-body m-0 p-0">
+             <div class="mx-3">
+               <p class="p-card-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus tenetur ab odio adipisci nihil recusandae. Nobis fuga minus excepturi quae tenetur rem aperiam accusamus amet ex possimus? Consectetur, debitis corporis.</p>
+             </div>
+              <div class="d-flex justify-content-center py-1">
+                 <img src="/assets/images/carousel\banner_7.jpg" class="img-fluid" alt="...">
+              </div>
           </div>
           <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
                <div class="row row-footer">
@@ -355,9 +373,13 @@
                  </div>
                   <p class="text-muted mt-2 small p-share p-1">Share</p>
           </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body">fun filled place, really had lots of fun here</p>
-            <img src="/assets/images/carousel\banner_8.jpg" class="img-fluid" alt="...">
+          <div class="card-body m-0 p-0">
+            <div class="mx-3">
+               <p class="p-card-body">fun filled place, really had lots of fun here</p>
+            </div>
+             <div class="d-flex justify-content-center py-1">
+               <img src="/assets/images/carousel\banner_8.jpg" class="img-fluid" alt="...">
+             </div>
           </div>
           <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
                <div class="row row-footer">
@@ -404,9 +426,13 @@
                  </div>
                   <p class="text-muted mt-2 small p-share p-1">Share</p>
           </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body">Nature is amazing</p>
-            <img src="/assets/images/carousel\banner_9.jpg" class="img-fluid" alt="...">
+          <div class="card-body m-0 p-0">
+            <div class="mx-3">
+              <p class="p-card-body">Nature is amazing</p>
+            </div>
+            <div class="d-flex justify-content-center py-1">
+               <img src="/assets/images/carousel\banner_4.jpg" class="img-fluid" alt="...">
+            </div>
           </div>
           <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
                <div class="row row-footer">
@@ -436,6 +462,32 @@
       </div>
      </div>
     </div>
+
+    <div class="container">
+   <div class="offcanvas offcanvas-start  w-50 h-50 bg-light" tabindex="-4" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+    <div class="offcanvas-header">
+        <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas"><strong>Menu</strong></h6>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body  p-0 m-0">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+           
+           
+            <li>
+                <a href="#" class="nav-link text-truncate">
+                 <span class="ms-1 d-none d-sm-inline">Products</span>
+                 </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-truncate">
+                 <span class="ms-1 d-none d-sm-inline">Customers</span> 
+                 </a>
+            </li>
+        </ul>
+    </div>
+ </div>
+
+ </div>
   </div>
 </template>
 
@@ -521,9 +573,10 @@ export default {
     }
 }
 
-.page-body{
+/* .page-body{
   background-color: #222 !important;
-}
+
+} */
 
 .card{
    /* background-color: #222 !important; */
@@ -542,6 +595,8 @@ export default {
   top: 0;
   bottom: 0;
   left: 0;
+  z-index: 100; 
+  display: none;
  }
 
  .sidebar-right{
