@@ -89,15 +89,21 @@ z-index: 1;
 transition: 0.2s ease-in;
 visibility: collapse;
 opacity: 0;
-transform: scaleX(5);
+/* transform: scaleX(5); */
 /* transform: scaleY(5); */
+/* transform: rotateX(90deg); */
+/* transform: rotateY(90deg); */
+transform: rotateZ(90deg);
 }
 
 .class1{
  visibility: visible;
  opacity: 1;
- transform: scaleX(1);
+ /* transform: scaleX(1); */
  /* transform: scaleY(1); */
+ /* transform: rotateX(0deg); */
+ /* transform: rotateY(0deg); */
+ transform: rotateZ(0deg);
 }
 
 
@@ -117,6 +123,11 @@ transform: scaleX(5);
     transition: 0.2s ease-in;
     visibility: visible;
     opacity: 1;
+    /* transform: rotateX(0deg); */
+    /* transform: scaleX(1); */
+    /* transform: scaleY(1); */
+    /* transform: rotateY(0deg); */
+    transform: rotateZ(0deg);
     } 
 }
 
