@@ -87,32 +87,33 @@ top: 0;
 bottom: 0;
 z-index: 1;
 transition: 0.2s ease-in;
-visibility: visible;
-opacity: 1;
+visibility: collapse;
+opacity: 0;
 }
 
 .class1{
- visibility: hidden;
- opacity: 0;
- /* transform: scaleY(10); */
- /* transform: scaleX(10); */
- transform:rotateY(90deg);
+ visibility: visible;
+ opacity: 1;
 }
 
-@media(min-width:768px) {
-  .class1{
-    visibility: visible;
-    opacity: 1;
-    transform:rotateY(0deg);
-    transform: scaleX(1); 
-    transform: scaleY(1); 
-  }
-}
 
 @media(max-width:768px) {
  .sidebar-left{
    width: auto;
  }
+}
+
+@media(min-width: 770px){
+  .sidebar-left{
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: 0.2s ease-in;
+    visibility: visible;
+    opacity: 1;
+    } 
 }
 
 
