@@ -89,15 +89,15 @@ z-index: 1;
 transition: 0.2s ease-in;
 visibility: collapse;
 opacity: 0;
-/* transform: scaleX(5); */
-transform: scaleY(5);
+transform: scaleX(5);
+/* transform: scaleY(5); */
 }
 
 .class1{
  visibility: visible;
  opacity: 1;
- /* transform: scaleX(1); */
- transform: scaleY(1);
+ transform: scaleX(1);
+ /* transform: scaleY(1); */
 }
 
 
