@@ -9,7 +9,7 @@
     <div class="fixed-top">
     
 
-     <nav class="navbar navbar-expand-sm" aria-label="Third navbar example" style="background-color:white">
+     <!-- <nav class="navbar navbar-expand-sm" aria-label="Third navbar example" style="background-color:white">
     <div class="container-fluid">
       <img class="navbar-brand logo" src="/logo/logo.png" alt="logo" />
       <button class="navbar-toggler" type="button">
@@ -29,7 +29,39 @@
              
       </div>
     </div>
-  </nav>
+  </nav> -->
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 
+    <!-- Navbar brand -->
+     <img class="navbar-brand logo" src="/logo/logo.png" alt="logo" />
+
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button">
+      <i class="fas fa-bars" onclick="toggleSideNav()"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+       <form style="margin-left:52px">
+             <div class="search">
+               <input class="nav-form-input form-control" type="text" placeholder="Search" aria-label="Search">
+               <i class="mdi mdi-magnify icon"></i> 
+             </div>
+          </form>
+      <div class="d-flex align-items-center px-5">
+        <button type="button" class="btn btn-success px-3 me-2">
+          Login
+        </button>
+        <button type="button" class="btn btn-primary me-2">
+          Sign up for free
+        </button>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
 
 
    </div>
@@ -233,10 +265,28 @@
         <div class="card-body bg-light p-0 m-0">
           <div class="d-flex flex-row justify-content-between mt-3">
             <h4 class="card-title">Home</h4>
-            <ul class="ul-list mx-2 list-inline">
+            <!-- <ul class="ul-list mx-2 list-inline">
               <li class="list-inline-item"><p class="text-muted mb-1 small p-view-all p-1">Latest</p> </li>
               <li class="list-inline-item"><i class="mdi mdi-chevron-down ul-list-icon"></i></li>
-            </ul>
+            </ul> -->
+            <div class="dropdown">
+              <a
+                class="btn btn-transparent dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+              Latest
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
