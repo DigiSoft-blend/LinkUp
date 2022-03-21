@@ -12,7 +12,7 @@
      <nav class="navbar navbar-expand-sm" aria-label="Third navbar example" style="background-color:white">
     <div class="container-fluid">
       <img class="navbar-brand logo" src="/logo/logo.png" alt="logo" />
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button">
         <span class="mdi mdi-menu" onclick="toggleSideNav()"></span>
       </button>
 
