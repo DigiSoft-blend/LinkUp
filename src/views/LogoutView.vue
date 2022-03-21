@@ -7,27 +7,31 @@
 
   <div class="col-md-12  bg-secondary">
     <div class="fixed-top">
-     <nav class="navbar navbar-expand-lg navbar-light" aria-label="Eleventh navbar example" style="background-color:white">
-      <div class="container-fluid">
-        <img class="logo" src="/logo/logo.png" alt="logo" height="50px" width="270px" />
-       
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon" onclick="toggleSideNav()"></span>
-            </button>
- 
-        <div class="collapse navbar-collapse" id="navbarsExample09">
-          <form style="margin-left:43px">
+    
+
+     <nav class="navbar navbar-expand-sm" aria-label="Third navbar example" style="background-color:white">
+    <div class="container-fluid">
+      <img class="navbar-brand logo" src="/logo/logo.png" alt="logo" />
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="mdi mdi-menu" onclick="toggleSideNav()"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <form style="margin-left:27px">
              <div class="search">
                <input class="nav-form-input form-control" type="text" placeholder="Search" aria-label="Search">
                <i class="mdi mdi-magnify icon"></i> 
              </div>
           </form>
-            <button class="btn btn-transparent border mx-4" type="button">log in</button>
-            <button class="btn btn-primary" type="button">sign up</button>
+        
+         <button class="btn btn-transparent border mx-4" type="button">log in</button>
+         <button class="btn btn-primary" type="button">sign up</button>
              
-        </div>  
       </div>
-    </nav>
+    </div>
+  </nav>
+
+
    </div>
   </div>
  </div>
@@ -152,7 +156,7 @@
                  <div class="preview-list">
                       <div class="preview-item">
                         <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle status" />
+                          <img src="/assets/images/faces/face1.jpg" alt="image" class="rounded-circle status" />
                           <div class="active"></div>
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
@@ -170,7 +174,7 @@
               <div class="preview-list">
                       <div class="preview-item">
                         <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                          <img src="/assets/images/faces/face2.jpg" alt="image" class="rounded-circle" />
                           <div class="active"></div>
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
@@ -184,30 +188,13 @@
                       </div>
                 </div>
           </li>
-          <li class="nav-item">
-             <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
-                          <div class="active"></div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Leonard</h6>
-                            </div>
-                            <p class="text-muted p-sidbar-text">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                     </div>
-             </div>
-          </li>
+         
           
           <li class="nav-item">
               <div class="preview-list">
                       <div class="preview-item">
                         <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                          <img src="/assets/images/faces/face3.jpg" alt="image" class="rounded-circle" />
                           <div class="active"></div>
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
@@ -226,6 +213,15 @@
             <p class="text-muted text-muted p-see-all">See all</p>
           </li>
         </ul>
+
+
+          <ul class="nav flex-column mb-auto px-4 mt-3 box-shadow" style="background:gray;height:180px">
+          <li class="nav-item p-0 m-0">
+               
+          </li>
+        </ul>
+
+        
       </div>
     </nav> 
 
@@ -233,7 +229,7 @@
   <div class="main-view col-md-6  container bg-light">
     <div class="row content gy-2">
 
-      <div class="card bg-light p-0 m-0  px-3">
+      <div class="card card1 bg-light p-0 m-0  px-3">
         <div class="card-body bg-light p-0 m-0">
           <div class="d-flex flex-row justify-content-between mt-3">
             <h4 class="card-title">Home</h4>
@@ -244,6 +240,16 @@
           </div>
         </div>
       </div>
+
+
+      <div class="card   p-0 mt-2 mb-4">
+        <div class="card-body m-0 p-0">
+             <div class="d-flex justify-content-center">
+                <img src="/cars/11231.jpg" class="img-fluid" alt="...">
+             </div>
+          </div>
+      </div>
+
       <div class="card text-dark mb-2 box-shadow p-0 m-0">
             <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
                   <div class="preview-list">

@@ -3,6 +3,28 @@ body{
 }
 
 
+.advert1{
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-image: url('/assets/images/carousel/banner_8.jpg');
+}
+
+.advert2{
+
+}
+
+
+.navbar-toggler{
+  outline: none !important;
+  border: none !important;
+}
+
+.navbar-toggler .mdi :hover{
+  color: aqua;
+}
+
+
 .time-text{
   padding-top:3px;
 }
@@ -58,6 +80,12 @@ background-color: #ecf3fa;
 /* end */
 
  /* linkup logo */
+
+ .logo{
+  width: 270px;
+  height: 50px;
+}
+
 @media( max-width: 400px){
   .logo{
       width: 190px;
@@ -70,7 +98,14 @@ background-color: #ecf3fa;
 .card{
 background-color: white;
 border: none;
+box-shadow: 0px 1px 2px 0px #b7b8b9e0;
 }
+
+.card1{
+  box-shadow: 0px 0px 0px 0px #727374e0 !important;
+}
+
+
 .card .card-header{
 /* background-color: #222 !important; */
 background-color: white;
@@ -81,7 +116,7 @@ border: none;
 
 /* side nav left and right */
 .sidebar-left{
-height: 100vh;
+min-height: 100vh;
 position: fixed;
 top: 0;
 bottom: 0;
@@ -89,6 +124,7 @@ z-index: 1;
 transition: 0.2s ease-in;
 visibility: collapse;
 opacity: 0;
+/* overflow-x: hidden; */
 /* transform: scaleX(5); */
 /* transform: scaleY(5); */
 /* transform: rotateX(90deg); */
@@ -147,6 +183,11 @@ transform: rotateZ(90deg);
   bottom: 0;
   right: 0;
   transition: 1s;
+  overflow-x: hidden;
+}
+
+.sidebar-right ul {
+  box-shadow: 0px 1px 1px 0px #b7b8b9e0;
 }
 
 .main-view{
@@ -156,7 +197,7 @@ min-height: 100vh;
 
 .main-view .content {
 margin-top: 54px;
-justify-content: center;
+justify-content: center !important;
 padding: 2px;
 }
 
