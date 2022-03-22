@@ -2,6 +2,12 @@ body{
   background-color: rgb(253, 255, 255);
 }
 
+.nav-link{
+  padding: 10px !important;
+  margin: 2px !important;
+  /* background-color: white !important; */
+}
+
 
 .advert1{
  background-size: cover;
@@ -130,6 +136,7 @@ opacity: 0;
 /* transform: rotateX(90deg); */
 /* transform: rotateY(90deg); */
 transform: rotateZ(90deg);
+overflow-x: hidden;
 }
 
 .class1{
@@ -169,10 +176,10 @@ transform: rotateZ(90deg);
 
 
 .sidebar-left a{
- text-decoration: none;
+ /* text-decoration: none;
  font-size: 13px;
  display: block;
- transition: 0.3s;
+ transition: 0.3s; */
 }
 
 

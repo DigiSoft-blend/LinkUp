@@ -9,39 +9,17 @@
     <div class="fixed-top">
     
 
-     <!-- <nav class="navbar navbar-expand-sm" aria-label="Third navbar example" style="background-color:white">
-    <div class="container-fluid">
-      <img class="navbar-brand logo" src="/logo/logo.png" alt="logo" />
-      <button class="navbar-toggler" type="button">
-        <span class="mdi mdi-menu" onclick="toggleSideNav()"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExample03">
-        <form style="margin-left:27px">
-             <div class="search">
-               <input class="nav-form-input form-control" type="text" placeholder="Search" aria-label="Search">
-               <i class="mdi mdi-magnify icon"></i> 
-             </div>
-          </form>
-        
-         <button class="btn btn-transparent border mx-4" type="button">log in</button>
-         <button class="btn btn-primary" type="button">sign up</button>
-             
-      </div>
-    </div>
-  </nav> -->
-  <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
  
-    <!-- Navbar brand -->
      <img class="navbar-brand logo" src="/logo/logo.png" alt="logo" />
 
-    <!-- Toggle button -->
+    
     <button class="navbar-toggler" type="button">
       <i class="fas fa-bars" onclick="toggleSideNav()"></i>
     </button>
 
-    <!-- Collapsible wrapper -->
+   
     <div class="collapse navbar-collapse" id="navbarButtonsExample">
        <form style="margin-left:52px">
              <div class="search">
@@ -58,7 +36,106 @@
         </button>
       </div>
     </div>
+</nav> -->
+<!-- Navbar -->
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button">
+      <i class="fas fa-bars" onclick="toggleSideNav()"></i>
+    </button>
+
+     <!-- <img class="navbar-brand" src="/logo/logo.png" alt="logo"  height="40" width="120"/> -->
+
     <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     
+      <img class="navbar-brand logo" src="/logo/logo.png" alt="logo" />
+
+          <form style="margin-left:28px">
+             <div class="search">
+               <input class="nav-form-input form-control" type="text" placeholder="Search" aria-label="Search">
+               <i class="mdi mdi-magnify icon"></i> 
+             </div>
+          </form>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <!-- Notifications -->
+      <div class="dropdown">
+        <a
+          class="text-reset me-3 dropdown-toggle hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bell"></i>
+          <span class="badge rounded-pill badge-notification bg-danger">1</span>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" href="#">Some news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Another news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="/assets/images/faces/face2.jpg"
+            class="rounded-circle"
+            height="40"
+            alt="img"
+            loading="lazy"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
@@ -73,7 +150,7 @@
     <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block bg-light">
       <div class="position-sticky pt-5">
         <ul class="nav flex-column  nav-pills list-unstyled">
-          <li class="mb-3">
+          <li class="nav-item mb-3">
             <a class="nav-link active" aria-current="page" href="/login">
              <span class="mdi mdi-home nav-icon" ></span>
               Home
@@ -822,28 +899,28 @@
   </div>
 </template>
 
-<script>
-import { ref } from 'vue'
-const loadUserData = async() => {
-    return new Promise((resolve => {
-        setTimeout(() => {
-          resolve({
-            name: 'silas udofia',
-            pic: 'assets/images/faces/face6.jpg',
-            bio: 'vue js developer'
-          })
-        },2000)
-    }))
-}
-export default {
-   async setup(){
-     const userData = ref(await loadUserData())
-     return {
-      userData
-     }
-   }
-}
-</script>
+// <script>
+// import { ref } from 'vue'
+// const loadUserData = async() => {
+//     return new Promise((resolve => {
+//         setTimeout(() => {
+//           resolve({
+//             name: 'silas udofia',
+//             pic: 'assets/images/faces/face6.jpg',
+//             bio: 'vue js developer'
+//           })
+//         },2000)
+//     }))
+// }
+// export default {
+//    async setup(){
+//      const userData = ref(await loadUserData())
+//      return {
+//       userData
+//      }
+//    }
+// }
+// </script>
 
 
 
