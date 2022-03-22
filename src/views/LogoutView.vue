@@ -78,25 +78,86 @@
              <span class="mdi mdi-home nav-icon" ></span>
               Home
             </a>
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link bg-light" aria-current="page" href="#">
               <span class="mdi mdi-account nav-icon" ></span>
               Members
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+
+      <li class="mb-1 nav-item nav-link bg-light">
+        <a class="text-muted align-items-center rounded collapsed d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+         Home
+         <span class="mdi mdi-chevron-down" style="font-size:20px" ></span>
+        </a>
+        <div class="collapse show" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+             <li class="nav-item">
+            <a class="nav-link bg-light" href="#">
              <span class="" >&#x1F354;</span>
               Customers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
              <span class="" >&#x1F624;</span>
               Reports
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
+              <span class="" >&#x1F594;</span>
+              Integrations
+            </a>
+          </li>
+        
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1 nav-item nav-link bg-light">
+        <a class="text-muted  align-items-center collapsed d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+          Dashboard
+          <span class="mdi mdi-chevron-down" style="font-size:20px" ></span>
+        </a>
+        <div class="collapse" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+             <li class="nav-item">
+            <a class="nav-link bg-light" href="#">
+             <span class="" >&#x1F354;</span>
+              Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-light" href="#">
+             <span class="" >&#x1F624;</span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-light" href="#">
+              <span class="" >&#x1F594;</span>
+              Integrations
+            </a>
+          </li>
+        
+          </ul>
+        </div>
+      </li>
+
+
+          <li class="nav-item bg-light">
+            <a class="nav-link bg-light" href="#">
+             <span class="" >&#x1F354;</span>
+              Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-light" href="#">
+             <span class="" >&#x1F624;</span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-light" href="#">
               <span class="" >&#x1F594;</span>
               Integrations
             </a>
@@ -111,61 +172,61 @@
         </h6>
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
                <span class="" >&#x1F554;</span>
               Current month
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
             <span class="" >&#x1F353;</span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
               <span class="" >&#x1F324;</span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
                <span class="" >&#x1F351;</span>
               Year-end sale
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
             <span class="" >&#x1F353;</span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
               <span class="" >&#x1F324;</span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
                <span class="" >&#x1F351;</span>
               Year-end sale
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
             <span class="" >&#x1F353;</span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
               <span class="" >&#x1F324;</span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link bg-light" href="#">
                <span class="" >&#x1F351;</span>
               Year-end sale
             </a>
