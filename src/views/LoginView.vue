@@ -4,7 +4,7 @@
    <Loader v-if="getLoader" class="text-center"></Loader> 
   <div class="col-md-6  text-dark">
          
-  <main class="form-signin">
+  <main class="form-signin animate__animated animate__fadeInLeft">
     
   <form @submit="login">
     <div class="mt-5">
@@ -38,7 +38,7 @@
          <p>Lost Password ?</p>
       </router-link>
     </div>
-    <button class="w-100 btn btn-lg btn-primary zbtn" type="submit">Sign in</button>
+    <button class="w-100 btn btn-lg zbtn btn-grad" type="submit">Sign in</button>
     <div class="text-center p-2">
        <router-link to="/register">Create an account</router-link> 
     </div>
@@ -117,7 +117,7 @@ export default {
             })
                 .then(response => {
                 this.errorMessage = '';
-                this.$router.push({ name: 'dashboard'})
+                this.$router.push({ name: 'userdashboard'})
                 console.log(response);
             })
                 .catch(error => {

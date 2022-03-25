@@ -4,16 +4,16 @@
      <Loader v-if="getLoader" class="text-center"></Loader>
   <div class="col-md-6 text-dark">
          
-  <h1 class="fw-normal mt-4 mb-3 text-center p-0 animate__animated animate__fadeInLeft">Create an Account</h1>
+  <h1 class="fw-normal mt-4 mb-1 text-center p-0 animate__animated animate__fadeInLeft">Create an Account</h1>
       <div class="diva animate__animated animate__fadeInLeft">
         <i class="mdi mdi-information text-info icond"></i><p class="p-diva">Registration for this site is easy. just fill in the fields below. and we'll get a new account set up for you in no time.</p>
       </div>
       
-  <main class="form-signin animate__animated animate__fadeInLeft">
+  <main class="form-signin">
     
   <form @submit="register">
    
-    <h1 class="h3 m-0 p-0  fw-normal text-center">Account Details</h1>
+    <h1 class="h3 m-0 p-0  fw-normal text-center animate__animated animate__fadeInLeft">Account Details</h1>
       <div class="d-flex justify-content-center m-0 p-0">
         <i v-if="form2Visible" @click="btn2" class="mdi mdi-menu-up text-primary  text-center m-0 p-0" style="font-size:40px"></i> 
       </div>
@@ -21,13 +21,13 @@
       <div class="search mb-3">
          <i class="mdi mdi-account text-primary icon"></i> 
          <input v-model="username" type="text" class="inp bg-light input-field" placeholder="Username" required> 
-         <p  class="mt-2 text-danger" style="font-size:12px">{{ getRegistrationError.username }}</p>
+         <p  class="mt-1 text-danger" style="font-size:12px">{{ getRegistrationError.username }}</p>
        </div>
 
       <div class="search mb-3">
          <i class="mdi mdi-email text-primary icon"></i> 
          <input v-model="email" type="email" class="inp bg-light input-field" placeholder="Email Address" required> 
-          <p  class="mt-2 text-danger" style="font-size:12px">{{ getRegistrationError.email }}</p>
+          <p  class="mt-1 text-danger" style="font-size:12px">{{ getRegistrationError.email }}</p>
        </div>
     
     
@@ -38,15 +38,15 @@
 
        <div class="search">
          <i class="mdi mdi-key text-warning icon"></i>
-          <input v-model="password_confirmation" type="password" class="inp bg-light input-field" placeholder="Confirme Password" required> 
-         <p class="mt-2 text-danger" style="font-size:12px">{{ getRegistrationError.password }}</p>
+          <input v-model="password_confirmation" type="password" class="inp bg-light input-field" placeholder="Confirm Password" required> 
+         <p class="mt-1 text-danger" style="font-size:12px">{{ getRegistrationError.password }}</p>
        </div>
 
     
     <!-- <router-link to="/profileentry">
          <p class="w-100 btn btn-lg btn-primary zbtn mt-4">Continue</p>
     </router-link> -->
-    <button  @click="btn"  class="w-100 btn btn-lg btn-primary zbtn mt-4">Continue</button>
+    <button  @click="btn"  class="w-100 btn btn-lg btn-primary zbtn btn-grad">Continue</button>
     <div class="text-center p-2">
        <span> Have an account ?</span> <router-link to="/login">Log in</router-link>
     </div>
@@ -70,22 +70,22 @@
        </div>
     
  
-    <div class="text-muted mb-1 mt-1" style="font-size:14px">
-      <p class="text-muted p-0 mb-2 mt-3 ">Registration Type (required)</p>
+    <div class="text-muted mb-1 mt-1 px-1" style="font-size:14px">
+      <p class="text-muted p-0 mb-2  ">Registration Type (required)</p>
      
-      <input class="mr-1" type="checkbox" id="talent" value="Talent" v-model="checkedUserType">
-      <label class="mr-1" for="talent">Talent</label>
-      <input class="mr-1" type="checkbox" id="vendor" value="Vendor" v-model="checkedUserType">
-      <label class="mr-1" for="vendor">Vendor</label>
-      <input class="mr-1" type="checkbox" id="affiliate" value="Affiliate" v-model="checkedUserType">
-      <label class="mr-1" for="affilate">Affiliate</label>
-      <input class="mr-1" type="checkbox" id="customer" value="Customer" v-model="checkedUserType">
-      <label class="mr-1" for="customer">Customer</label>
+      <input class="mr-2" type="checkbox" id="talent" value="Talent" v-model="checkedUserType">
+      <label class="mr-2" for="talent">Talent</label>
+      <input class="mr-2" type="checkbox" id="vendor" value="Vendor" v-model="checkedUserType">
+      <label class="mr-2" for="vendor">Vendor</label>
+      <input class="mr-2" type="checkbox" id="affiliate" value="Affiliate" v-model="checkedUserType">
+      <label class="mr-2" for="affilate">Affiliate</label>
+      <input class="mr-2" type="checkbox" id="customer" value="Customer" v-model="checkedUserType">
+      <label class="mr-2" for="customer">Customer</label>
     </div>
  
      
     
-    <button  class="w-100 btn btn-lg btn-primary zbtn mt-1" type="submit">Complete Sign Up</button>
+    <button  class="w-100 btn btn-lg btn-primary zbtn btn-grad" type="submit">Complete Sign Up</button>
    </section>
    
   </form>
@@ -97,7 +97,7 @@
   
 <div class="col-md-6  bimg  d-none d-md-block">
 
- <div class="cover-container d-flex w-100 hight p-3 mx-auto flex-column animate__animated animate__fadeInRight">
+ <div class="cover-container d-flex w-100 hight p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
      

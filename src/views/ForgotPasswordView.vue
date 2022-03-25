@@ -4,8 +4,11 @@
    <Loader v-if="getLoader" class="text-center"></Loader> 
   <div class="col-md-6  text-dark">
       <h1  class="h3 mb-3 mt-5 text-danger fw-normal text-center">Forgot Password </h1>
-      <div class="diva mt-5 animate__animated animate__fadeInLeft">
-        <i class="mdi mdi-information text-info icond"></i><p class="ml-4">Forgot your password ? Never to worry! please enter your email address</p>
+      <!-- <div class="diva mt-5 animate__animated animate__fadeInLeft">
+        <i class="mdi mdi-information text-info icond"></i><p class="">Forgot your password ? Never to worry! please enter your email address</p>
+      </div> -->
+       <div class="diva animate__animated animate__fadeInLeft">
+        <i class="mdi mdi-information text-info icond"></i><p class="p-diva">Forgot your password ? Never to worry! please enter your email address</p>
       </div>
   <main class="form-signin animate__animated animate__fadeInLeft">
     
@@ -23,7 +26,7 @@
     <div class="text-muted mb-1 mt-2 d-flex justify-content-between pt-1">
     
     </div>
-    <button class="w-100 btn btn-lg btn-primary zbtn" type="submit">Continue</button>
+    <button class="w-100 btn btn-lg btn-primary zbtn btn-grad" type="submit">Continue</button>
     <div class="text-center p-2">
       <span>Or go back to</span>  <router-link to="/login"> Log in</router-link> 
     </div>
@@ -123,7 +126,7 @@ export default {
   height: 100vh;
 }
 
-.diva{
+/* .diva{
    box-shadow: 0px 1px 3px 0px rgb(217, 219, 219);
    border-radius: 8px;
    justify-content: center;
@@ -141,7 +144,34 @@ export default {
     position: absolute;
     top: 12px;
     left: 12px
+} */
+
+
+.diva{
+   box-shadow: 0px 1px 3px 0px rgb(217, 219, 219);
+   border-radius: 8px;
+   justify-content: center;
+   text-align: justify;
+   margin-bottom: 10px !important;
+   border-top: 2px solid rgb(182, 117, 243);
+   width: 100%;
+   max-width: 400px;
+   padding: 15px;
+   margin: auto;
+   position: relative;
+   
 }
+
+.p-diva{
+  margin-left: 20px;
+}
+
+.diva .icond {
+    position: absolute;
+    top: 14px;
+    left: 12px
+}
+
 
 
 .search {

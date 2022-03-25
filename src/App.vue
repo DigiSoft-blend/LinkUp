@@ -7,13 +7,13 @@ import DashboardSkeleton from './views/DashboardSkeletonView.vue'
 </script>
 
 <template>
-  <!-- <RouterView /> --> 
-  <Suspense>
+  <RouterView /> 
+  <!-- <Suspense>
     <template #default>
      <LogoutView></LogoutView>
     </template>
     <template #fallback>
      <DashboardSkeleton></DashboardSkeleton>
     </template>
-  </Suspense>
+  </Suspense> -->
 </template>
