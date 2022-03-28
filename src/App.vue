@@ -3,10 +3,13 @@ import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
 import LogoutView from './views/LogoutView.vue'
 import DashboardSkeleton from './views/DashboardSkeletonView.vue'
-
+import Tiptap from './components/Tiptap.vue'
+import TiptapCompositionApi from './components/TiptapCompositionApi.vue'
 </script>
 
 <template>
+   <!-- <Tiptap /> -->
+   <!-- <TiptapCompositionApi></TiptapCompositionApi> -->
   <RouterView /> 
   <!-- <Suspense>
     <template #default>
@@ -17,3 +20,15 @@ import DashboardSkeleton from './views/DashboardSkeletonView.vue'
     </template>
   </Suspense> -->
 </template>
+
+
+
+<script>
+export default {
+  name: 'App',
+  components: {
+    Tiptap,
+    TiptapCompositionApi
+  }
+}
+</script>

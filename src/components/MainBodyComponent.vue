@@ -1,0 +1,25 @@
+<template>
+
+<div class="col-md-5  container bg-light">
+    <div class="row gy-2">
+        <MainCardComponent></MainCardComponent>  
+    </div>
+</div>
+
+
+</template>
+
+<script>
+import MainCardComponent from "./MainCardComponent.vue"
+import TopCardComponent from "./TopCardComponent.vue"
+import AdvertCardComponent from "./AdvertCardComponent.vue"
+export default{
+  components: {
+    MainCardComponent,
+    TopCardComponent,
+    AdvertCardComponent
+  }
+}
+
+</script>
+
