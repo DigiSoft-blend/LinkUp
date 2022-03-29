@@ -112,7 +112,7 @@ box-shadow: 0px 1px 2px 0px #b7b8b9e0;
 
 .preview-thumb img{
   width: 35px !important;
-  border: solid 3px rgb(151, 73, 240);
+  border: solid 3px rgb(0, 125, 228);
 }
  .container{
   display:flex; 
