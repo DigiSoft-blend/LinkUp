@@ -4,7 +4,7 @@
 <div class="row content  ">
   <div class="bg-light" style="border:none">
                 <div class="container p-4 m-0">
-                    <div class="col-4 main-staus-con  rounded m-r">
+                    <div class="col-md-3 col-4 main-staus-con  rounded m-r">
                     
                       <div class="status-con d-flex justify-content-center">
                       
@@ -19,7 +19,7 @@
                       </div>
                     
                   </div>
-                    <div class="col-4 main-staus-con  rounded  m-r">
+                    <div class="col-md-3 col-4 main-staus-con  rounded  m-r">
                     
                         <div class="status-con d-flex justify-content-center ">
                           <div class="preview-thumb">
@@ -31,7 +31,7 @@
                         </div>
                     
                   </div>
-                    <div class="col-4 main-staus-con   rounded  m-r">
+                    <div class="col-md-3 col-4 main-staus-con   rounded  m-r">
                       
                         <div class="status-con d-flex justify-content-center">
                           <div class="preview-thumb">
@@ -43,7 +43,7 @@
                         </div>
                       
                   </div>
-                  <div class="col-4 main-staus-con  rounded  m-r">
+                  <div class="col-md-3 col-4 main-staus-con  rounded  m-r">
                       
                       <div class="status-con d-flex justify-content-center">
                         <div class="preview-thumb">
@@ -55,7 +55,7 @@
                       </div>
                       
                   </div>
-                  
+
                 </div>
          </div>
        </div> 
