@@ -38,7 +38,7 @@
                  <div class="col-4">
                     <div class="col-12 footer-div">
                         <i class="mdi mdi-chart-bubble text-warning"></i>
-                        <p class="">Feeling/activity</p>
+                        <p class="">Feeling</p>
                     </div>
                  </div>
                </div>
