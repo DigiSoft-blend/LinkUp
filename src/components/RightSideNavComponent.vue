@@ -3,7 +3,10 @@
       <div class="position-sticky pt-5">
        <ul class="nav flex-column mb-auto px-4">
           <li class="nav-item">
-            <p class="Trend-text  mt-2 text-muted p-trending-post">Friends/contacts</p>
+            <div class="d-flex  d-xl-flex justify-content-between">
+              <p class="Trend-text text-muted p-trending-post">Friends/contacts</p>
+                 <i class="mdi mdi-dots-horizontal"></i>
+            </div>
                  <div class="preview-list">
                       <div class="preview-item">
                         <div class="img-div">
@@ -133,10 +136,6 @@
 <style scoped>
   .preview-thumbnail img{
      width: 35px !important;
-     height: auto !important;
+     height: 35px !important;
   }
-  /* .preview-thumbnail .active{
-    top: 0 !important;
-    left: 0 !important;
-  } */
 </style>

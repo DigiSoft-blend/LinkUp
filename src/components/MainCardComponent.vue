@@ -69,14 +69,14 @@
                         </div>
                       </div>
                  </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
           <div class="card-body m-0 p-0">
              <div class="mx-3">
-               <p class="p-card-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus tenetur ab odio adipisci nihil recusandae. Nobis fuga minus excepturi quae tenetur rem aperiam accusamus amet ex possimus? Consectetur, debitis corporis.</p>
+               <p class="p-card-body">Consectetur, debitis corporis.</p>
              </div>
               <div class="d-flex justify-content-center py-1">
-                 <img src="/cars/11231.jpg" class="img-fluid" alt="...">
+                 <img src="/cars/33120.jpg" class="img-fluid" alt="...">
               </div>
           </div>
           <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
@@ -127,7 +127,7 @@
                         </div>
                       </div>
                  </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
@@ -184,7 +184,7 @@
                         </div>
                       </div>
                  </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
@@ -243,7 +243,7 @@
                         </div>
                       </div>
                  </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
@@ -302,7 +302,7 @@
                         </div>
                       </div>
                  </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
@@ -361,7 +361,7 @@
                         </div>
                       </div>
                  </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
@@ -419,7 +419,7 @@
                         </div>
                       </div>
                  </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
@@ -478,7 +478,7 @@
                         </div>
                       </div>
                  </div>
-                  <p class="text-muted mt-2 small p-share p-1">Share</p>
+                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
@@ -526,6 +526,10 @@ export default {
 </script>
 
 <style scoped>
+
+.mdi-dots-horizontal{
+  font-size: 24px;
+}
  .preview-item-content input{
      width: 28em;
      height: 40px;

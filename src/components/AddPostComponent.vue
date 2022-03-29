@@ -85,7 +85,7 @@
 
 @media(min-width:393px) {
   .preview-item-content input{
-     width: 300px;
+     width: 290px;
      height: 40px;
      border-radius: 50px;
      border: none !important;
@@ -96,7 +96,7 @@
 
 @media(max-width:390px) {
   .preview-item-content input{
-     width: 270px;
+     width: 260px;
      height: 40px;
      border-radius: 50px;
      border: none !important;

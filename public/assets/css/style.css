@@ -12,6 +12,10 @@ li :hover{
   transition: 0.7s;
 }
 
+li a{
+  color: black !important;
+}
+
 
 .advert1{
  background-size: cover;
@@ -82,7 +86,7 @@ left: 47px
 
 
 .nav-form-input{
-width: 676px !important;
+width: 200px !important;
 border: none !important;
 background-color: #ecf3fa;
 border-radius: 50px;
@@ -93,8 +97,8 @@ border-radius: 50px;
  /* linkup logo */
 
  .logo{
-  width: 250px;
-  height: 60px;
+  width: 130px;
+  height: auto;
 }
 
 @media( max-width: 400px){
