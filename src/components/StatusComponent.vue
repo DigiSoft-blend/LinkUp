@@ -135,7 +135,7 @@ box-shadow: 0px 1px 2px 0px #b7b8b9e0;
   height: 150px !important;
   width:auto !important;
   border-radius: 10px !important;
-  border: solid 2px white !important;
+  /* border: solid 2px white !important; */
 }
 img:hover{ 
  border: solid 0px white !important;
