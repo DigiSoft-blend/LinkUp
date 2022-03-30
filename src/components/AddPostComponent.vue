@@ -24,21 +24,21 @@
           <div class="card-footer  py-3 border-top" style="background-color:white; border:none">
                <div class="row row-footer">
                   <div class="col-4">
-                    <div class="col-12 footer-div">
-                      <i class="mdi mdi-camcorder text-danger"></i>
-                      <p>Live video</p>
+                    <div class="d-flex  footer-div">
+                      <i class="fa fa-video text-danger mt-1 me-1"></i>
+                      <span>Live video</span>
                     </div>
                  </div>
                  <div class="col-4">
-                     <div class="col-12 footer-div">
-                      <i class="mdi mdi-image-multiple text-primary"></i>
-                      <p>Photo/video</p>
+                     <div class="footer-div">
+                      <i class="fa-solid fa-images text-primary mt-1 me-1"></i>
+                      <span>Photo/video</span>
                      </div>
                  </div>
                  <div class="col-4">
-                    <div class="col-12 footer-div">
-                        <i class="mdi mdi-chart-bubble text-warning"></i>
-                        <p class="">Feeling</p>
+                    <div class="footer-div">
+                        <i class="fa fa-smile text-warning mt-1 me-1"></i>
+                        <span class="">Feeling</span>
                     </div>
                  </div>
                </div>
