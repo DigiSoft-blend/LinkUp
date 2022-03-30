@@ -1,19 +1,25 @@
 <template>
 
  <div class="card status1 text-dark mt-2 box-shadow p-0 m-0">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
-                  <div class="preview-list">
+          
+           <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
+                  <div class="preview-list col-11">
                       <div class="preview-item">
                          <div class="img-div">
                         <div class="preview-thumbnail">
                           <img src="/assets/images/faces/face2.jpg" alt="image" class="rounded-circle" />
                          </div>
                         </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <form action="">
-                              <input class="form-control inp" type="text" placeholder="What's on your mind, Silas?">
-                          </form>
+                        <div class="col-11 preview-item-content d-flex">
+                          <form action="" class="frm">
+                                 <input class="form-control inp" type="text" placeholder="What's on your mind, Silas?">
+                         </form>
+                          <div>
+                             <i class="fa fa-file-image mt-2 ms-3 text-danger" style="font-size:30px"></i>
+                             <p class="ms-2 mt-1 mb-0">Photo</p>
+                          </div>
                         </div>
+                        
                       </div>
                  </div>
           </div>
@@ -132,7 +138,7 @@
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
-               <p class="p-card-body">Come bang me babe</p>
+               <p class="p-card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quia</p>
             </div>
              <div class="d-flex justify-content-center py-1">
                <img src="/cars/33111.jpg" class="img-fluid" alt="...">
@@ -189,7 +195,7 @@
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
-              <p class="p-card-body">Horny sexy girls damn!!!</p>
+              <p class="p-card-body">sit amet consectetur adipisicing elit. Nobis quia</p>
             </div>
             <div class="d-flex justify-content-center py-1">
                <img src="/cars/33115.jpg" class="img-fluid" alt="...">
@@ -248,7 +254,7 @@
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
-              <p class="p-card-body">Call me babe, need you now !!!</p>
+              <p class="p-card-body">nemo labore, pariatur laborum? Sapiente perferendis deserunt, </p>
             </div>
             <div class="d-flex justify-content-center py-1">
                <img src="/cars/33116.jpg" class="img-fluid" alt="...">
@@ -307,7 +313,7 @@
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
-              <p class="p-card-body">Just me and you all night</p>
+              <p class="p-card-body">sit porro nulla nihil tenetur quas incidunt, cum laudantium unde quos quod?</p>
             </div>
             <div class="d-flex justify-content-center py-1">
                <img src="/cars/33117.jpg" class="img-fluid" alt="...">
@@ -366,7 +372,7 @@
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
-              <p class="p-card-body">Need you  in the middle now babe !</p>
+              <p class="p-card-body">sit porro nulla nihil tenetur quas incidunt, cum laudantium unde quos quod?</p>
             </div>
             <div class="d-flex justify-content-center py-1">
                <img src="/cars/33118.jpg" class="img-fluid" alt="...">
@@ -424,7 +430,7 @@
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
-              <p class="p-card-body">Badass girlfrind killing it !</p>
+              <p class="p-card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint aperiam numquam sit laudantium iste sapiente, fugit eos iusto explicab</p>
             </div>
             <div class="d-flex justify-content-center py-1">
                <img src="/cars/33119.jpg" class="img-fluid" alt="...">
@@ -483,7 +489,7 @@
           </div>
           <div class="card-body m-0 p-0">
             <div class="mx-3">
-              <p class="p-card-body">Sexy latina, fricky hot !</p>
+              <p class="p-card-body">sit porro nulla nihil tenetur quas incidunt, cum laudantium unde quos quod?</p>
             </div>
             <div class="d-flex justify-content-center py-1">
                <img src="/cars/33120.jpg" class="img-fluid" alt="...">
@@ -565,4 +571,20 @@ export default {
     display: none;
   }
 }
+
+
+.preview-item-content input{
+     width: inherit;
+     height: 40px;
+     border-radius: 50px;
+     border: none !important;
+     background-color: #ecf3fa;
+     margin-top: 7px;
+     font-size: 15px;
+  }
+
+.frm{
+   width: inherit;
+   display: flex;
+} 
 </style>

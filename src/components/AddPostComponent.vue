@@ -103,29 +103,6 @@
  
 
 
-/* @media(max-width:763px) {
-  .preview-item-content input{
-     max-width: 600px;
-     width: ;
-     height: 40px;
-     border-radius: 50px;
-     border: none !important;
-     background-color: #ecf3fa;
-     margin-top: 7px;
-  }
-} 
-
-@media(min-width:763px) {
-  .preview-item-content input{
-     width: inherit;
-     height: 40px;
-     border-radius: 50px;
-     border: none !important;
-     background-color: #ecf3fa;
-     margin-top: 7px;
-  }
-}  */
- 
 
 
 @media(max-width:763px) {
