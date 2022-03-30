@@ -2,6 +2,26 @@
     <div class="con1 status2 col-md-5 container bg-light">
     <div class="row">
     <div class="card text-dark box-shadow p-0 m-0">
+   <div class="card-header  border border-bottom d-flex  d-xl-flex justify-content-between p-0 m-0 p-2">
+      <a class="text-reset ms-3" href="#">
+        <i class="fa fa-home text-primary"></i>
+      </a>
+
+       <a class="text-reset" href="#">
+        <i class="fa fa-user-group"></i>
+      </a>
+
+       <a class="text-reset" href="#">
+       <i class="fa-brands fa-facebook-messenger"></i>
+      </a>
+       <a class="text-reset" href="#">
+        <i class="mdi mdi-bell"></i>
+      </a>
+       <a class="text-reset me-3" href="#">
+       <i class="fa fa-users"></i>
+      </a>
+          </div>
+         
             <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
                   <div class="preview-list">
                       <div class="preview-item">
@@ -16,7 +36,12 @@
                                  <input class="form-control inp" type="text" placeholder="What's on your mind, Silas?">
                               </div>
                           </form>
+                          <div>
+                             <i class="fa fa-file-image mt-2 ms-3 text-danger" style="font-size:30px"></i>
+                             <p class="ms-2 mt-1 mb-0">Photo</p>
+                          </div>
                         </div>
+                        
                       </div>
                  </div>
           </div>
@@ -74,7 +99,7 @@
  
 @media(max-width:360px) {
   .preview-item-content input{
-     width: 270px;
+     width: 250px;
      height: 40px;
      border-radius: 50px;
      border: none !important;
@@ -85,7 +110,7 @@
 
 @media(min-width:393px) {
   .preview-item-content input{
-     width: 290px;
+     width: 247px;
      height: 40px;
      border-radius: 50px;
      border: none !important;
@@ -96,7 +121,7 @@
 
 @media(max-width:390px) {
   .preview-item-content input{
-     width: 260px;
+     width: 200px;
      height: 40px;
      border-radius: 50px;
      border: none !important;
