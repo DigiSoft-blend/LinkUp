@@ -23,19 +23,17 @@
           </div>
          
             <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
-                  <div class="preview-list">
+                  <div class="preview-list col-11">
                       <div class="preview-item">
                          <div class="img-div">
                         <div class="preview-thumbnail">
                           <img src="/assets/images/faces/face2.jpg" alt="image" class="rounded-circle" />
                          </div>
                         </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <form action="">
-                              <div class="md-12">
+                        <div class="col-11 preview-item-content d-flex">
+                          <form action="" class="frm">
                                  <input class="form-control inp" type="text" placeholder="What's on your mind, Silas?">
-                              </div>
-                          </form>
+                         </form>
                           <div>
                              <i class="fa fa-file-image mt-2 ms-3 text-danger" style="font-size:30px"></i>
                              <p class="ms-2 mt-1 mb-0">Photo</p>
@@ -88,40 +86,26 @@
  margin-top: 90px;
 }
  .preview-item-content input{
-     width: 440px;
+     width: inherit;
      height: 40px;
      border-radius: 50px;
      border: none !important;
      background-color: #ecf3fa;
      margin-top: 7px;
   }
+
+.frm{
+   width: inherit;
+   display: flex;
+}  
 
  
-@media(max-width:360px) {
-  .preview-item-content input{
-     width: 250px;
-     height: 40px;
-     border-radius: 50px;
-     border: none !important;
-     background-color: #ecf3fa;
-     margin-top: 7px;
-  }
-}  
 
-@media(min-width:393px) {
-  .preview-item-content input{
-     width: 247px;
-     height: 40px;
-     border-radius: 50px;
-     border: none !important;
-     background-color: #ecf3fa;
-     margin-top: 7px;
-  }
-}  
 
-@media(max-width:390px) {
+/* @media(max-width:763px) {
   .preview-item-content input{
-     width: 210px;
+     max-width: 600px;
+     width: ;
      height: 40px;
      border-radius: 50px;
      border: none !important;
@@ -130,6 +114,17 @@
   }
 } 
 
+@media(min-width:763px) {
+  .preview-item-content input{
+     width: inherit;
+     height: 40px;
+     border-radius: 50px;
+     border: none !important;
+     background-color: #ecf3fa;
+     margin-top: 7px;
+  }
+}  */
+ 
 
 
 @media(max-width:763px) {
