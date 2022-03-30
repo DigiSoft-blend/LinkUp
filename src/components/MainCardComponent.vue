@@ -43,7 +43,7 @@
        </div>
 
   <div class="d-flex justify-content-center">
-   <button class="btn btn-grad" type="submit">New Posts</button>
+   <button class="btn btn-primary btn-gra" type="submit">New Posts</button>
   </div>
 
 
@@ -528,7 +528,7 @@ export default {
 
 <style scoped>
 
-.btn-grad{
+.btn-gra{
   border-radius: 50px;
   width: 140px;
 }

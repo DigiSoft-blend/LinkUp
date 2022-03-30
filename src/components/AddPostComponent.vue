@@ -24,9 +24,9 @@
           <div class="card-footer  py-3 border-top" style="background-color:white; border:none">
                <div class="row row-footer">
                   <div class="col-4">
-                    <div class="d-flex  footer-div">
-                      <i class="fa fa-video text-danger mt-1 me-1"></i>
-                      <span>Live video</span>
+                    <div class="footer-div">
+                        <i class="fa fa-smile text-warning mt-1 me-1"></i>
+                        <span class="">Feeling</span>
                     </div>
                  </div>
                  <div class="col-4">
@@ -36,9 +36,9 @@
                      </div>
                  </div>
                  <div class="col-4">
-                    <div class="footer-div">
-                        <i class="fa fa-smile text-warning mt-1 me-1"></i>
-                        <span class="">Feeling</span>
+                    <div class="d-flex  footer-div">
+                      <i class="fa fa-location-dot text-danger mt-1 me-1"></i>
+                      <span>Location</span>
                     </div>
                  </div>
                </div>
