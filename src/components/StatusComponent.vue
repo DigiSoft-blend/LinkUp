@@ -3,7 +3,7 @@
 <div class="col-md-6 container status-con1">
 <div class="row content">
   <div class="bg-light" style="border:none;">
-                <div class="container p-3 m-0">
+                <div class="container p-3 m-0 justify-content-center">
                     <div class="col-md-3 col-4 main-staus-con  rounded m-r">
                     
                       <div class="status-con d-flex justify-content-center">
