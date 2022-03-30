@@ -92,6 +92,7 @@
      border: none !important;
      background-color: #ecf3fa;
      margin-top: 7px;
+     font-size: 15px;
   }
 
 .frm{
