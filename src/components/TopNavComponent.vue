@@ -5,10 +5,7 @@
   <!-- Container wrapper -->
    
     <!-- Toggle button -->
-     <button class="navbar-toggler" type="button">
-      <i class="mdi mdi-menu" onclick="toggleSideNav()"></i>
-    </button>
-
+    
      <img class="navbar-brand small-screen-logo" src="/logo/logo.png" alt="logo"  height="40" width="130"/>
 
     <!-- Collapsible wrapper -->
@@ -35,7 +32,7 @@
        <div class="link-div">
          <router-link class="nav-link mdi mdi-earth nav-icon" to="/userdashboard"></router-link>
       </div>
-     
+
     </div>
     <!-- Collapsible wrapper -->
 
@@ -161,6 +158,9 @@
     <!-- Right elements -->
   <!-- </div> -->
   <!-- Container wrapper -->
+    <button class="navbar-toggler" type="button">
+      <i class="mdi mdi-menu" onclick="toggleSideNav()"></i>
+    </button>
 </nav>
 <!-- Navbar -->
 </div>
