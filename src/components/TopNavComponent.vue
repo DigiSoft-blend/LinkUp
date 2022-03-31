@@ -6,12 +6,12 @@
    
     <!-- Toggle button -->
     
-     <img class="navbar-brand small-screen-logo mx-2" src="/fblogo/facebook-logo-png-38355.png" alt="logo"/>
+     <img class="navbar-brand small-screen-logo mx-2" src="/logo/default-monochrome-black.svg" alt="logo"/>
 
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
      
-       <img class="navbar-brand logo mx-4" src="/fblogo/facebook-logo-png-2336.png" alt="logo" />
+       <img class="navbar-brand logo mx-4" src="/logo/default-monochrome-black.svg" alt="logo" />
 
           <form style="">
              <div class="search">
@@ -169,7 +169,7 @@
 <style scoped>
 
 .logo{
-  width: 40px !important;
+  width: 150px !important;
   height: auto !important;
 }
 
