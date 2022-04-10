@@ -10,9 +10,6 @@ import StarterKit from '@tiptap/starter-kit'
 export default {
   components: {
     EditorContent,
-    EditorMenuBar,
-    Editor,
-    EditorMenuBubble
   },
 
   setup() {
