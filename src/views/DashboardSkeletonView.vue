@@ -233,19 +233,19 @@
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="footer-div">
-                        <i class="fa fa-smile text-warning mt-1 me-1"></i>
+                        <!-- <i class="fa fa-smile text-warning mt-1 me-1"></i> -->
                         <span class="animated-background"></span>
                     </div>
                  </div>
                  <div class="col-4">
                      <div class="footer-div">
-                      <i class="fa-solid fa-images text-primary mt-1 me-1"></i>
+                      <!-- <i class="fa-solid fa-images text-primary mt-1 me-1"></i> -->
                       <span class="animated-background"></span>
                      </div>
                  </div>
                  <div class="col-4">
                     <div class="d-flex  footer-div">
-                      <i class="fa fa-location-dot text-danger mt-1 me-1"></i>
+                      <!-- <i class="fa fa-location-dot text-danger mt-1 me-1"></i> -->
                       <span class="animated-background"></span>
                     </div>
                  </div>
