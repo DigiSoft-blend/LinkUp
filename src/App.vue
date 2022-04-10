@@ -1,24 +1,14 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
-import LogoutView from './views/LogoutView.vue'
 import DashboardSkeleton from './views/DashboardSkeletonView.vue'
-import Tiptap from './components/Tiptap.vue'
-import TiptapCompositionApi from './components/TiptapCompositionApi.vue'
+import ContentLoaderComponent from './components/ContentLoaderComponent.vue'
 </script>
 
 <template>
-   <!-- <Tiptap /> -->
-   <!-- <TiptapCompositionApi></TiptapCompositionApi> -->
+   
+   <!-- <ContentLoaderComponent></ContentLoaderComponent> -->
   <RouterView /> 
-  <!-- <Suspense>
-    <template #default>
-     <LogoutView></LogoutView>
-    </template>
-    <template #fallback>
-     <DashboardSkeleton></DashboardSkeleton>
-    </template>
-  </Suspense> -->
 </template>
 
 
@@ -27,8 +17,9 @@ import TiptapCompositionApi from './components/TiptapCompositionApi.vue'
 export default {
   name: 'App',
   components: {
-    Tiptap,
-    TiptapCompositionApi
+    // Tiptap,
+    // TiptapCompositionApi
+    ContentLoaderComponent
   }
 }
 </script>

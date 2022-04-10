@@ -1,34 +1,32 @@
 <template>
   
   <div class="row p-0 m-0">
-   <Loader v-if="getLoader" class="text-center"></Loader> 
-  <div class="col-md-6  text-dark">
-         
-  <main class="form-signin animate__animated animate__fadeInLeft">
+   <Loader v-if="Loader" class="text-center"></Loader> 
+  <div class="col-md-6   text-dark">
     
-  <form @submit="login">
-    <div class="mt-5">
-      <h1 class="h3 mb-3 fw-normal text-center"><img src="/assets/images/zhivago-logo.png" alt="logo" height="70px" width="320px" /></h1>
+    <div class="container sign-up-div  text-center">
+      <img src="/logo/default-monochrome-black.svg" alt="logo" />
     </div>
-    <h1  class="h3 mb-3 fw-normal text-center">Welcome</h1>
+ 
+   <main class="form-signin animate__animated animate__fadeInLeft">
 
-    <p class="text-muted text-center p-4">Get connected with everything !</p>
+  <form @submit="login">
+   
+    <p class="text-muted text-center mt-3">Get connected with everything !</p>
 
-    
        <div class="search mb-3">
-         <i class="mdi mdi-account text-info icon"></i>
-          <input v-model="email" type="email" class="inp bg-light input-field" placeholder="Email" required> 
+         <i class="mdi mdi-account icon"></i>
+          <input v-model="email" type="email" class="inp bg-light input-field" placeholder="Email"> 
        </div>
     
     
       <div class="search">
-         <i class="mdi mdi-key text-primary icon"></i> 
+         <i class="mdi mdi-key  icon"></i> 
          <input v-model="password" type="password" class="inp bg-light input-field" placeholder="Password" required> 
        </div>
     
-      <p class="text-danger text-center mt-2">{{ getLoginError }}</p>
+      <p class="text-danger text-center mt-2">{{ error }}</p>
    
-       
 
     <div class="text-muted mb-1 mt-2 d-flex justify-content-between pt-1">
       <label>
@@ -66,8 +64,8 @@
 
   <div class="container m-0 p-5 mt-5 text-light">
     <div class="col-md-8">
-      <p style="font-size:24px">______ &nbsp;  Join the club</p>
-     <h1>Join millions of people</h1>
+      <p style="font-size:24px">Join the club</p>
+     <h1>Link up with millions of people</h1>
     </div>
   
      <p class="mt-4">
@@ -86,54 +84,60 @@
 
 <script>
 import Loader from "./Loader.vue";
+import { useStore } from "vuex";
+import { ref } from "vue";
+import { computed } from "@vue/reactivity";
+import { onMounted } from "vue";
+import router from "../router";
 export default {
-    name: "Forgot",
-     created(){
-       this.$store.dispatch('clearLoginError')
-     },
-    computed: {
-     getLoader() {
-       return this.$store.getters.getLoader
-     },
-     getUser(){
-       return this.$store.getters.getUser
-     },
-     getLoginError(){
-       return this.$store.getters.getLoginError
-     }
-    },
-    data() {
-        return {
-            email: "",
-            password: "",
-        };
-    },
-    methods: {
-        login(e) {
-            e.preventDefault();
-            this.$store.dispatch("login", {
-                email: this.email,
-                password: this.password,
-            })
-                .then(response => {
-                this.errorMessage = '';
-                this.$router.push({ name: 'userdashboard'})
-                console.log(response);
-            })
-                .catch(error => {
-                this.errorMessage = error.response.data.message; 
-                console.log(error);
-            });
-        },
-    },
-    components: { Loader }
+   
+setup(){
+
+  const store = useStore()
+  const email = ref('')
+  const password = ref('')
+
+ onMounted(()=> stopConfetti())
+
+  const login = (e)=> {
+    e.preventDefault()
+    store.dispatch('login', {
+      email: email.value,
+      password: password.value
+    }).then(response => {
+      router.push("/userdashboard")
+    }).catch(error => {
+      console.log(error)
+    })
+  }
+
+  const Loader = computed(() => store.getters.getLoader) 
+  const error = computed(() => store.getters.getLoginError)
+
+ return{email, password, login, Loader, error}
+},
+ components: { Loader }
 }
+
 </script>
 
 
 
-
 <style scoped>
+
+.p-absolute{
+  position: absolute
+}
+.sign-up-div{
+  margin-top: 100px;
+}
+
+.sign-up-div img{
+  animation: squiz-in-out 3s linear infinite;
+  height: auto;
+  width: 220px;
+  color: red !important;
+}
 
 .col-md-6{
   height: 100vh !important;
@@ -143,17 +147,17 @@ export default {
     position: relative;
 }
  .search input {
-    height: 45px;
+    height: 39px;
     text-indent: 40px;
-    border: 2px solid #d6d4d4
 }
 
 
 
 .search .icon {
     position: absolute;
-    top: 1px;
-    left: 1px
+    top: 0px;
+    left: 0px;
+    font-size: 10px;
 }
 
 .circle{
@@ -206,17 +210,138 @@ a{
 }
 .bimg{
   height: 100vh;
- background-image: url("/img/pexels-j.jpg");
+  /* background-image: url("/logo/default.svg"); */
+  background-image: url("/assets/images/samples/Banner_bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+
+
+@keyframes pendulum {
+    0% {
+       /* background-color: #eee; */
+       transform: rotateZ(0deg)
+    }
+     50% {
+       transform: rotateZ(180deg)
+    } 
+    100%{
+       transform: rotateZ(0deg)
+    } 
+}
+
+
+@keyframes squiz-in-out {
+    0% {
+       transform: rotateX(0deg);
+    }
+    50% {
+       transform: rotateX(45deg);
+    } 
+    100%{
+       transform: rotateX(0deg);
+    } 
+}
+
+@keyframes coin-flip-z {
+    0% {
+       transform: rotateZ(-360deg);
+    }
+    50% {
+       transform: rotateZ(360deg);
+    } 
+    100%{
+       transform: rotateZ(-360deg);
+    } 
+}
+
+@keyframes coin-flip-x {
+    0% {
+       transform: rotateX(-360deg);
+    }
+    50% {
+       transform: rotateX(360deg);
+    } 
+    100%{
+       transform: rotateX(-360deg);
+    } 
+}
+
+@keyframes coin-flip-y {
+    0% {
+       transform: rotateY(-360deg);
+    }
+    50% {
+       transform: rotateY(360deg);
+    } 
+    100%{
+       transform: rotateY(-360deg);
+    } 
+}
+
+
+@keyframes rotate-y-default {
+    0% {
+       /* background-color: #eee; */
+       transform: rotateY(0deg)
+    }
+     50% {
+       transform: rotateY(360deg)
+    } 
+    100%{
+       transform: rotateY(360deg)
+    } 
+}
+
+@keyframes rotate-y {
+    0% {
+       /* background-color: #eee; */
+       transform: rotateY(0deg)
+    }
+     50% {
+       transform: rotateY(180deg)
+    } 
+    100%{
+       transform: rotateY(360deg)
+    } 
+}
+
+@keyframes rotate-x {
+    0% {
+       /* background-color: #eee; */
+       transform: rotateX(0deg)
+    }
+     50% {
+       transform: rotateX(180deg)
+    } 
+    100%{
+       transform: rotateX(360deg)
+    } 
+}
+
+@keyframes rotate-z {
+    0% {
+       /* background-color: #eee; */
+       transform: rotateZ(0deg)
+    }
+     50% {
+       transform: rotateZ(180deg)
+    } 
+    100%{
+       transform: rotateZ(360deg)
+    } 
+}
+
 .inp{
-  border-radius: 50px;
+ border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
   outline: none !important;
   border: none !important;
-  background-color: rgb(245, 245, 245) !important;
+  background-color: rgb(241, 243, 243) !important;
 }
 
 .form-signin {

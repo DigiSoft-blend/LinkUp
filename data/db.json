@@ -1,0 +1,24 @@
+{
+  "post" : [
+        {
+          "id": 1,
+          "title" : "welcome to the new blog",
+          "body": "Wow its so nice to be a vue js developer working on link up, yeah thats awesome !",
+          "tags":[
+              "webdev",
+              "coding",
+              "news"
+          ]   
+        },
+        {
+            "id": 2,
+            "title" : "second welcome to the new blog",
+            "body": "second Wow its so nice to be a vue js developer working on link up, yeah thats awesome !",
+            "tags":[
+                "webdev",
+                "coding",
+                "news"
+            ]   
+          }
+    ]
+}

@@ -1,96 +1,65 @@
 <template>
  
   <div class="row p-0 m-0">
-     <Loader v-if="getLoader" class="text-center"></Loader>
+     <Loader v-if="Loader" class="text-center"></Loader>
   <div class="col-md-6 text-dark">
          
-  <h1 class="fw-normal mt-4 mb-1 text-center p-0 animate__animated animate__fadeInLeft">Create an Account</h1>
-      <div class="diva animate__animated animate__fadeInLeft">
-        <i class="mdi mdi-information text-info icond"></i><p class="p-diva">Registration for this site is easy. just fill in the fields below. and we'll get a new account set up for you in no time.</p>
-      </div>
+     
+    <div class="container sign-up-div mt-4  text-center">
+      <img src="/logo/default-monochrome-black.svg" class="mt-4" alt="logo" />
+    </div>
+
+    <h3 class="fw-normal mt-4 mb-1 text-center p-0 animate__animated animate__fadeInLeft">Create an Account</h3>
+  
       
   <main class="form-signin">
     
-  <form @submit="register">
+  <form @submit="signup">
    
-    <h1 class="h3 m-0 p-0  fw-normal text-center animate__animated animate__fadeInLeft">Account Details</h1>
       <div class="d-flex justify-content-center m-0 p-0">
-        <i v-if="form2Visible" @click="btn2" class="mdi mdi-menu-up text-primary  text-center m-0 p-0" style="font-size:40px"></i> 
+        <i v-if="formVisible" @click="toggleBtn" class="mdi mdi-menu-up text-primary  text-center m-0 p-0" style="font-size:40px"></i> 
       </div>
-     <section v-if="form1Visible"  class="animate__animated animate__fadeInLeft">
-      <div class="search mb-3">
-         <i class="mdi mdi-account text-primary icon"></i> 
-         <input v-model="username" type="text" class="inp bg-light input-field" placeholder="Username" required> 
-         <p  class="mt-1 text-danger" style="font-size:12px">{{ getRegistrationError.username }}</p>
+     <section v-if="!formVisible"  class="animate__animated animate__fadeInLeft">
+      
+        <div class="search mb-3 ">
+          <i class="mdi mdi-face  icon"></i>
+          <input v-model="firstName" type="text" class="inp  input-field" placeholder="First Name" required > 
+       </div>
+    
+    
+      <div class="search mb-3" >
+         <i class="mdi mdi-account  icon"></i> 
+         <input v-model="lastName" type="text" class="inp  input-field" :class="formErrorName" placeholder="Last Name" required> 
+        <p v-if="error.name != null" class="text-center text-danger" style="font-size:14px">{{ error.name[0] }} </p>
        </div>
 
       <div class="search mb-3">
-         <i class="mdi mdi-email text-primary icon"></i> 
-         <input v-model="email" type="email" class="inp bg-light input-field" placeholder="Email Address" required> 
-          <p  class="mt-1 text-danger" style="font-size:12px">{{ getRegistrationError.email }}</p>
+         <i class="mdi mdi-email  icon" ></i> 
+         <input v-model="email" type="email" class="inp  input-field"  :class="formErrorEmail" placeholder="Email Address" required> 
+         <p v-if="error.email != null" class="text-center text-danger" style="font-size:14px">{{ error.email[0] }} </p>
        </div>
     
     
       <div class="search mb-3">
-         <i class="mdi mdi-key text-info icon"></i>
-          <input v-model="password" type="password" class="inp bg-light input-field" placeholder="Choose a Password" required> 
+         <i class="mdi mdi-key  icon"></i>
+          <input  v-model="password" type="password" class="inp  input-field" :class="formErrorPassword" placeholder="Choose a Password" required> 
        </div>
 
        <div class="search">
-         <i class="mdi mdi-key text-warning icon"></i>
-          <input v-model="password_confirmation" type="password" class="inp bg-light input-field" placeholder="Confirm Password" required> 
-         <p class="mt-1 text-danger" style="font-size:12px">{{ getRegistrationError.password }}</p>
+         <i class="mdi mdi-key icon"></i>
+          <input v-model="password_confirmation" type="password" class="inp  input-field" :class="formErrorPassword" placeholder="Confirm Password" required> 
+        <p v-if="error.password != null" class="text-center text-danger" style="font-size:14px">{{ error.password[0] }} </p>
        </div>
 
     
-    <!-- <router-link to="/profileentry">
-         <p class="w-100 btn btn-lg btn-primary zbtn mt-4">Continue</p>
-    </router-link> -->
-    <button  @click="btn"  class="w-100 btn btn-lg btn-primary zbtn btn-grad">Continue</button>
+    <button  class="w-100 btn btn-lg btn-primary zbtn btn-grad mt-3" type="submit">Sign Up</button>
     <div class="text-center p-2">
        <span> Have an account ?</span> <router-link to="/login">Log in</router-link>
     </div>
   </section>  
 
-  <section v-if="form2Visible" class="animate__animated animate__bounce">
-     <div class="search mb-3">
-         <i class="mdi mdi-face text-info icon"></i>
-          <input v-model="firstName" type="text" class="inp bg-light input-field" placeholder="First Name" required > 
-       </div>
-    
-    
-      <div class="search mb-3">
-         <i class="mdi mdi-account text-info icon"></i> 
-         <input v-model="lastName" type="text" class="inp bg-light input-field" placeholder="Last Name" required> 
-       </div>
-
-       <div class="search">
-         <i class="mdi mdi-phone text-success icon"></i> 
-         <input v-model="phone" type="text" class="inp bg-light input-field" placeholder="Phone" required> 
-       </div>
-    
  
-    <div class="text-muted mb-1 mt-1 px-1" style="font-size:14px">
-      <p class="text-muted p-0 mb-2  ">Registration Type (required)</p>
-     
-      <input class="mr-2" type="checkbox" id="talent" value="Talent" v-model="checkedUserType">
-      <label class="mr-2" for="talent">Talent</label>
-      <input class="mr-2" type="checkbox" id="vendor" value="Vendor" v-model="checkedUserType">
-      <label class="mr-2" for="vendor">Vendor</label>
-      <input class="mr-2" type="checkbox" id="affiliate" value="Affiliate" v-model="checkedUserType">
-      <label class="mr-2" for="affilate">Affiliate</label>
-      <input class="mr-2" type="checkbox" id="customer" value="Customer" v-model="checkedUserType">
-      <label class="mr-2" for="customer">Customer</label>
-    </div>
- 
-     
-    
-    <button  class="w-100 btn btn-lg btn-primary zbtn btn-grad" type="submit">Complete Sign Up</button>
-   </section>
-   
   </form>
-
-  <!-- <button @click="btn"  class="w-100 btn btn-lg btn-primary zbtn mt-4">Continue</button> -->
 </main>
 
 </div>
@@ -112,8 +81,8 @@
 
   <div class="container m-0 p-5 mt-5 text-light">
     <div class="col-md-8">
-      <p style="font-size:24px">______ &nbsp;  Join the club</p>
-     <h1>Join millions of people</h1>
+       <p style="font-size:24px">Join the club</p>
+     <h1>Link up with millions of people</h1>
     </div>
     <p class="mt-4" > </p>
      <p class="mt-4">
@@ -122,10 +91,6 @@
 
   </div>
    
-    <!-- <div class="mt-1 text-light" style="font-size:20px">
-        <i class="mdi mdi-arrow-left  p-2  circle2"></i>
-        <i class="mdi mdi-arrow-right  ml-4 p-2   circle2"></i> 
-    </div> -->
  
     </div>
     </div>
@@ -138,77 +103,87 @@
 
 <script>
 import Loader from "./Loader.vue";
+import { useStore } from "vuex";
+import { computed } from "@vue/reactivity";
+import { onMounted, ref } from "vue";
+import router from "../router";
+
 export default {
-  name: 'register',
-  created(){
-    this.$store.dispatch('clearRegistrationError')
-  },
-  computed:{
-    getLoader() {
-       return this.$store.getters.getLoader
-     },
-     getRegistrationError(){
-       return this.$store.getters.getRegistrationError
+  setup(){
+     const store = useStore()
+     const username = ref('')
+     const email = ref('')
+     const password = ref('')
+     const password_confirmation = ref('')
+     const firstName = ref('')
+     const lastName = ref('')
+     const formVisible = ref(false)
+     const formErrorEmail = ref('')
+     const formErrorPassword = ref('')
+     const formErrorName = ref('')
+
+     const signup = (e) => {
+       e.preventDefault()
+       store.dispatch('signUp',{
+         name: firstName.value  +  " "  +  lastName.value,
+         email: email.value,
+         password: password.value,
+         password_confirmation: password_confirmation.value
+       }).then(response => {
+         router.push("/registrationsuccess")
+       }).catch(error => {
+          const errorEmail = error.response.data.errors.email
+          const errorPassword = error.response.data.errors.password
+          const errorName = error.response.data.errors.name
+          
+          if(errorEmail != null){
+            formErrorEmail.value = "form-error"
+          }else{
+            formErrorEmail.value = ""
+          }
+
+          if(errorPassword != null){
+            formErrorPassword.value = "form-error"
+          }else{
+            formErrorPassword.value = ""
+          }
+
+          if(errorName != null){
+            formErrorName.value = "form-error"
+          }else{
+            formErrorName.value = ""
+          }
+  
+       })
      }
-  },
-  data(){
-    return{
-      form1Visible: true,
-      form2Visible: false,
-      
-      name:'',
-      username: '',
-      email: '',
-      password: '',
-      password_confirmation: '',
-      
-      firstName: '',
-      lastName: '',
-      phone: '',
-      checkedUserType: [],
+     
+     const toggleBtn = () => {
+       formVisible.value = !formVisible.value
+     }
 
-      errStatus: '',
-      // regStatus: '',
-      // regMessage: ''
-    }
-  },
-  methods:{
-     btn(){
-      this.form1Visible = false
-      this.form2Visible = true
-    },
-     btn2(){
-      this.form1Visible = true
-      this.form2Visible = false
-     },
-     register(e){
-             e.preventDefault();
+     const Loader = computed(() => store.getters.getLoader)
+     const error = computed(() => store.getters.getRegistrationError)
 
-             this.$store.dispatch('register', {
-                name: this.firstName + " " + this.lastName,
-                username: this.username,
-                email: this.email,
-                password: this.password,
-                password_confirmation: this.password_confirmation,
-                //phone: this.phone,
-                user_type: this.checkedUserType
-             })
-             .then(response => {
-              this.$router.push({ name: 'registrationsuccess'})
-             })
-             .catch(error => { 
-                 this.errStatus  = error.response.data.success
-                 if(this.errStatus == false){
-                    this.form1Visible = true
-                    this.form2Visible = false
-                 }
-             })
-       }
+
+     return{ 
+       username,
+       email,
+       password,
+       password_confirmation,
+       firstName,
+       lastName,
+       formVisible, 
+       toggleBtn,
+       signup,
+       Loader,
+       error,
+       formErrorEmail,
+       formErrorPassword,
+       formErrorName
+      }
 
   },
-
    components: { Loader }
-
 }
 </script>
 
@@ -216,8 +191,42 @@ export default {
 
 <style scoped>
 
+.sign-up-div img{
+  animation: squiz-in-out 3s linear infinite;
+  height: auto;
+  width: 220px;
+  color: red !important;
+}
+
+@keyframes squiz-in-out {
+    0% {
+       transform: rotateX(0deg);
+    }
+    50% {
+       transform: rotateX(45deg);
+    } 
+    100%{
+       transform: rotateX(0deg);
+    } 
+}
+
+.form-error{
+  animation:  form-border-error 2s linear infinite;
+}
+
+@keyframes form-border-error {
+    0% {
+     color:  red;
+    }
+    50% {
+     color: rgb(224, 221, 221);
+    } 
+    100%{
+      color:  red;
+    } 
+}
 .col-md-6{
-  height: 100vh !important;
+  min-height: 100vh !important;
 }
 .diva{
    box-shadow: 0px 1px 3px 0px rgb(217, 219, 219);
@@ -248,17 +257,17 @@ export default {
     position: relative;
 }
  .search input {
-    height: 45px;
+    height: 39px;
     text-indent: 40px;
-    border: 2px solid #d6d4d4
 }
 
 
 
 .search .icon {
     position: absolute;
-    top: 1px;
-    left: 1px
+    top: 0px;
+    left: 0px;
+    font-size: 10px;
 }
 
 
@@ -313,18 +322,21 @@ a{
   width: 200px;
 }
 .bimg{
-  height: 100vh;
- background-image: url("/img/pexels-j.jpg");
+  min-height: 100vh;
+ background-image: url("/assets/images/samples/Banner_bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .inp{
-  border-radius: 50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
   outline: none !important;
   border: none !important;
-  background-color: rgb(245, 245, 245) !important;
+  background-color: rgb(241, 243, 243) !important;
 }
 
 .form-signin {

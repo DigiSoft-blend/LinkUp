@@ -1,7 +1,8 @@
 <template>
-<DashboardSkeletonView v-if="false"></DashboardSkeletonView>
-<div v-if="true" class="container-fluid page-body bg-light">
-<div class="row">
+<DashboardSkeletonView v-if="pageLoader"></DashboardSkeletonView>
+    
+<div v-else  class="container-fluid page-body bg-light">
+<div  class="row">
     <div class="col-md-12">
        <TopNavComponent></TopNavComponent>
     </div>  
@@ -29,7 +30,19 @@ import RightSideNavComponent from '../components/RightSideNavComponent.vue';
 import MainBodyComponent from '../components/MainBodyComponent.vue'
 import StatusComponent from '../components/StatusComponent.vue';
 import AddPostComponent from '../components/AddPostComponent.vue';
+
+
+import { useStore } from 'vuex';
+import { computed } from '@vue/reactivity';
+import { onMounted } from 'vue';
 export default {
+    setup(){
+       const store = useStore()
+       onMounted(() => store.dispatch('AuthUser'))
+       const pageLoader = computed(()=>store.getters.getPageLoader)
+       const page = computed(()=>store.getters.getPage)
+       return { pageLoader, page }
+    },
     components:{ 
       DashboardSkeletonView,
       TopNavComponent,
@@ -37,7 +50,7 @@ export default {
       RightSideNavComponent,
       MainBodyComponent,
       StatusComponent,
-      AddPostComponent
+      AddPostComponent,
      }
     
 };

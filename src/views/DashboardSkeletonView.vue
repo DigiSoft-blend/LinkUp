@@ -3,331 +3,346 @@
 
   <div class="row">
   <div class="col-md-12  bg-secondary">
-    <div class="fixed-top p-0 ">
-     <nav class="navbar navbar-expand-lg navbar-light" aria-label="Eleventh navbar example" style="background-color:white">
-      <div class="container-fluid">
-        <img class="logo" src="/logo/default-monochrome-black.svg" alt="logo" height="50px" width="270px" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExample09">
-          <form style="margin-left:43px">
-            <input class="nav-form-input form-control" type="text" placeholder="Search" aria-label="Search">
-          </form>
-         
-            <button class="btn btn-primary mx-4" type="button" >sign up</button>
-            <button class="btn btn-success" type="button" >log in</button>
-          
-        </div>  
-      </div>
-    </nav>
-   </div>
+    <TopNavComponent></TopNavComponent>
   </div>
  </div>
 
+   
 
-    <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 sidebar-left p-4 d-md-block bg-light collapse">
-      <div class="position-sticky pt-5">
+<div class="row bg-light">
+   <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block bg-light mt-5">
+      <div class="position-sticky nav-div">
         <ul class="nav flex-column  nav-pills list-unstyled">
-          <li class="nav-item mb-5">
-            <a class="nav-link active" aria-current="page" href="#">
-             <span class="" ></span>
-             
-            </a>
-            <a class="nav-link" aria-current="page" href="#">
-              <span class="" ></span>
-             
-            </a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-             <span class="" ></span>
-              
-            </a>
+           
+             <div class="preview-list mx-3">
+                      <div class="preview-item">
+                        <div class="">
+                        <div class="preview-thumbnail">
+                          <img src="" alt="image" class="rounded-circle animated-background" />
+                          <!-- <div class="active"></div> -->
+                          </div>
+                        </div>
+                        <div class="preview-item-content d-flex flex-grow">
+                          <div class="flex-grow">
+                            <div class="d-flex d-md-block d-xl-flex justify-content-between mt-2">
+                              <h6 class="preview-subject p-user-name animated-background"> </h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+           
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-             <span class="" ></span>
-            
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span class="" ></span>
-              
-            </a>
-          </li>
+
+        <li class="nav-item mx-3">
+         <bullet-list-loader 
+            :speed="1"
+            :animation="true"
+            primaryColor="#eeeeee"
+            secondaryColor="white"
+            class="fb-loader"
+          >
+          </bullet-list-loader>  
+        </li>  
+
         </ul>
-
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span ></span>
-          <a class="link-secondary" href="#" aria-label="Add a new report">
-           <span class="" ></span>
-          </a>
-        </h6>
+        <hr>
+       
         <ul class="nav flex-column  nav-pills list-unstyled">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               <span class="" ></span>
-             
-            </a>
+            <li class="nav-item mx-3">
+            <bullet-list-loader 
+            :speed="1"
+            :animation="true"
+             primaryColor="#eeeeee"
+            secondaryColor="white"
+            class="fb-loader"
+          >
+          </bullet-list-loader> 
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-            <span class="" ></span>
-             
-            </a>
+          <li class="nav-item mx-3">
+            <bullet-list-loader 
+            :speed="1"
+            :animation="true"
+            primaryColor="#eeeeee"
+            secondaryColor="white"
+            class="fb-loader"
+          >
+          </bullet-list-loader>  
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span class="" ></span>
-            
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               <span class="" ></span>
-             
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="#">
-            <span class="" ></span>
-             
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span class="" ></span>
-             
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               <span class="" ></span>
-             
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="#">
-            <span class="" ></span>
-            
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span class="" ></span>
-             
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               <span class="" ></span>
-             
-            </a>
+
+          <li class="nav-item mx-3">
+            <bullet-list-loader 
+            :speed="1"
+            :animation="true"
+            primaryColor="#eeeeee"
+            secondaryColor="white"
+            class="fb-loader"
+          >
+          </bullet-list-loader> 
           </li>
         </ul>
       </div>
     </nav> 
 
- 
- <nav id="sidebarMenu" class="col-md-3 sidebar-right p-4 d-md-block bg-light collapse">
-      <div class="position-sticky pt-5">
-         
 
-       <ul class="nav flex-column mb-auto p-4 box-shadow" style="background:white;">
-          <li class="nav-item">
-            <p class="Trend-text px-1 text-muted p-trending-post"></p>
-                 <div class="preview-list">
+    <nav id="sidebarMenu" class="col-md-3 sidebar-right py-3 d-md-block bg-light collapse">
+      <div class="position-sticky mt-5">
+        <ul class="nav flex-column  nav-pills list-unstyled">
+          <li class="nav-item mx-5">
+             <div class="preview-list mx-3">
                       <div class="preview-item">
+                        <div class="">
                         <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                          <img src="" alt="image" class="rounded-circle animated-background" />
+                          <!-- <div class="active"></div> -->
+                          </div>
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name"></h6>
+                            <div class="d-flex d-md-block d-xl-flex justify-content-between mt-2">
+                              <h6 class="preview-subject p-user-name  animated-background"> </h6>
                             </div>
-                            <p class="text-muted p-sidbar-text"></p>
+                            <p class="p-trending-post animated-background"></p>
                           </div>
                         </div>
                       </div>
                  </div>
           </li>
-          <li class="nav-item">
-              <div class="preview-list">
+          <li class="nav-item mx-5">
+             <div class="preview-list mx-3">
                       <div class="preview-item">
+                        <div class="">
                         <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                          <img src="" alt="image" class="rounded-circle animated-background" />
+                          <!-- <div class="active"></div> -->
+                          </div>
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name"></h6>
+                            <div class="d-flex d-md-block d-xl-flex justify-content-between mt-2">
+                              <h6 class="preview-subject p-user-name  animated-background"> </h6>
                             </div>
-                            <p class="text-muted p-sidbar-text"></p>
+                            <p class="p-trending-post animated-background"></p>
                           </div>
                         </div>
                       </div>
-                </div>
+                 </div>
           </li>
-          <li class="nav-item">
-             <div class="preview-list">
+          <li class="nav-item mx-5">
+             <div class="preview-list mx-3">
                       <div class="preview-item">
+                        <div class="">
                         <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name"></h6>
-                            </div>
-                            <p class="text-muted p-sidbar-text"></p>
+                          <img src="" alt="image" class="rounded-circle animated-background" />
+                          <!-- <div class="active"></div> -->
                           </div>
                         </div>
-                     </div>
-             </div>
-          </li>
-          
-          <li class="nav-item">
-              <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
-                        </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name"></h6>
+                            <div class="d-flex d-md-block d-xl-flex justify-content-between mt-2">
+                              <h6 class="preview-subject p-user-name  animated-background"> </h6>
                             </div>
-                            <p class="text-muted p-sidbar-text"></p>
+                            <p class="p-trending-post animated-background"></p>
                           </div>
                         </div>
                       </div>
-                </div>
+                 </div>
           </li>
-
-        
-          <li class="nav-item px-2">
-            <p class="text-muted text-muted p-see-all"></p>
+          <li class="nav-item mx-5">
+             <div class="preview-list mx-3">
+                      <div class="preview-item">
+                        <div class="">
+                        <div class="preview-thumbnail">
+                          <img src="" alt="image" class="rounded-circle animated-background" />
+                          <!-- <div class="active"></div> -->
+                          </div>
+                        </div>
+                        <div class="preview-item-content d-flex flex-grow">
+                          <div class="flex-grow">
+                            <div class="d-flex d-md-block d-xl-flex justify-content-between mt-2">
+                              <h6 class="preview-subject p-user-name  animated-background"> </h6>
+                            </div>
+                            <p class="p-trending-post animated-background"></p>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
           </li>
-        </ul>
-
+          <li class="nav-item mx-5">
+             <div class="preview-list mx-3">
+                      <div class="preview-item">
+                        <div class="">
+                        <div class="preview-thumbnail">
+                          <img src="" alt="image" class="rounded-circle animated-background" />
+                          <!-- <div class="active"></div> -->
+                          </div>
+                        </div>
+                        <div class="preview-item-content d-flex flex-grow">
+                          <div class="flex-grow">
+                            <div class="d-flex d-md-block d-xl-flex justify-content-between mt-2">
+                              <h6 class="preview-subject p-user-name  animated-background"> </h6>
+                            </div>
+                            <p class="p-trending-post animated-background"></p>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+          </li>
+          <li class="nav-item mx-5">
+             <div class="preview-list mx-3">
+                      <div class="preview-item">
+                        <div class="">
+                        <div class="preview-thumbnail">
+                          <img src="" alt="image" class="rounded-circle animated-background" />
+                          <!-- <div class="active"></div> -->
+                          </div>
+                        </div>
+                        <div class="preview-item-content d-flex flex-grow">
+                          <div class="flex-grow">
+                            <div class="d-flex d-md-block d-xl-flex justify-content-between mt-2">
+                              <h6 class="preview-subject p-user-name  animated-background"> </h6>
+                            </div>
+                            <p class="p-trending-post animated-background"></p>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+          </li>
+       </ul>
 
       </div>
     </nav> 
 
+<div class="row m-0 p-0">
+     <div class="con1 status2 col-md-5 container bg-light">
+    <div class="row">
+    <div class="card text-dark box-shadow p-0 m-0">
+   <div class="card-header  border border-bottom d-flex  d-xl-flex justify-content-between p-0 m-0 p-2">
+       <facebook-loader 
+            :speed="1"
+            :animation="true"
+            primaryColor="#eeeeee"
+            secondaryColor="white"
+            class="fb-loader"
+          >
+          </facebook-loader>
+   </div>
+         
+          <div class="card-footer  py-3 border-top" style="background-color:white; border:none">
+               <div class="row row-footer">
+                  <div class="col-4">
+                    <div class="footer-div">
+                        <i class="fa fa-smile text-warning mt-1 me-1"></i>
+                        <span class="animated-background"></span>
+                    </div>
+                 </div>
+                 <div class="col-4">
+                     <div class="footer-div">
+                      <i class="fa-solid fa-images text-primary mt-1 me-1"></i>
+                      <span class="animated-background"></span>
+                     </div>
+                 </div>
+                 <div class="col-4">
+                    <div class="d-flex  footer-div">
+                      <i class="fa fa-location-dot text-danger mt-1 me-1"></i>
+                      <span class="animated-background"></span>
+                    </div>
+                 </div>
+               </div>
+          </div>
+       </div>
+      </div>
+    </div>
+  </div>    
+
+
+<div class="row  m-0 p-0">
+  <div class="col-md-6 md-4  container status-con1 p-0">
+<div class="container-fluid  d-flex justify-content-center m-0 p-0">
+  <div class="bg-light" style="border:none;">
+                <div class="container content p-3 m-0">
+                  
+                <div class="col-md-3 col-4 main-staus-con animated-background   m-r">
+                    
+                </div>
+
+                <div class="col-md-3 col-4 main-staus-con animated-background rounded  m-r">
+                          
+                </div>
+
+                <div class="col-md-3 col-4 main-staus-con animated-background  rounded  m-r">
+                      
+                </div>
+
+                <div class="col-md-3 col-4 main-staus-con animated-background rounded  m-r">
+                        
+                </div>
+
+                </div>
+         </div>
+       </div> 
+    </div>
+</div>
  
-  <div class="main-view col-md-6  container bg-light">
+  <div class=" col-md-5  container bg-light">
     <div class="row content gy-2">
 
-        <div class="card">
-        <div class="card-body">
-          <div class="d-flex flex-row justify-content-between">
-            <h4 class="card-title"></h4>
-            <p class="text-muted mb-1 small p-view-all"></p>
-          </div>
+        <div class="card mt-4 border">
+        <div class="card-body py-3 px-0">
+          <facebook-loader 
+            :speed="1"
+            :animation="true"
+            primaryColor="#eeeeee"
+            secondaryColor="white"
+            class="fb-loader"
+          >
+          </facebook-loader>
         </div>
       </div>
-      <div class="card text-dark mb-2 box-shadow">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="preview-thumbnail">
-                          <img />
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name"></h6>
-                            </div>
-                            <p class="text-muted p-card-header"></p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share"></p>
-          </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body" ></p>
-          </div>
-       </div>
 
 
-       <div class="card text-dark mb-2 box-shadow">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="preview-thumbnail">
-                          <img src="" alt="image" class="rounded-circle" />
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name"></h6>
-                            </div>
-                            <p class="text-muted p-card-header"></p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share"></p>
-          </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body"></p>
-          </div>
-       </div>
+      <div class="card mt-4 border">
+        <div class="card-body py-3 px-0">
+          <facebook-loader 
+            :speed="1"
+            :animation="true"
+            primaryColor="#eeeeee"
+            secondaryColor="white"
+            class="fb-loader"
+          >
+          </facebook-loader>
+           <content-loader 
+            :speed="1"
+            :animation="true"
+             primaryColor="#eeeeee"
+            secondaryColor="white"
+          >
+          </content-loader>
+        </div>
+      </div>
 
 
-<div class="card text-dark mb-2 box-shadow">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="preview-thumbnail">
-                          <img src="" alt="image" class="rounded-circle" />
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name"></h6>
-                            </div>
-                            <p class="text-muted p-card-header"></p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share"></p>
-          </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body"></p>
-          </div>
-       </div>
-
-       <div class="card text-dark mb-2 box-shadow">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="preview-thumbnail">
-                          <img src="" alt="image" class="rounded-circle" />
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name"></h6>
-                            </div>
-                            <p class="text-muted p-card-header"></p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share"></p>
-          </div>
-          <div class="card-body m-0 p-0 mx-3">
-            <p class="p-card-body"></p>
-          </div>
-       </div>
+      <div class="card mt-4 border">
+        <div class="card-body py-3 px-0">
+          <facebook-loader 
+            :speed="1"
+            :animation="true"
+            primaryColor="#eeeeee"
+            secondaryColor="white"
+            class="fb-loader"
+          >
+          </facebook-loader>
+           <content-loader 
+            :speed="1"
+            :animation="true"
+            primaryColor="#eeeeee"
+            secondaryColor="white"
+          >
+          </content-loader>
+        </div>
+      </div>
+      
       
     </div>
   </div>
@@ -339,15 +354,68 @@
 </template>
 
 <script>
+import TopNavComponent from '../components/TopNavComponent.vue';
+import { FacebookLoader } from 'vue-content-loader';
+import { InstagramLoader } from 'vue-content-loader';
+import { ContentLoader } from 'vue-content-loader';
+import { BulletListLoader } from 'vue-content-loader';
 export default {
-  
+  components:{ 
+    TopNavComponent,
+    FacebookLoader,
+    InstagramLoader,
+    ContentLoader,
+    BulletListLoader 
+  }
 }
 </script>
 
 <style scoped>
+
+.footer-div span {
+  height: 5px;
+  width: 40px;
+}
+
+@keyframes placeHolderShimmer {
+  0%{
+    background-position: -800px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+.animated-background{
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background-color: white;
+  background: linear-gradient(to right, #eeeeee 8%, #fff 18%, #eeeeee 33%);
+  background-size: 800px 104px;
+  position: relative;
+}
+
+
+
+
+
+
+.content-loader{
+  animation: pulse-bg 1s infinite;
+}
+.fb-loader{
+  height: 100px;
+}
+
+.ins-loader{
+  height: 50%;
+  width: auto;
+}
 .preview-thumbnail img {
   padding-top: 100%;
-  animation: pulse-bg 1s infinite;
   width: 52px;
   float:left;
   border-radius: 50%;
@@ -356,64 +424,62 @@ export default {
 
 .card-title{
    animation: pulse-bg 1s infinite;
-   border-radius: 20px;
-   height: 30px;
+   border-radius: 2px;
+   height: 20px;
    width: 130px;
 } 
 
 
 .p-share{
   animation: pulse-bg 1s infinite;
-  border-radius: 20px;
-  height: 30px;
+  border-radius: 2px;
+  height: 20px;
   width: 50px;
 }
 
 .p-view-all{
   animation: pulse-bg 1s infinite;
-  border-radius: 20px;
-  height: 30px;
+  border-radius: 2px;
+  height: 20px;
   width: 60px;
 }
 
 .p-trending-post{
-  animation: pulse-bg 1s infinite;
-  border-radius: 20px;
-  height: 25px;
+  border-radius:5px;
+  height: 8px;
   width: 150px;
 }
 
 .p-sidbar-text{
   animation: pulse-bg 1s infinite;
-  border-radius: 20px;
-  height: 30px;
+  border-radius: 1px;
+  height: 20px;
   width: 170px;
 }
 
 .p-card-header{
   animation: pulse-bg 1s infinite;
-  border-radius: 20px;
+  border-radius: 1px;
   height: 16px;
   width: 230px;
 }
 
 .p-user-name{
-  animation: pulse-bg 1s infinite;
-  border-radius: 20px;
-  height: 18px;
+  border-radius: 5px;
+  height: 14px;
   width: 100px;
 }
 
 .p-card-body{
   animation: pulse-bg 1s infinite;
-  border-radius: 20px;
+  border-radius: 1px;
   height: 23px;
   width: 200px;
 }
 
 .p-see-all{
   animation: pulse-bg 1s infinite;
-  border-radius: 20px;
+  border-radius: 1px;
   height: 23px;
   width: 100px;
 }
@@ -421,7 +487,7 @@ export default {
 
 .sidebar-left .nav-link{
   animation: pulse-bg 1s infinite;
-  border-radius: 20px;
+  border-radius: 1px;
   height: 30px;
   margin-top: 10px;
  } 
@@ -430,13 +496,153 @@ export default {
 @keyframes pulse-bg {
     0% {
        background-color: #eee;
+
     }
     50% {
-       background-color: #d6d6d6
+       background-color: #b6b3b3
     }
     100%{
        background-color: #eee;
     }
 }
+
+
+.status-con1{
+    margin-top: 80px;
+}
+
+@media(max-width:765px){
+  .status-con1{
+    margin-top: 0px; 
+}  
+}
+.main-staus-con{
+min-height: 150px;  
+min-width: 150px;  
+background-color: white;
+border: none;
+border-radius: 10px !important;
+box-shadow: 0px 1px 2px 0px #b7b8b9e0;
+}
+
+@media(max-width:1000px){
+.main-staus-con{
+min-height: 150px;  
+min-width: 80px;  
+background-color: white;
+border: none;
+border-radius: 10px !important;
+box-shadow: 0px 1px 2px 0px #b7b8b9e0;
+}
+}
+
+/* @media(min-width:725px){
+.main-staus-con{
+min-height: 150px;  
+min-width: 80px;  
+background-color: white;
+border: none;
+border-radius: 10px !important;
+box-shadow: 0px 1px 2px 0px #b7b8b9e0;
+}
+} */
+
+.status-con{
+  position: relative;
+}
+
+.status-con .username{
+  position: absolute;
+  top:110px;
+  left: 10px;
+  font-size: 13px;
+}
+
+@media(max-width:394px) {
+  .status-con .username{
+  position: absolute;
+  top:110px;
+  left: 10px;
+  font-size: 10px;
+}
+}
+.preview-thumb{
+  position:absolute;
+  background-color: blueviolet !important;
+  border-radius: 100%;
+  top: 10px;
+  left: 10px;
+}
+
+.preview-thumb img{
+  width: 35px !important;
+  border: solid 3px rgb(0, 125, 228);
+}
+ .container{
+  display:flex; 
+  overflow-x:auto;
+ }
+
+.container ::-webkit-scrollbar{
+  display: none;
+}
+
+.container .m-r{
+  margin-right: 5px;
+}
+
+.img-con{
+  border-radius: 10px !important;
+}
+
+.img-fluid{
+  height: 150px !important;
+  width:auto !important;
+  border-radius: 10px !important;
+  /* border: solid 2px white !important; */
+}
+img:hover{ 
+ border: solid 0px white !important;
+ transition: 0.1s;
+}
+
+img ::after {
+  transition: 1s !important; 
+}
+
+
+.status2{
+    display: none;
+  }
+
+@media(max-width:765px) {
+  .status2{
+    display: block;
+  }
+}
+.con1{
+ margin-top: 90px;
+}
+ .preview-item-content input{
+     width: inherit;
+     height: 40px;
+     border-radius: 50px;
+     border: none !important;
+     background-color: #ecf3fa;
+     margin-top: 7px;
+     font-size: 15px;
+  }
+
+.frm{
+   width: inherit;
+   display: flex;
+}  
+
+@media(max-width:763px) {
+.con1{
+ margin-top: 50px;
+ }
+}
+
 </style>
 

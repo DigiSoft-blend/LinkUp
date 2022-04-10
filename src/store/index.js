@@ -2,20 +2,42 @@ import { createStore } from 'vuex'
 
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://zhivago.herokuapp.com/api/auth' 
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api/' 
 
 export default createStore({
     state:{
       token: localStorage.getItem('token') || null,  
       Name: 'welcome',
       loading: false,
+      pageLoader: false,
+      page: true,
       user: [],
+      authUser: '',
+      registeredUser: '',
       loginError: '',
       registrationError: '',
       forgotPasswordError: '',
-      messageForgotPassword: ''
+      messageForgotPassword: '',
+      likesCount: 0,
+      email:'silasudofia469@gmail.com',
+      password:'12345678'
     },
     getters:{
+        getPage(state){
+          return state.page
+        },
+        getPageLoader(state){
+          return state.pageLoader
+        },
+        getAuthUser(state){
+          return state.authUser
+        },
+        getRegisteredUser(state){
+          return state.registeredUser
+        },
+        getLikesCount(state){
+          return state.likesCount
+        },
         getForgotPasswordError(state){
           return state.forgotPasswordError
         },
@@ -44,77 +66,97 @@ export default createStore({
     },
    
     actions:{
+     
+      AuthUser(context){
+        context.state.registrationError = ''
+        context.commit('setPageLoader', true)
+        context.commit('setPage', false)
+        axios.defaults.headers.common['Content-Type'] = 'application/json',
+        axios.defaults.headers.common['Accept'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
 
-        register(context, credentials){
+      return new Promise(( resolve, reject) => {  
+        axios.get('/authuser')
+        .then(response => {
+          const regUser = response.data
+          context.commit('setAuthUser', regUser)
+          context.commit('setPageLoader',false)
+          context.commit('setPage', true)
+          resolve(response)
+        })
+        .catch(error => {
+          context.commit('setPageLoader',false)
+          context.commit('setPage', true)
+          reject(error)
+        })
+      })
+    },
+
+
+        signUp(context, credentials){
             
             context.state.registrationError = ''
             
-            context.commit('getLoader', true)
-            axios.defaults.headers.common['Content-Type'] = 'application/ecmascript',
+            context.commit('setLoader', true)
+            axios.defaults.headers.common['Content-Type'] = 'application/json',
             axios.defaults.headers.common['Accept'] = 'application/json'
             
           return new Promise(( resolve, reject) => {  
-            axios.post('/register', {
-              name: credentials.name,  
-              username: credentials.username,
+            axios.post('/signup', { 
+              name: credentials.name,
               email: credentials.email,
               password: credentials.password,
               password_confirmation: credentials.password_confirmation,
-              phone: credentials.phone,
-              user_type: credentials.user_type
             })
             .then(response => {
-        
-              const token = response.data.data.token 
-              const user = response.data.data.user
+              const token = response.data.token 
+              const regUser = response.data.user
               localStorage.setItem('token', token)
-              context.commit('registerUser', token)
-              context.commit('getUser', user)
-              context.commit('getLoader',false)
+              context.commit('setRegisteredUser', regUser)
+              context.commit('setLoader',false)
               resolve(response)
-        
             })
             .catch(error => {
-              context.commit('getLoader',false)
-              const regError = error.response.data.error.fields
-              context.commit('getRegistrationError', regError)
+              context.commit('setLoader',false)
+              const regError = error.response.data.errors
+              context.commit('setRegistrationError', regError)
               reject(error)
             })
           })
         },
 
-        login(context, credentials){
-          
-          context.state.loginError = ''
-         
-          context.commit('getLoader', true)
-          //Tell axios the header you want
-          axios.defaults.headers.common['Content-Type'] = 'application/ecmascript',
-          axios.defaults.headers.common['Accept'] = 'application/json'
+     
+
+      login(context, credentials){
+        context.state.loginError = ''
+        context.commit('setLoader', true)
+        // Tell axios the header you want
+        axios.defaults.headers.common['Content-Type'] = 'application/json',
+        axios.defaults.headers.common['Accept'] = 'application/json'
+     
+         return new Promise(( resolve, reject) => {
+             axios.post('/signin', {
+             email: credentials.email,
+             password: credentials.password,
+             })
+             .then(response => {
+             const token = response.data.token 
+             localStorage.setItem('token', token)
+             context.commit('setToken', token)
+             context.commit('setLoader', false)
+             resolve(response) 
+             })
+             .catch(error => {
+              context.commit('setLoader',false)
+              const rror = error.response.data.message
+              context.commit('setLoginError', rror)
+              reject(error)
+             })
+         })
+     },
+
+
        
-           return new Promise(( resolve, reject) => {
-               axios.post('/login', {
-               email: credentials.email,
-               password: credentials.password,
-               })
-               .then(response => {
-               const token = response.data.data.token 
-               const user = response.data.data.user
-               localStorage.setItem('token', token)
-               context.commit('login', token)
-               context.commit('getUser', user)
-              
-               resolve(response)
-               context.commit('getLoader', false)
-               })
-               .catch(error => {
-                context.commit('getLoader',false)
-                const rror = error.response.data.error.fields.email[0]
-                context.commit('getLoginError', rror)
-                reject(error)
-               })
-           })
-       },
 
        forgotPassword(context, credentials){
         context.state.messageForgotPassword = ''
@@ -144,6 +186,34 @@ export default createStore({
          })
      },
 
+
+     logout(context){ 
+      //Tell axios the header you want
+      axios.defaults.headers.common['Content-Type'] = 'application/json',
+      axios.defaults.headers.common['Accept'] = 'application/json'
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
+      // if(context.getters.loggedIn){
+  
+        context.commit('setLoader', true)
+        
+        return new Promise(( resolve, reject) => {
+          axios.post('/logout')
+          .then(response => {
+            localStorage.removeItem('token')
+            context.commit('destroyToken')
+            resolve(response)
+            context.commit('setLoader', false)
+          })
+          .catch(error => {
+            localStorage.removeItem('token')
+            context.commit('destroyToken')
+            context.commit('setLoader',false)
+            reject(error)
+          })
+         })
+      // }
+    },
+    
      clearRegistrationError(context){
        context.commit('clearRegError', '')
      },
@@ -153,11 +223,27 @@ export default createStore({
      },
      clearForgotPasswordError(context){
        context.commit('clearForgotPasswordError', '')
+     },
+
+     asyncIncrementLikes(context){
+       context.commit('asyncIncrementLikes')
      }
 
     },
 
     mutations:{
+      setPageLoader(state, payLoad){
+         state.pageLoader = payLoad
+      },
+      setAuthUser(state, authUser){
+        state.authUser = authUser
+      },
+      setToken(state, payloadToken){
+        state.token = payloadToken
+      },
+      destroyToken(state){
+         state.token = null
+      },
       clearForgotPasswordError(state, empty){
         state.forgotPasswordError = empty
         state.messageForgotPassword = empty
@@ -171,24 +257,34 @@ export default createStore({
         register(state, token){
             state.token = token
         },
-        getLoader(state, payLoad){
+        setLoader(state, payLoad){
           state.loading = payLoad
         }, 
-        getUser(state, user){
+        setUser(state, user){
           state.user = user
         },
-        getLoginError(state, error){
+        setRegisteredUser(state, regUser){
+          state.registeredUser = regUser
+        },
+        setLoginError(state, error){
           state.loginError = error
         },
-        getRegistrationError(state, error){
+        setRegistrationError(state, error){
           state.registrationError = error
         },
-        getForgotPasswordMessage(state, message){
+        setForgotPasswordMessage(state, message){
            state.messageForgotPassword = message
         },
-        getForgotPasswordError(state, error){
+        setForgotPasswordError(state, error){
           state.forgotPasswordError = error
+        },
+        asyncIncrementLikes(state){
+          state.likesCount = state.likesCount + 1
+        },
+        setPage(state, payLoad){
+          state.page = payLoad
         }
+
     }
 })
 

@@ -18,7 +18,7 @@
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
                             <div class="d-flex d-md-block d-xl-flex justify-content-between mt-2">
-                              <h6 class="preview-subject p-user-name">Silas Udofia</h6>
+                              <h6 class="preview-subject p-user-name">{{ authUser.name }}</h6>
                             </div>
                           </div>
                         </div>
@@ -32,10 +32,10 @@
 
 
            <li class="nav-item bg-light">
-            <a class="nav-link bg-light" href="#">
+            <router-link class="nav-link bg-light" to="/logout">
              <span class="" >&#x1F354;</span>
-              Friends
-            </a>
+              Log out
+            </router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link bg-light" href="#">
@@ -202,6 +202,24 @@
     </nav> 
 
 </template>
+
+
+<script>
+import { useStore } from "vuex"
+import { computed } from "@vue/reactivity"
+import { onMounted } from "vue"
+
+export default {
+  setup(){
+    const store = useStore()
+    const authUser = computed(()=> store.getters.getAuthUser)
+    return { authUser }
+  }
+}
+</script>
+
+
+
 
 <style scoped>
 .nav-div{

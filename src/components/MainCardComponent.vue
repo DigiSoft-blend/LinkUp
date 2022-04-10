@@ -12,7 +12,8 @@
                         </div>
                         <div class="col-11 preview-item-content d-flex">
                           <form action="" class="frm">
-                                 <input class="form-control inp" type="text" placeholder="What's on your mind, Silas?">
+                                 <!-- <input class="form-control inp" type="text" placeholder="What's on your mind, Silas?"> -->
+                          <TiptapCompositionApi></TiptapCompositionApi>
                          </form>
                           <div>
                              <i class="fa fa-file-image mt-2 ms-3 text-danger" style="font-size:30px"></i>
@@ -474,10 +475,10 @@
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">{{ Myname }}</h6>
+                              <h6 class="preview-subject p-user-name">Silas</h6>
                             </div>
                             <div style="display:flex">
-                               <span @click="changeName" class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
+                               <span class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
                             </div>
                            
                             <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
@@ -499,8 +500,8 @@
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="col-12 footer-div">
-                      <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>3k</p>
+                      <i @click="incrementLikes" class="mdi mdi-thumb-up-outline"></i>
+                      <p>{{ getLikesCount }}k</p>
                     </div>
                  </div>
                  <div class="col-4">
@@ -523,12 +524,29 @@
 
 
 <script>
+import TiptapCompositionApi from '../components/TiptapCompositionApi.vue';
 import setName from "../composibles/setName"
+import { useStore } from "vuex"
+import { computed } from "@vue/reactivity"
+import { onMounted } from "vue"
+
 export default {
   setup(){
-    const { Myname, changeName } = setName()
-    return { Myname, changeName }
+    
+    const store = useStore()
+    //FETCHES DATA FROM STORE WHEN COMPONENT IS MOUNTED 
+    // onMounted(() => store.dispatch('asyncIncrement') )
+
+    const getLikesCount = computed(() => store.getters.getLikesCount ) 
+
+    const incrementLikes = () => store.dispatch('asyncIncrementLikes') 
+
+    return { getLikesCount, incrementLikes }
+
+    // const { Myname, changeName } = setName()
+    // return { Myname, changeName }
   },
+  components:{ TiptapCompositionApi }
 }
 </script>
 
