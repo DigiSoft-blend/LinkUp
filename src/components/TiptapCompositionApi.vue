@@ -4,23 +4,8 @@
 
 <script>
 import Blockquote from '@tiptap/extension-blockquote'
-import { useEditor, EditorContent, EditorMenuBar, Editor, EditorMenuBubble } from '@tiptap/vue-3'
-import {
-StarterKit,
-Blockquote,
-CodeBlock,
-HardBreak,
-Heading,
-HorizontalRule,
-OrderedList,
-BulletList,
-ListItem,
-TodoItem,
-TodoList,
-Bold,
-Code
-}
-from '@tiptap/starter-kit'
+import { useEditor, EditorContent } from '@tiptap/vue-3'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
