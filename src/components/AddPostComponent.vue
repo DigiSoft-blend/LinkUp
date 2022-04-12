@@ -1,7 +1,7 @@
 <template>
     <div class="con1 status2 col-md-5 container" style="background-color:#222 ">
     <div class="row" style="background-color:#222">
-    <div class=" box-shadow p-0 m-0 bg-dark">
+    <div class="box-shadow p-0 m-0 bg-dark">
    <div class="card-header  border-bottom d-flex  d-xl-flex justify-content-between p-0 m-0 p-2 bg-dark">
       <a class="text-reset ms-3" href="#">
         <i class="fa fa-home text-primary"></i>
@@ -45,7 +45,7 @@
                  </div>
           </div>
          
-          <div class="  py-3 border-top bg-dark" style="border:none">
+          <div class="card-footer  py-3 border-top bg-dark" style="border:none">
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="footer-div">
@@ -124,7 +124,9 @@ export default {
 }  
 
  
-
+.card-footer{
+  box-shadow: 0px 0px 0px 0px #222 !important;
+}
 
 
 
