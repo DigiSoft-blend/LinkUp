@@ -1,6 +1,6 @@
 <template>
 <Post></Post>  
-<DashboardSkeletonView v-if="true"></DashboardSkeletonView>  
+<DashboardSkeletonView v-if="pageLoader"></DashboardSkeletonView>  
 <div v-else  class="container-fluid page-body bg-light">
 <div  class="row">
     <div class="col-md-12">
