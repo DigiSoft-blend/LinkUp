@@ -93,7 +93,7 @@ export default {
 
 .post-div p{
   font-size: 15px;
-  margin-top: 19px;
+  margin-top: 21px;
 }
 
 .status2{
