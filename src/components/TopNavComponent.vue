@@ -6,12 +6,12 @@
    
     <!-- Toggle button -->
     
-     <img class="navbar-brand small-screen-logo mx-2" src="/logo/default-monochrome-black.svg" alt="logo"/>
+     <img class="navbar-brand small-screen-logo mx-2" src="/logo/default-monochrome-white.svg" alt="logo"/>
 
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
      
-       <img class="navbar-brand logo mx-4" src="/logo/default-monochrome-black.svg" alt="logo" />
+       <img class="navbar-brand logo mx-4" src="/logo/default-monochrome-white.svg" alt="logo" />
 
           <form style="">
              <div class="search">
