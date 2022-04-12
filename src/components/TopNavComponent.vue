@@ -1,7 +1,7 @@
 <template>
   <div class="fixed-top">
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+<nav class="navbar navbar-expand-lg p-0" style="background-color:#222">
   <!-- Container wrapper -->
    
     <!-- Toggle button -->
@@ -91,7 +91,7 @@
  
    
     <button class="navbar-toggler" type="button">
-      <i class="mdi mdi-menu" onclick="toggleSideNav()"></i>
+      <i class="mdi mdi-menu text-light" onclick="toggleSideNav()"></i>
     </button>
 </nav>
 <!-- Navbar -->

@@ -2,7 +2,7 @@
 
  <div class="card status1 text-dark mt-2 box-shadow p-0 m-0">
           
-           <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
+           <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3 bg-dark text-light">
                   <div class="preview-list col-11">
                       <div class="preview-item">
                          <div class="img-div">
@@ -10,11 +10,11 @@
                           <img src="/assets/images/faces/face2.jpg" alt="image" class="rounded-circle" />
                          </div>
                         </div>
-                        <div class="col-11 preview-item-content d-flex">
-                          <form action="" class="frm">
-                                 <!-- <input class="form-control inp" type="text" placeholder="What's on your mind, Silas?"> -->
-                          <TiptapCompositionApi></TiptapCompositionApi>
-                         </form>
+                        <div class="col-11 preview-item-content d-flex bg-dark">
+                         
+                          <div @click="postEditorOpen" class="post-div col-11 bg-dark text-dark">
+                            <p class="text-center">What's on your mind Silas ?</p>
+                          </div>
                           <div>
                              <i class="fa fa-file-image mt-2 ms-3 text-danger" style="font-size:30px"></i>
                              <p class="ms-2 mt-1 mb-0">Photo</p>
@@ -25,7 +25,7 @@
                  </div>
           </div>
          
-          <div class="card-footer  py-3 border-top" style="background-color:white; border:none">
+          <div class="card-footer  py-3 border-top bg-dark text-light" >
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="d-flex  footer-div">
@@ -54,8 +54,8 @@
   </div>
 
 
-    <div class="card text-dark mt-3 box-shadow p-0 m-0">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
+    <div class="card text-dark mt-3 box-shadow p-0 m-0 bg-dark text-light">
+            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3 bg-dark text-light">
                   <div class="preview-list">
                       <div class="preview-item">
                          <div class="img-div">
@@ -79,7 +79,7 @@
                  </div>
                   <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
-          <div class="card-body m-0 p-0">
+          <div class="card-body m-0 p-0 bg-dark text-light">
              <div class="mx-3">
                <p class="p-card-body">Consectetur, debitis corporis.</p>
              </div>
@@ -87,7 +87,7 @@
                  <img src="/cars/33120.jpg" class="img-fluid" alt="...">
               </div>
           </div>
-          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
+          <div class="card-footer mt-4 py-3 border-top bg-dark text-light" style="border:none">
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="col-12 footer-div">
@@ -112,8 +112,8 @@
        </div>
 
 
-<div class="card text-dark mt-4 box-shadow p-0 m-0">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
+<div class="card text-dark mt-4 box-shadow p-0 m-0 bg-dark text-light">
+            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3 bg-dark text-light">
                   <div class="preview-list">
                       <div class="preview-item">
                          <div class="img-div">
@@ -137,7 +137,7 @@
                  </div>
                   <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
-          <div class="card-body m-0 p-0">
+          <div class="card-body m-0 p-0 bg-dark text-light">
             <div class="mx-3">
                <p class="p-card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quia</p>
             </div>
@@ -145,7 +145,7 @@
                <img src="/cars/33111.jpg" class="img-fluid" alt="...">
              </div>
           </div>
-          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
+          <div class="card-footer mt-4 py-3 border-top bg-dark text-light" style="border:none">
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="col-12 footer-div">
@@ -532,16 +532,13 @@ import { onMounted } from "vue"
 
 export default {
   setup(){
-    
     const store = useStore()
-    //FETCHES DATA FROM STORE WHEN COMPONENT IS MOUNTED 
-    // onMounted(() => store.dispatch('asyncIncrement') )
-
+    const postEditorOpen = () =>{
+      store.commit('postBtnState', true)
+    }
     const getLikesCount = computed(() => store.getters.getLikesCount ) 
-
     const incrementLikes = () => store.dispatch('asyncIncrementLikes') 
-
-    return { getLikesCount, incrementLikes }
+    return { getLikesCount, incrementLikes, postEditorOpen }
 
     // const { Myname, changeName } = setName()
     // return { Myname, changeName }
@@ -567,6 +564,16 @@ export default {
      background-color: #ecf3fa;
      margin-top: 7px;
   }
+
+.post-div{
+  border-radius: 50px;
+  background-color: #ecf3fa !important;
+}
+
+.post-div p{
+  font-size: 18px;
+  margin-top: 16px;
+}
 
 @media(max-width:393px) {
   .preview-item-content input{

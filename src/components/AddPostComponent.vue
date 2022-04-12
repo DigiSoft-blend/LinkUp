@@ -1,8 +1,8 @@
 <template>
-    <div class="con1 status2 col-md-5 container bg-light">
-    <div class="row">
-    <div class="card text-dark box-shadow p-0 m-0">
-   <div class="card-header  border border-bottom d-flex  d-xl-flex justify-content-between p-0 m-0 p-2">
+    <div class="con1 status2 col-md-5 container" style="background-color:#222 ">
+    <div class="row" style="background-color:#222">
+    <div class="card  box-shadow p-0 m-0 bg-dark">
+   <div class="card-header  border-bottom d-flex  d-xl-flex justify-content-between p-0 m-0 p-2 bg-dark">
       <a class="text-reset ms-3" href="#">
         <i class="fa fa-home text-primary"></i>
       </a>
@@ -22,7 +22,7 @@
       </a>
           </div>
          
-            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3">
+            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3 bg-dark">
                   <div class="preview-list col-11">
                       <div class="preview-item">
                          <div class="img-div">
@@ -31,9 +31,10 @@
                          </div>
                         </div>
                         <div class="col-11 preview-item-content d-flex">
-                          <form action="" class="frm">
-                                 <input class="form-control inp" type="text" placeholder="What's on your mind, Silas?">
-                         </form>
+                         
+                          <div @click="postEditorOpen" class="post-div col-10 bg-light">
+                            <p class="text-center">What's on your mind Silas ?</p>
+                          </div>
                           <div>
                              <i class="fa fa-file-image mt-2 ms-3 text-danger" style="font-size:30px"></i>
                              <p class="ms-2 mt-1 mb-0">Photo</p>
@@ -44,7 +45,7 @@
                  </div>
           </div>
          
-          <div class="card-footer  py-3 border-top" style="background-color:white; border:none">
+          <div class="card-footer  py-3 border-top bg-dark" style="border:none">
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="footer-div">
@@ -71,8 +72,30 @@
     </div>
 </template>
 
+<script>
+import { useStore } from "vuex"
+export default {
+  setup(){
+    const store = useStore()
+    const postEditorOpen = () =>{
+      store.commit('postBtnState', true)
+    }
+    return{postEditorOpen}
+  }
+}
+</script>
 
 <style scoped>
+.post-div{
+  border-radius: 50px;
+  background-color: #ecf3fa !important;
+}
+
+.post-div p{
+  font-size: 15px;
+  margin-top: 17px;
+}
+
 .status2{
     display: none;
   }

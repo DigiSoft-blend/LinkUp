@@ -20,9 +20,13 @@ export default createStore({
       messageForgotPassword: '',
       likesCount: 0,
       email:'silasudofia469@gmail.com',
-      password:'12345678'
+      password:'12345678',
+      postBtnState: false
     },
     getters:{
+      getPostBtnState(state){
+        return state.postBtnState
+      },
         getPage(state){
           return state.page
         },
@@ -283,6 +287,10 @@ export default createStore({
         },
         setPage(state, payLoad){
           state.page = payLoad
+        },
+
+        postBtnState(state, payLoad){
+          state.postBtnState = payLoad
         }
 
     }

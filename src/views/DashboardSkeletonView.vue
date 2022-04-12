@@ -1,16 +1,16 @@
 <template>
   <div class="container-fluid page-body">
 
-  <div class="row">
-  <div class="col-md-12  bg-secondary">
+  <div class="row" style="background-color:#222">
+  <div class="col-md-12" style="background-color:#222">
     <TopNavComponent></TopNavComponent>
   </div>
  </div>
 
    
 
-<div class="row bg-light">
-   <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block bg-light mt-5">
+<div class="row" style="background-color:#222">
+   <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block mt-5" style="background-color:#222">
       <div class="position-sticky nav-div">
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item">
@@ -39,8 +39,8 @@
          <bullet-list-loader 
             :speed="1"
             :animation="true"
-            primaryColor="#eeeeee"
-            secondaryColor="white"
+            primaryColor="black"
+            secondaryColor="#224"
             class="fb-loader"
           >
           </bullet-list-loader>  
@@ -54,8 +54,8 @@
             <bullet-list-loader 
             :speed="1"
             :animation="true"
-             primaryColor="#eeeeee"
-            secondaryColor="white"
+             primaryColor="black"
+            secondaryColor="#224"
             class="fb-loader"
           >
           </bullet-list-loader> 
@@ -64,8 +64,8 @@
             <bullet-list-loader 
             :speed="1"
             :animation="true"
-            primaryColor="#eeeeee"
-            secondaryColor="white"
+            primaryColor="black"
+            secondaryColor="#224"
             class="fb-loader"
           >
           </bullet-list-loader>  
@@ -75,8 +75,8 @@
             <bullet-list-loader 
             :speed="1"
             :animation="true"
-            primaryColor="#eeeeee"
-            secondaryColor="white"
+            primaryColor="black"
+            secondaryColor="#224"
             class="fb-loader"
           >
           </bullet-list-loader> 
@@ -86,7 +86,7 @@
     </nav> 
 
 
-    <nav id="sidebarMenu" class="col-md-3 sidebar-right py-3 d-md-block bg-light collapse">
+    <nav id="sidebarMenu" class="col-md-3 sidebar-right py-3 d-md-block  collapse" style="background-color:#222">
       <div class="position-sticky mt-5">
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item mx-5">
@@ -215,21 +215,21 @@
     </nav> 
 
 <div class="row m-0 p-0">
-     <div class="con1 status2 col-md-5 container bg-light">
+     <div class="con1 status2 col-md-5 container" style="background-color:#222; border:none">
     <div class="row">
     <div class="card text-dark box-shadow p-0 m-0">
-   <div class="card-header  border border-bottom d-flex  d-xl-flex justify-content-between p-0 m-0 p-2">
+   <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 p-2 bg-dark">
        <facebook-loader 
             :speed="1"
             :animation="true"
-            primaryColor="#eeeeee"
-            secondaryColor="white"
+            primaryColor="black"
+            secondaryColor="#224"
             class="fb-loader"
           >
           </facebook-loader>
    </div>
          
-          <div class="card-footer  py-3 border-top" style="background-color:white; border:none">
+          <div class="card-footer  py-3 border-top" style="background-color:#222; border:none">
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="footer-div">
@@ -257,10 +257,10 @@
   </div>    
 
 
-<div class="row  m-0 p-0">
+<div class="row  m-0 p-0" style="background-color:#222">
   <div class="col-md-6 md-4  container status-con1 p-0">
 <div class="container-fluid  d-flex justify-content-center m-0 p-0">
-  <div class="bg-light" style="border:none;">
+  <div class="" style="background-color:#222; border:none">
                 <div class="container content p-3 m-0">
                   
                 <div class="col-md-3 col-4 main-staus-con animated-background   m-r">
@@ -285,16 +285,16 @@
     </div>
 </div>
  
-  <div class=" col-md-5  container bg-light">
+  <div class=" col-md-5  container" style="background-color:#222">
     <div class="row content gy-2">
 
-        <div class="card mt-4 border">
+        <div class="card mt-4 border bg-dark">
         <div class="card-body py-3 px-0">
           <facebook-loader 
             :speed="1"
             :animation="true"
-            primaryColor="#eeeeee"
-            secondaryColor="white"
+            primaryColor="black"
+            secondaryColor="#224"
             class="fb-loader"
           >
           </facebook-loader>
@@ -302,42 +302,42 @@
       </div>
 
 
-      <div class="card mt-4 border">
+      <div class="card mt-4 border bg-dark">
         <div class="card-body py-3 px-0">
           <facebook-loader 
             :speed="1"
             :animation="true"
-            primaryColor="#eeeeee"
-            secondaryColor="white"
+            primaryColor="black"
+            secondaryColor="#224"
             class="fb-loader"
           >
           </facebook-loader>
            <content-loader 
             :speed="1"
             :animation="true"
-             primaryColor="#eeeeee"
-            secondaryColor="white"
+             primaryColor="black"
+            secondaryColor="#224"
           >
           </content-loader>
         </div>
       </div>
 
 
-      <div class="card mt-4 border">
+      <div class="card mt-4 border bg-dark">
         <div class="card-body py-3 px-0">
           <facebook-loader 
             :speed="1"
             :animation="true"
-            primaryColor="#eeeeee"
-            secondaryColor="white"
+            primaryColor="black"
+            secondaryColor="#224"
             class="fb-loader"
           >
           </facebook-loader>
            <content-loader 
             :speed="1"
             :animation="true"
-            primaryColor="#eeeeee"
-            secondaryColor="white"
+            primaryColor="black"
+            secondaryColor="#224"
           >
           </content-loader>
         </div>
@@ -393,7 +393,7 @@ export default {
   animation-name: placeHolderShimmer;
   animation-timing-function: linear;
   background-color: white;
-  background: linear-gradient(to right, #eeeeee 8%, #fff 18%, #eeeeee 33%);
+  background: linear-gradient(to right, black 8%, #224 18%, black 33%);
   background-size: 800px 104px;
   position: relative;
 }

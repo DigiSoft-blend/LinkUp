@@ -2,7 +2,7 @@
 
 <div class="col-md-6 md-4  container status-con1 p-0">
 <div class="container-fluid content d-flex justify-content-center m-0 p-0">
-  <div class="bg-light" style="border:none;">
+  <div class="" style="background-color:#222; border:none">
                 <div class="container content p-3 m-0">
                     <div class="col-md-3 col-4 main-staus-con  rounded m-r">
                     

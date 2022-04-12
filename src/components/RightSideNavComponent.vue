@@ -1,5 +1,5 @@
 <template>
-    <nav id="sidebarMenu" class="col-md-3 sidebar-right py-4 d-md-block bg-light collapse">
+    <nav id="sidebarMenu" class="col-md-3 sidebar-right py-4 d-md-block  text-light collapse" style="background-color:#222">
       <div class="position-sticky pt-5">
        <ul class="nav flex-column mb-auto px-4">
           <li class="nav-item">

@@ -1,6 +1,6 @@
 <template>
 
-<div class="col-md-5  container bg-light">
+<div class="col-md-5  container">
     <div class="row gy-2">
         <MainCardComponent></MainCardComponent>  
     </div>

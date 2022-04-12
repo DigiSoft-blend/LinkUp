@@ -1,12 +1,9 @@
 <template>
-    <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block bg-light">
+    <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block text-light" style="background-color:#222">
       <div class="position-sticky nav-div">
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item">
-            <!-- <a class="nav-link active" aria-current="page" href="/login">
-             <span class="mdi mdi-home nav-icon" ></span>
-              Home
-            </a> -->
+           
              <div class="preview-list mx-2">
                       <div class="preview-item">
                         <div class="img-div">
@@ -24,62 +21,30 @@
                         </div>
                       </div>
                  </div>
-            <!-- <a class="nav-link bg-light" aria-current="page" href="#">
-              <span class="mdi mdi-account nav-icon" ></span>
-              Members
-            </a> -->
           </li>
 
 
-           <li class="nav-item bg-light">
-            <router-link class="nav-link bg-light" to="/logout">
+           <li class="nav-item">
+            <router-link class="nav-link" to="/logout">
              <span class="" >&#x1F354;</span>
               Log out
             </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
              <span class="" >&#x1F624;</span>
               Groups
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
               <span class="mdi mdi-git" ></span>
               Marketplace
             </a>
           </li>
 
-      <!-- <li class="mb-1 nav-item nav-link bg-light">
-        <a class="text-muted align-items-center rounded collapsed d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-        Marketplace
-         <span class="mdi mdi-chevron-down" style="font-size:20px" ></span>
-        </a>
-        <div class="collapse show" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-             <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
-             <span class="" >&#x1F454;</span>
-              Customers
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
-             <span class="" >&#x1F524;</span>
-              Reports
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
-              <span class="mdi mdi-git" ></span>
-              Integrations
-            </a>
-          </li>
-        
-          </ul>
-        </div>
-      </li> -->
-      <li class="mb-1 nav-item nav-link bg-light">
+     
+      <li class="mb-1 nav-item nav-link">
         <a class="text-dark  align-items-center collapsed d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
         See more
           <span class="mdi mdi-chevron-down" style="font-size:20px" ></span>
@@ -87,19 +52,19 @@
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
              <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
              <span class="" >&#x1F354;</span>
               Customers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
              <span class="" >&#x1F624;</span>
               Reports
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
               <span class="mdi mdi-web" ></span>
               Integrations
             </a>
@@ -110,20 +75,20 @@
       </li>
 
 
-          <li class="nav-item bg-light">
-            <a class="nav-link bg-light" href="#">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
              <span class="" >&#x1F354;</span>
               Customers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
              <span class="" >&#x1F624;</span>
               Reports
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
               <span class="mdi mdi-git" ></span>
               Integrations
             </a>
@@ -138,61 +103,61 @@
         </h6>
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
                <span class="" >&#x1F554;</span>
               Current month
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
             <span class="" >&#x1F353;</span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
               <span class="" >&#x1F324;</span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
                <span class="" >&#x1F351;</span>
               Year-end sale
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
             <span class="" >&#x1F353;</span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
               <span class="" >&#x1F324;</span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
                <span class="" >&#x1F351;</span>
               Year-end sale
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
             <span class="" >&#x1F353;</span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
               <span class="" >&#x1F324;</span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-light" href="#">
+            <a class="nav-link" href="#">
                <span class="" >&#x1F351;</span>
               Year-end sale
             </a>
@@ -224,6 +189,11 @@ export default {
 <style scoped>
 .nav-div{
   margin-top: 35px;
+}
+
+.nav-link{
+  background-color: #222;
+  color: white !important;
 }
 .preview-thumbnail img{
      width: 35px !important;

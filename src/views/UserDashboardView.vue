@@ -1,19 +1,19 @@
 <template>
-<DashboardSkeletonView v-if="true"></DashboardSkeletonView>
-    
+<Post></Post>  
+<DashboardSkeletonView v-if="pageLoader"></DashboardSkeletonView>  
 <div v-else  class="container-fluid page-body bg-light">
 <div  class="row">
     <div class="col-md-12">
        <TopNavComponent></TopNavComponent>
     </div>  
   </div>
-  <div class="row">
+  <div class="row" style="background-color:#222">
     <AddPostComponent></AddPostComponent>
   </div>
-   <div class="row">
+   <div class="row" style="background-color:#222">
    <StatusComponent></StatusComponent>
    </div> 
-  <div class="row">             
+  <div class="row" style="background-color:#222">             
     <LeftSideNavComponent></LeftSideNavComponent>   
     <RightSideNavComponent></RightSideNavComponent>
     <MainBodyComponent></MainBodyComponent>  
@@ -30,7 +30,7 @@ import RightSideNavComponent from '../components/RightSideNavComponent.vue';
 import MainBodyComponent from '../components/MainBodyComponent.vue'
 import StatusComponent from '../components/StatusComponent.vue';
 import AddPostComponent from '../components/AddPostComponent.vue';
-
+import Post from '../components/Post.vue'
 
 import { useStore } from 'vuex';
 import { computed } from '@vue/reactivity';
@@ -51,13 +51,14 @@ export default {
       MainBodyComponent,
       StatusComponent,
       AddPostComponent,
+      Post
      }
     
 };
 
 </script>
 
-<style>
+<style scoped>
 
 
 </style>

@@ -1,11 +1,12 @@
 body{
-  background-color: rgb(253, 255, 255);
+  /* background-color: rgb(253, 255, 255); */
 }
 
 .nav-link{
   padding: 10px !important;
   margin: 2px !important;
 }
+
 
 li :hover{
   color: rgb(144, 144, 238) !important;
