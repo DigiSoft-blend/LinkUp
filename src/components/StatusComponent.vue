@@ -2,7 +2,7 @@
 
 <div class="col-md-6 md-4  container status-con1 p-0">
 <div class="container-fluid content d-flex justify-content-center m-0 p-0">
-  <div class="" style="background-color:#222; border:none">
+  <div :class="backgroundModeParent" style="border:none">
                 <div class="container content p-3 m-0">
                     <div class="col-md-3 col-4 main-staus-con  rounded m-r">
                     
@@ -63,6 +63,18 @@
   
 </template>
 
+<script>
+import { useStore } from "vuex"
+import { computed } from "@vue/reactivity"
+export default {
+  setup(){
+    const store = useStore()
+    const backgroundModeParent = computed(()=> store.getters.getBackgroundModeParent)
+    return { backgroundModeParent }
+  }
+}
+</script>
+
 <style scoped>
 
 .status-con1{
@@ -85,6 +97,8 @@ box-shadow: 0px 1px 2px 0px #b7b8b9e0;
 
 .status-con{
   position: relative;
+  border-radius: 10px !important;
+  overflow: hidden;
 }
 
 .status-con .username{
@@ -111,7 +125,7 @@ box-shadow: 0px 1px 2px 0px #b7b8b9e0;
 }
 
 .preview-thumb img{
-  width: 35px !important;
+  width: 38px !important;
   border: solid 3px rgb(0, 125, 228);
 }
  .container{
@@ -134,16 +148,11 @@ box-shadow: 0px 1px 2px 0px #b7b8b9e0;
 .img-fluid{
   height: 150px !important;
   width:auto !important;
-  border-radius: 10px !important;
-  /* border: solid 2px white !important; */
 }
-img:hover{ 
- border: solid 0px white !important;
- transition: 0.1s;
+.status-con img:hover{ 
+ transition: 1s;
+ transform: scale(1.1);
 }
 
-img ::after {
-  transition: 1s !important; 
-}
 
 </style>

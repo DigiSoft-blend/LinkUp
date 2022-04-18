@@ -58,7 +58,7 @@
     <button @click="editor.chain().focus().setHardBreak().run()">
       hard break
     </button> -->
-    
+   
     <i class="control mdi mdi-undo text-danger" @click="editor.chain().focus().undo().run()">
     </i>
     <i class="control mdi mdi-redo text-danger" @click="editor.chain().focus().redo().run()">
@@ -79,37 +79,54 @@
     </i>
   </div>
   <div class="container-editor py-3  p-2">
-    <editor-content :editor="editor" />
+
+  <form @submit="Post">
+     <editor-content 
+     :editor="editor"
+     v-model="body" 
+    />
+    <div class="container-fluid  px-3">
+      <div class="border add-to-post-con border-muted mt-2 d-flex justify-content-between">
+        <p class="my-3 mx-3 para" :class="backgroundMode">Add to your post</p>
+        <p class="para-down mx-3"><i class="mdi mdi-image text-danger image-mdi"></i></p>
+      </div>
+      <button class="btn btn-block mt-3 post-btn" type="submit">Post</button>
+    </div>
+  </form> 
   </div>
+  
+   <!-- <p>{{ body }}</p> -->
 </template>
 
 
 <script>
-// import Blockquote from '@tiptap/extension-blockquote'
 import { useEditor, EditorContent } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
 import Document from '@tiptap/extension-document'
-import Paragraph from '@tiptap/extension-paragraph'
-import Text from '@tiptap/extension-text'
-import Code from '@tiptap/extension-code'
 import Link from '@tiptap/extension-link'
 import Mention from '@tiptap/extension-mention'
 import suggestion from '@tiptap/suggestion'
+import { onMounted, onUnmounted, onUpdated, ref } from 'vue'
+import { useStore } from 'vuex'
+import { computed } from '@vue/reactivity'
 
 export default {
   components: {
     EditorContent,
   },
 
+  
   setup() {
+
+   const store = useStore() 
+   const body = ref("")
+
+   /* Tip Tap Config Start */
+////////////////////////////////////////////////  
     const editor = useEditor({
-      content: "<h5>What's on your mind Silas ?</h5>",
+      content: "<h6>What's on your mind Silas ?</h6>",
       extensions: [
         StarterKit,
-        Document,
-        Paragraph,
-        Text,
-        Code,
         Link.configure({
           openOnClick: false,
           autolink: true,
@@ -165,8 +182,32 @@ export default {
         .setLink({ href: url })
         .run()
   }
+      /* Tip Tap Config End */
+////////////////////////////////////////////////
 
-    return { editor, setLink }
+onMounted(()=>{
+  onUpdated(()=>{
+   body.value = editor.value.getHTML()
+ })
+})
+
+
+ const Post = (e)=> {
+    e.preventDefault()
+    store.commit('setPostLoaderState', true)
+    store.dispatch('creatPost', {
+      body: body.value
+    }).then(response => {
+       store.dispatch("updatePost")
+    }).catch(error => {
+      console.log(error)
+    })
+   store.commit('postBtnState', false)
+  }
+
+ const backgroundMode = computed(()=> store.getters.getBackgroundMode)
+
+    return { editor, setLink, body, Post, backgroundMode }
   },
 }
 </script>
@@ -176,8 +217,40 @@ export default {
 <style lang="scss">
 /* Basic editor styles */
 
+.image-mdi{
+  font-size: 20px;
+}
+.add-to-post-con{
+  border-radius: 15px;
+  position: relative;
+}
+
+.para-down{
+  position: absolute;
+  right: 0;
+  top: 13px;
+}
+.para{
+  color: black;
+}
+
+.post-btn{
+  background-color: #e9e8e8;
+   box-shadow: 0px 0px 0px 0px  white;
+   border-radius: 11px;
+}
+.post-btn:hover{
+  color: rgb(2, 128, 145);
+}
+
 .ProseMirror-focused:focus {
     outline: none;
+}
+
+.ProseMirror{
+  height: 75px;
+  max-height: 75px;
+  overflow-y: scroll;
 }
 
 .mention {
@@ -196,8 +269,8 @@ export default {
     border: none;
     outline: none !important;
     border: none !important;
-    max-height: 80px;
-    overflow-y: hidden;
+    // max-height: 80px;
+    // overflow-y: hidden;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
  }
 

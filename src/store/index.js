@@ -12,6 +12,8 @@ export default createStore({
       pageLoader: false,
       page: true,
       user: [],
+      users: [],
+      posts: [],
       authUser: '',
       registeredUser: '',
       loginError: '',
@@ -21,9 +23,36 @@ export default createStore({
       likesCount: 0,
       email:'silasudofia469@gmail.com',
       password:'12345678',
-      postBtnState: false
+      postBtnState: false,
+      background:'dark',
+      parentBackground:'parent-dark',
+      textColor:'light',
+      sideNav: 'class1',
+      postLoader: false,
+      notification: false
     },
     getters:{
+      getNotificationState(state){
+        return state.notification
+      },
+      getPostLoaderState(state){
+        return state.postLoader
+      },
+      getPost(state){
+        return state.posts
+      },
+      getSideNav(state){
+        return state.sideNav
+      },
+      getBackgroundMode(state){
+        return state.background
+      },
+      getParentBackgroundMode(state){
+        return state.parentBackground
+      },
+      getTextColor(state){
+        return state.textColor
+      },
       getPostBtnState(state){
         return state.postBtnState
       },
@@ -66,6 +95,9 @@ export default createStore({
         },
         getUser(state){
           return state.user
+        },
+        getUsers(state){
+          return state.users
         }
     },
    
@@ -74,7 +106,6 @@ export default createStore({
       AuthUser(context){
         context.state.registrationError = ''
         context.commit('setPageLoader', true)
-        context.commit('setPage', false)
         axios.defaults.headers.common['Content-Type'] = 'application/json',
         axios.defaults.headers.common['Accept'] = 'application/json'
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
@@ -85,16 +116,90 @@ export default createStore({
           const regUser = response.data
           context.commit('setAuthUser', regUser)
           context.commit('setPageLoader',false)
-          context.commit('setPage', true)
           resolve(response)
         })
         .catch(error => {
           context.commit('setPageLoader',false)
-          context.commit('setPage', true)
           reject(error)
         })
       })
     },
+
+    Users(context){
+      // context.commit('setPageLoader', true)
+      axios.defaults.headers.common['Content-Type'] = 'application/json',
+      axios.defaults.headers.common['Accept'] = 'application/json'
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
+
+    return new Promise(( resolve, reject) => {  
+      axios.get('/users')
+      .then(response => {
+        const users = response.data
+        context.commit('setUsers', users)
+        // context.commit('setPageLoader',false)
+        console.log(users)
+        resolve(response)
+      })
+      .catch(error => {
+        // context.commit('setPageLoader',false)
+        console.log(error)
+        reject(error)
+      })
+    })
+  },
+
+
+    updatePost(context){
+      axios.defaults.headers.common['Content-Type'] = 'application/json',
+      axios.defaults.headers.common['Accept'] = 'application/json'
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
+
+    return new Promise(( resolve, reject) => {  
+      axios.get('getposts')
+      .then(response => {
+        const post = response.data.data
+        context.commit('updatePost', post)
+        context.commit('setPostLoaderState', false)
+        context.commit('setNotification', true)
+
+        setTimeout(()=>{
+          context.commit("setNotification", false)
+        },2000) 
+    
+        resolve(response)
+      })
+      .catch(error => {
+        context.commit('setPostLoaderState', false)
+        console.log(error)
+        reject(error)
+      })
+    })
+    },
+
+
+    Post(context){
+      context.commit('setPageLoader', true)
+      axios.defaults.headers.common['Content-Type'] = 'application/json',
+      axios.defaults.headers.common['Accept'] = 'application/json'
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
+
+    return new Promise(( resolve, reject) => {  
+      axios.get('getposts')
+      .then(response => {
+        const post = response.data.data
+        context.commit('setPost', post)
+        context.commit('setPageLoader', false)
+        context.commit('setPostLoaderState', false)
+        resolve(response)
+      })
+      .catch(error => {
+        context.commit('setPageLoader', false)
+        context.commit('setPostLoaderState', false)
+        console.log(error)
+        reject(error)
+      })
+    })
+  },
 
 
         signUp(context, credentials){
@@ -159,6 +264,30 @@ export default createStore({
          })
      },
 
+     
+     creatPost(context, credentials){
+
+      // context.commit('setLoader', true)
+      // Tell axios the header you want
+      axios.defaults.headers.common['Content-Type'] = 'application/json',
+      axios.defaults.headers.common['Accept'] = 'application/json'
+   
+       return new Promise(( resolve, reject) => {
+           axios.post('/createpost', {
+            body: credentials.body,
+           })
+           .then(response => {
+           console.log(response)
+          //  context.commit('setLoader', false)
+           resolve(response) 
+           })
+           .catch(error => {
+             console.log(error)
+            // context.commit('setLoader',false)
+            reject(error)
+           })
+       })
+   },
 
        
 
@@ -201,7 +330,7 @@ export default createStore({
         context.commit('setLoader', true)
         
         return new Promise(( resolve, reject) => {
-          axios.post('/logout')
+          axios.post('logout')
           .then(response => {
             localStorage.removeItem('token')
             context.commit('destroyToken')
@@ -291,8 +420,34 @@ export default createStore({
 
         postBtnState(state, payLoad){
           state.postBtnState = payLoad
-        }
-
+        },
+        setBackgroundMode(state, payLoad){
+          state.background = payLoad
+        },
+        setParentBackgroundMode(state, payLoad){
+          state.parentBackground = payLoad
+        },
+        setTextColor(state, payLoad){
+          state.textColor = payLoad
+        },
+        setSideNav(state, payLoad){
+          state.sideNav = payLoad
+        },
+        setPost(state, payLoad){
+          state.posts = payLoad
+        },
+        setPostLoaderState(state, payLoad){
+          state.postLoader = payLoad
+        },
+       updatePost(state, payLoad){
+         state.posts = payLoad
+       },
+       setNotification(state, payLoad){
+         state.notification = payLoad
+       }, 
+      setUsers(state, payLoad){
+        state.users = payLoad
+      }
     }
 })
 

@@ -1,6 +1,6 @@
 <template>
-    <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block text-light" style="background-color:#222">
-      <div class="position-sticky nav-div">
+    <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block" :class="backgroundModeParent"  >
+      <div class="position-sticky nav-div" :class="backgroundModeParent">
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item">
            
@@ -25,27 +25,27 @@
 
 
            <li class="nav-item">
-            <router-link class="nav-link" to="/logout">
-             <span class="" >&#x1F354;</span>
+            <router-link class="nav-link" :class="backgroundModeParent" to="/logout">
+             <span class="">&#x1F354;</span>
               Log out
             </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-             <span class="" >&#x1F624;</span>
+            <a class="nav-link" :class="backgroundModeParent" href="#">
+             <span class=""  >&#x1F624;</span>
               Groups
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
               <span class="mdi mdi-git" ></span>
               Marketplace
             </a>
           </li>
 
      
-      <li class="mb-1 nav-item nav-link">
-        <a class="text-dark  align-items-center collapsed d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+      <li class="mb-1 nav-item">
+        <a class="align-items-center collapsed d-flex justify-content-between nav-link" :class="backgroundModeParent"  data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
         See more
           <span class="mdi mdi-chevron-down" style="font-size:20px" ></span>
         </a>
@@ -76,19 +76,19 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
              <span class="" >&#x1F354;</span>
               Customers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
              <span class="" >&#x1F624;</span>
               Reports
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
               <span class="mdi mdi-git" ></span>
               Integrations
             </a>
@@ -97,67 +97,67 @@
         <hr>
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span >Events</span>
-          <a class="link-secondary" href="#" aria-label="Add a new report">
+          <a class="link-secondary"  href="#" aria-label="Add a new report">
            <span class="mdi mdi-calendar" ></span>
           </a>
         </h6>
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
                <span class="" >&#x1F554;</span>
               Current month
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
             <span class="" >&#x1F353;</span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
               <span class="" >&#x1F324;</span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
                <span class="" >&#x1F351;</span>
               Year-end sale
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
             <span class="" >&#x1F353;</span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
               <span class="" >&#x1F324;</span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
                <span class="" >&#x1F351;</span>
               Year-end sale
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
             <span class="" >&#x1F353;</span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
               <span class="" >&#x1F324;</span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" :class="backgroundModeParent" href="#">
                <span class="" >&#x1F351;</span>
               Year-end sale
             </a>
@@ -178,7 +178,11 @@ export default {
   setup(){
     const store = useStore()
     const authUser = computed(()=> store.getters.getAuthUser)
-    return { authUser }
+    const backgroundMode = computed(()=> store.getters.getBackgroundMode)
+    const backgroundModeParent = computed(()=> store.getters.getParentBackgroundMode)
+    const textColor = computed(()=> store.getters.getTextColor)
+    const sideNav = computed(()=> store.getters.getSideNav) 
+    return { authUser, backgroundMode, backgroundModeParent, textColor, sideNav }
   }
 }
 </script>
@@ -192,9 +196,11 @@ export default {
 }
 
 .nav-link{
-  background-color: #222;
-  color: white !important;
+  background-color: inherit; 
+   border-radius: 18px;
 }
+
+
 .preview-thumbnail img{
      width: 35px !important;
      height: 35px !important;

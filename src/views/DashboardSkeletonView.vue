@@ -1,16 +1,16 @@
 <template>
-  <div class="container-fluid page-body">
+  <div class="container-fluid page-body" :class="backgroundModeParent">
 
-  <div class="row" style="background-color:#222">
-  <div class="col-md-12" style="background-color:#222">
+  <div class="row">
+  <div class="col-md-12">
     <TopNavComponent></TopNavComponent>
   </div>
  </div>
 
    
 
-<div class="row" style="background-color:#222">
-   <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block mt-5" style="background-color:#222">
+<div class="row"  :class="backgroundModeParent">
+   <nav id="mySidenav" class="col-md-3 sidebar-left p-4 d-md-block mt-5" :class="backgroundModeParent">
       <div class="position-sticky nav-div">
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item">
@@ -86,7 +86,7 @@
     </nav> 
 
 
-    <nav id="sidebarMenu" class="col-md-3 sidebar-right py-3 d-md-block  collapse" style="background-color:#222">
+    <nav id="sidebarMenu" class="col-md-3 sidebar-right py-3 d-md-block  collapse" :class="backgroundModeParent">
       <div class="position-sticky mt-5">
         <ul class="nav flex-column  nav-pills list-unstyled">
           <li class="nav-item mx-5">
@@ -215,10 +215,10 @@
     </nav> 
 
 <div class="row m-0 p-0">
-     <div class="con1 status2 col-md-5 container" style="background-color:#222; border:none">
+     <div class="con1 status2 col-md-5 container" :class="backgroundModeParent" style="border:none">
     <div class="row">
-    <div class="card text-dark box-shadow p-0 m-0">
-   <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 p-2 bg-dark">
+    <div class="card box-shadow p-0 m-0">
+   <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 p-2" :class="backgroundModeParent">
        <facebook-loader 
             :speed="1"
             :animation="true"
@@ -229,7 +229,7 @@
           </facebook-loader>
    </div>
          
-          <div class="card-footer  py-3 border-top" style="background-color:#222; border:none">
+          <div class="card-footer  py-3 border-top" :class="backgroundModeParent" style="border:none">
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="footer-div">
@@ -257,10 +257,10 @@
   </div>    
 
 
-<div class="row  m-0 p-0" style="background-color:#222">
+<div class="row  m-0 p-0" :class="backgroundModeParent">
   <div class="col-md-6 md-4  container status-con1 p-0">
 <div class="container-fluid  d-flex justify-content-center m-0 p-0">
-  <div class="" style="background-color:#222; border:none">
+  <div :class="backgroundModeParent" style="border:none">
                 <div class="container content p-3 m-0">
                   
                 <div class="col-md-3 col-4 main-staus-con animated-background   m-r">
@@ -285,10 +285,10 @@
     </div>
 </div>
  
-  <div class=" col-md-5  container" style="background-color:#222">
+  <div class=" col-md-5  container" :class="backgroundModeParent">
     <div class="row content gy-2">
 
-        <div class="card mt-4 border bg-dark">
+        <div class="card mt-4 border" :class="backgroundModeParent">
         <div class="card-body py-3 px-0">
           <facebook-loader 
             :speed="1"
@@ -302,7 +302,7 @@
       </div>
 
 
-      <div class="card mt-4 border bg-dark">
+      <div class="card mt-4 border" :class="backgroundModeParent">
         <div class="card-body py-3 px-0">
           <facebook-loader 
             :speed="1"
@@ -323,7 +323,7 @@
       </div>
 
 
-      <div class="card mt-4 border bg-dark">
+      <div class="card mt-4 border" :class="backgroundModeParent">
         <div class="card-body py-3 px-0">
           <facebook-loader 
             :speed="1"
@@ -359,7 +359,16 @@ import { FacebookLoader } from 'vue-content-loader';
 import { InstagramLoader } from 'vue-content-loader';
 import { ContentLoader } from 'vue-content-loader';
 import { BulletListLoader } from 'vue-content-loader';
+
+import { useStore } from 'vuex';
+import { computed } from '@vue/reactivity';
+
 export default {
+  setup(){
+    const store = useStore()
+   const backgroundModeParent = computed(()=> store.getters.getParentBackgroundMode)
+    return{ backgroundModeParent }
+  },
   components:{ 
     TopNavComponent,
     FacebookLoader,

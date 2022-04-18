@@ -1,12 +1,13 @@
+
+
 <template>
-<transition name="toast">
-    <div v-if="postBtnState" class="post-container">
-        <div class="row">
-           <div class="col-5 post-body">
-              <div class="card post-content bg-dark text-light">
-                <div class="card-header m-0 p-0 bg-dark text-light">
-                   <p class="text-middle text-light my-3">Create post</p>
-                    <p @click="postEditorClose" class="text-end"><i class="mdi mdi-close-circle px-3"></i></p>
+ <transition name="toast">
+       <div v-if="postBtnState" class="row">
+           <div class="col-md-5  card-wrapper">
+              <div class="card" :class="backgroundMode">
+                <div class="card-header m-0 p-0" :class="backgroundMode">
+                   <p class="text-middle  my-3" :class="backgroundMode">Create posts &#x1F554;</p>
+                    <p @click="postEditorClose"  class="text-end"><i class="mdi mdi-close-circle px-3"></i></p>
                 </div>
                 <div class="card-body  border-top p-0 m-0">
                    <div class="preview-list mx-3">
@@ -19,7 +20,7 @@
                         <div class="preview-item-content d-flex flex-grow m-0 p-0 mx-2">
                           <div class="flex-grow">
                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject">Silas Udofia</h6>
+                              <h6 class="preview-subject">{{ authUser.name }}</h6>
                             </div>
                             <div class="d-flex">
                                <i class="mdi mdi-earth"></i> 
@@ -29,22 +30,12 @@
                         </div>
                       </div>
                 </div>
-               
-                 <TiptapCompositionApi></TiptapCompositionApi>
-              
-                 <div class="container-fluid px-3">
-                   <div class="border add-to-post-con border-muted mt-4 d-flex justify-content-between">
-                      <p class="my-3 mx-3 para text-light">Add to your post</p>
-                      <p class="para-down mx-3"><i class="mdi mdi-image text-danger image-mdi"></i></p>
-                   </div>
-                    <button class="btn btn-block mt-3 post-btn">Post</button>
-                 </div>
+                <TiptapCompositionApi></TiptapCompositionApi>
                 </div>
               </div>
-           </div>
-        </div>
-    </div>
-    </transition>
+           </div> 
+       </div>
+   </transition>
 </template>
 
 
@@ -54,12 +45,22 @@ import { computed } from '@vue/reactivity';
 import { useStore } from 'vuex';
 export default {
   setup(){
-      const store = useStore()
+
+   const store = useStore()
+      
+      //gets the current state of post editor close/open button
       const postBtnState = computed(()=> store.getters.getPostBtnState)
+
+      //closes post editor window 
       const postEditorClose = () =>{
-      store.commit('postBtnState', false)
-    }
-      return {postBtnState, postEditorClose}
+       store.commit('postBtnState', false)
+      }
+      //sets backgroundMode dark  or light
+      const backgroundMode = computed(()=> store.getters.getBackgroundMode) 
+
+      const authUser = computed(()=> store.getters.getAuthUser)
+
+      return {postBtnState, backgroundMode, authUser ,postEditorClose}
   },
   components:{
     TiptapCompositionApi
@@ -70,8 +71,8 @@ export default {
 <style scoped>
 
 .toast-enter-from{
- opacity: 0;
- transform: translateX(-50px);
+ opacity: 0; 
+ transform: translateX(-100px);
 }
 
 .toast-enter-to{
@@ -82,30 +83,22 @@ export default {
 .toast-enter-active{
   transition: all 0.3s ease;
 } 
-.post-btn{
-  background-color: #e9e8e8;
-   box-shadow: 0px 0px 0px 0px  white;
-   border-radius: 11px;
-}
-.post-btn:hover{
-  color: rgb(2, 128, 145);
-}
-.image-mdi{
-  font-size: 20px;
-}
-.add-to-post-con{
-  border-radius: 15px;
-  position: relative;
+
+.toast-leave-from{
+ opacity: 1;
+ transform: translateX(0px);
 }
 
-.para-down{
-  position: absolute;
-  right: 0;
-  top: 13px;
+.toast-leave-to{
+ opacity: 0; 
+ transform: translateX(-100px);
 }
-.para{
-  color: black;
+
+.toast-leave-active{
+   transition: all 0.2s ease;
 }
+
+
 .post-intro{
   color: #747272;
 }
@@ -139,44 +132,37 @@ export default {
    color: rgb(196, 196, 196);
 }
 
-.post-container{
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999999999;
-  overflow: hidden;
-  background: rgba(224, 224, 224, 0.61);
+
+
+.row{
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-.post-content{
-    background-color: white;
-    height: 400px;
-    width: 500px;
-    border-radius: 5px;
-    box-shadow: 0px 1px 5px 2px  rgba(110, 109, 109, 0.733);
+  z-index: 9999999;
+  margin: 0;
+  padding: 0;
+  background: rgba(77, 77, 77, 0.61) !important;
 }
 
-
-
-@media(max-width: 740px  ){
-.post-content{
-    background-color: white;
-    height: 100vh;
-    width: 100vw;
-    border-radius: 5px;
-    box-shadow: 0px 1px 5px 2px  rgba(209, 209, 209, 0.733);
-}
+.card-wrapper{
+  position: fixed;
+  top: 100px;
 }
 
-.post-body{
-  
+@media(max-width: 765px){
+ .card-wrapper{
+  top:0;
+  margin: 0;
+  padding: 0;
+ }
 }
 
-.close-btn{
- 
+@media(max-width: 765px){
+ .card{
+  top:0;
+  height: 100vh;
+  border-radius: 0px;
+ }
 }
+
 </style>

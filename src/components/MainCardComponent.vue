@@ -2,7 +2,7 @@
 
  <div class="card status1 text-dark mt-2 box-shadow p-0 m-0">
           
-           <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3 bg-dark text-light">
+           <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3" :class="backgroundMode">
                   <div class="preview-list col-11">
                       <div class="preview-item">
                          <div class="img-div">
@@ -10,10 +10,10 @@
                           <img src="/assets/images/faces/face2.jpg" alt="image" class="rounded-circle" />
                          </div>
                         </div>
-                        <div class="col-11 preview-item-content d-flex bg-dark">
+                        <div class="col-11 preview-item-content d-flex">
                          
-                          <div @click="postEditorOpen" class="post-div col-11 bg-dark text-dark">
-                            <p class="text-center">What's on your mind Silas ?</p>
+                          <div @click="postEditorOpen" class="post-div col-11">
+                            <p class="text-center text-dark">What's on your mind Silas ?</p>
                           </div>
                           <div>
                              <i class="fa fa-file-image mt-2 ms-3 text-danger" style="font-size:30px"></i>
@@ -25,7 +25,7 @@
                  </div>
           </div>
          
-          <div class="card-footer  py-3 border-top bg-dark text-light" >
+          <div class="card-footer  py-3 border-top" :class="backgroundMode" >
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="d-flex  footer-div">
@@ -33,7 +33,7 @@
                       <span>Live video</span>
                     </div>
                  </div>
-                 <div class="col-4">
+                 <div class="col-4 border-start border-end border-muted">
                      <div class="footer-div">
                       <i class="fa-solid fa-images text-primary mt-1 me-1"></i>
                       <span>Photo/video</span>
@@ -49,13 +49,19 @@
           </div>
        </div>
 
-  <div class="d-flex justify-content-center">
+  <!-- <div class="d-flex justify-content-center">
    <button class="btn btn-primary btn-gra" type="submit">New Posts</button>
-  </div>
+  </div> -->
+     <div v-if="postLoader" class="d-flex justify-content-center my-3">
+        <div class="spinner-border" :class="backgroundMode" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <span class="ms-2 my-1">Uploading your post...</span>
+     </div>
 
-
-    <div class="card text-dark mt-3 box-shadow p-0 m-0 bg-dark text-light">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3 bg-dark text-light">
+<div v-if="posts.length"  class="m-0 p-0">
+    <div  v-for="post in posts" :key="post.id"  class="card mt-3 box-shadow p-0 m-0 mb-4" :class="backgroundMode">
+            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3" :class="backgroundMode">
                   <div class="preview-list">
                       <div class="preview-item">
                          <div class="img-div">
@@ -67,7 +73,7 @@
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Padosky Cardiento</h6>
+                              <h6 class="preview-subject p-user-name">{{ post.user.name }}</h6>
                             </div>
                             <div style="display:flex">
                                <span class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
@@ -79,15 +85,15 @@
                  </div>
                   <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
           </div>
-          <div class="card-body m-0 p-0 bg-dark text-light">
-             <div class="mx-3">
-               <p class="p-card-body">Consectetur, debitis corporis.</p>
+          <div class="card-body m-0 p-0" :class="backgroundMode">
+             <div  class="mx-3">
+               <p class="p-card-body" v-html="post.body" ></p>
              </div>
-              <div class="d-flex justify-content-center py-1">
-                 <img src="/cars/33120.jpg" class="img-fluid" alt="...">
+              <div class="image-wrapper d-flex justify-content-center py-1">
+                 <img src="/cars/33120.jpg" class="img-fluid scale-image" alt="...">
               </div>
           </div>
-          <div class="card-footer mt-4 py-3 border-top bg-dark text-light" style="border:none">
+          <div class="card-footer mt-4 py-3 border-top " :class="backgroundMode" style="border:none">
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="col-12 footer-div">
@@ -110,415 +116,12 @@
                </div>
           </div>
        </div>
-
-
-<div class="card text-dark mt-4 box-shadow p-0 m-0 bg-dark text-light">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3 bg-dark text-light">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                         <div class="img-div">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face4.jpg" alt="image" class="rounded-circle status" />
-                         <div class="active"></div>
-                         </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Marcelo frichxzany</h6>
-                            </div>
-                            <div style="display:flex">
-                               <span class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
-                            </div>
-                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
-          </div>
-          <div class="card-body m-0 p-0 bg-dark text-light">
-            <div class="mx-3">
-               <p class="p-card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quia</p>
-            </div>
-             <div class="d-flex justify-content-center py-1">
-               <img src="/cars/33111.jpg" class="img-fluid" alt="...">
-             </div>
-          </div>
-          <div class="card-footer mt-4 py-3 border-top bg-dark text-light" style="border:none">
-               <div class="row row-footer">
-                  <div class="col-4">
-                    <div class="col-12 footer-div">
-                      <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>20k</p>
-                    </div>
-                 </div>
-                 <div class="col-4">
-                     <div class="col-12 footer-div">
-                      <i class="mdi mdi-message-outline"></i>
-                      <p>12</p>
-                     </div>
-                 </div>
-                 <div class="col-4">
-                    <div class="col-12 footer-div">
-                        <i class="mdi mdi-share-outline"></i>
-                        <p class="">4</p>
-                    </div>
-                 </div>
-               </div>
-          </div>
+</div>
+ <div  v-else class="container text-center mt-4  rounded-pill no-content-wrapper">
+       <div  class=" text-center p-5 rounded-pill" :class="backgroundMode">
+         <h1>No contents yet  &#x1F554;</h1>
        </div>
-      
- <div class="card text-dark mt-4 p-0 m-0">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="img-div">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face7.jpg" alt="image" class="rounded-circle status" />
-                         <div class="active"></div>
-                         </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Tom Cruise</h6>
-                            </div>
-                           <div style="display:flex">
-                               <span class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
-                            </div>
-                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
-          </div>
-          <div class="card-body m-0 p-0">
-            <div class="mx-3">
-              <p class="p-card-body">sit amet consectetur adipisicing elit. Nobis quia</p>
-            </div>
-            <div class="d-flex justify-content-center py-1">
-               <img src="/cars/33115.jpg" class="img-fluid" alt="...">
-            </div>
-          </div>
-          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
-               <div class="row row-footer">
-                  <div class="col-4">
-                    <div class="col-12 footer-div">
-                      <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>3k</p>
-                    </div>
-                 </div>
-                 <div class="col-4">
-                     <div class="col-12 footer-div">
-                      <i class="mdi mdi-message-outline"></i>
-                      <p>12</p>
-                     </div>
-                 </div>
-                 <div class="col-4">
-                    <div class="col-12 footer-div">
-                        <i class="mdi mdi-share-outline"></i>
-                        <p class="">4</p>
-                    </div>
-                 </div>
-               </div>
-          </div>
-       </div> 
-
-
-
-       <div class="card text-dark mt-4 p-0 m-0">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="img-div">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face8.jpg" alt="image" class="rounded-circle status" />
-                         <div class="active"></div>
-                         </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Sexy Tilda</h6>
-                            </div>
-                            <div style="display:flex">
-                               <span class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
-                            </div>
-                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
-          </div>
-          <div class="card-body m-0 p-0">
-            <div class="mx-3">
-              <p class="p-card-body">nemo labore, pariatur laborum? Sapiente perferendis deserunt, </p>
-            </div>
-            <div class="d-flex justify-content-center py-1">
-               <img src="/cars/33116.jpg" class="img-fluid" alt="...">
-            </div>
-          </div>
-          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
-               <div class="row row-footer">
-                  <div class="col-4">
-                    <div class="col-12 footer-div">
-                      <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>3k</p>
-                    </div>
-                 </div>
-                 <div class="col-4">
-                     <div class="col-12 footer-div">
-                      <i class="mdi mdi-message-outline"></i>
-                      <p>12</p>
-                     </div>
-                 </div>
-                 <div class="col-4">
-                    <div class="col-12 footer-div">
-                        <i class="mdi mdi-share-outline"></i>
-                        <p class="">4</p>
-                    </div>
-                 </div>
-               </div>
-          </div>
-       </div> 
-
-
-
-<div class="card text-dark mt-4 p-0 m-0">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                         <div class="img-div">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face10.jpg" alt="image" class="rounded-circle status" />
-                         <div class="active"></div>
-                         </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Micky Ashanti</h6>
-                            </div>
-                            <div style="display:flex">
-                               <span class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
-                            </div>
-                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
-          </div>
-          <div class="card-body m-0 p-0">
-            <div class="mx-3">
-              <p class="p-card-body">sit porro nulla nihil tenetur quas incidunt, cum laudantium unde quos quod?</p>
-            </div>
-            <div class="d-flex justify-content-center py-1">
-               <img src="/cars/33117.jpg" class="img-fluid" alt="...">
-            </div>
-          </div>
-          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
-               <div class="row row-footer">
-                  <div class="col-4">
-                    <div class="col-12 footer-div">
-                      <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>3k</p>
-                    </div>
-                 </div>
-                 <div class="col-4">
-                     <div class="col-12 footer-div">
-                      <i class="mdi mdi-message-outline"></i>
-                      <p>12</p>
-                     </div>
-                 </div>
-                 <div class="col-4">
-                    <div class="col-12 footer-div">
-                        <i class="mdi mdi-share-outline"></i>
-                        <p class="">4</p>
-                    </div>
-                 </div>
-               </div>
-          </div>
-       </div> 
-
-
-
-<div class="card text-dark mt-4 p-0 m-0">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                         <div class="img-div">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face11.jpg" alt="image" class="rounded-circle status" />
-                         <div class="active"></div>
-                         </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Alan Walker</h6>
-                            </div>
-                           <div style="display:flex">
-                               <span class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
-                            </div>
-                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
-          </div>
-          <div class="card-body m-0 p-0">
-            <div class="mx-3">
-              <p class="p-card-body">sit porro nulla nihil tenetur quas incidunt, cum laudantium unde quos quod?</p>
-            </div>
-            <div class="d-flex justify-content-center py-1">
-               <img src="/cars/33118.jpg" class="img-fluid" alt="...">
-            </div>
-          </div>
-          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
-               <div class="row row-footer">
-                  <div class="col-4">
-                    <div class="col-12 footer-div">
-                      <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>3k</p>
-                    </div>
-                 </div>
-                 <div class="col-4">
-                     <div class="col-12 footer-div">
-                      <i class="mdi mdi-message-outline"></i>
-                      <p>12</p>
-                     </div>
-                 </div>
-                 <div class="col-4">
-                    <div class="col-12 footer-div">
-                        <i class="mdi mdi-share-outline"></i>
-                        <p class="">4</p>
-                    </div>
-                 </div>
-               </div>
-          </div>
-       </div> 
-
-
-<div class="card text-dark mt-4 p-0 m-0">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="img-div">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face12.jpg" alt="image" class="rounded-circle status" />
-                         <div class="active"></div>
-                         </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Jerry Dick</h6>
-                            </div>
-                           <div style="display:flex">
-                               <span class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
-                            </div>
-                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
-          </div>
-          <div class="card-body m-0 p-0">
-            <div class="mx-3">
-              <p class="p-card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint aperiam numquam sit laudantium iste sapiente, fugit eos iusto explicab</p>
-            </div>
-            <div class="d-flex justify-content-center py-1">
-               <img src="/cars/33119.jpg" class="img-fluid" alt="...">
-            </div>
-          </div>
-          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
-               <div class="row row-footer">
-                  <div class="col-4">
-                    <div class="col-12 footer-div">
-                      <i class="mdi mdi-thumb-up-outline"></i>
-                      <p>3k</p>
-                    </div>
-                 </div>
-                 <div class="col-4">
-                     <div class="col-12 footer-div">
-                      <i class="mdi mdi-message-outline"></i>
-                      <p>12</p>
-                     </div>
-                 </div>
-                 <div class="col-4">
-                    <div class="col-12 footer-div">
-                        <i class="mdi mdi-share-outline"></i>
-                        <p class="">4</p>
-                    </div>
-                 </div>
-               </div>
-          </div>
-       </div> 
-
-
-<div class="card text-dark mt-4 p-0 m-0">
-            <div class="card-header  d-flex  d-xl-flex justify-content-between">
-                  <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="img-div">
-                        <div class="preview-thumbnail">
-                          <img src="/assets/images/faces/face13.jpg" alt="image" class="rounded-circle status" />
-                         <div class="active"></div>
-                         </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                          <div class="flex-grow">
-                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                              <h6 class="preview-subject p-user-name">Silas</h6>
-                            </div>
-                            <div style="display:flex">
-                               <span class="text-muted">1 days ago</span><span class="mx-2 text-primary mdi mdi-earth"></span>
-                            </div>
-                           
-                            <p class="text-muted p-card-header mt-2">Well, it seems to be working now.</p>
-                          </div>
-                        </div>
-                      </div>
-                 </div>
-                  <p class="text-muted mt-2 small p-share p-1"><i class="mdi mdi-dots-horizontal"></i></p>
-          </div>
-          <div class="card-body m-0 p-0">
-            <div class="mx-3">
-              <p class="p-card-body">sit porro nulla nihil tenetur quas incidunt, cum laudantium unde quos quod?</p>
-            </div>
-            <div class="d-flex justify-content-center py-1">
-               <img src="/cars/33120.jpg" class="img-fluid" alt="...">
-            </div>
-          </div>
-          <div class="card-footer mt-4 py-3 border-top" style="background-color:white; border:none">
-               <div class="row row-footer">
-                  <div class="col-4">
-                    <div class="col-12 footer-div">
-                      <i @click="incrementLikes" class="mdi mdi-thumb-up-outline"></i>
-                      <p>{{ getLikesCount }}k</p>
-                    </div>
-                 </div>
-                 <div class="col-4">
-                     <div class="col-12 footer-div">
-                      <i class="mdi mdi-message-outline"></i>
-                      <p>12</p>
-                     </div>
-                 </div>
-                 <div class="col-4">
-                    <div class="col-12 footer-div">
-                        <i class="mdi mdi-share-outline"></i>
-                        <p class="">4</p>
-                    </div>
-                 </div>
-               </div>
-          </div>
-       </div> 
+ </div>
 
 </template>
 
@@ -529,6 +132,7 @@ import setName from "../composibles/setName"
 import { useStore } from "vuex"
 import { computed } from "@vue/reactivity"
 import { onMounted } from "vue"
+import { ref } from 'vue'
 
 export default {
   setup(){
@@ -538,7 +142,11 @@ export default {
     }
     const getLikesCount = computed(() => store.getters.getLikesCount ) 
     const incrementLikes = () => store.dispatch('asyncIncrementLikes') 
-    return { getLikesCount, incrementLikes, postEditorOpen }
+    const backgroundMode = computed(()=> store.getters.getBackgroundMode)
+    
+    const posts = computed(()=> store.getters.getPost)
+    const postLoader = computed(()=> store.getters.getPostLoaderState)
+    return { getLikesCount, incrementLikes, postEditorOpen, backgroundMode, posts, postLoader }
 
     // const { Myname, changeName } = setName()
     // return { Myname, changeName }
@@ -548,6 +156,28 @@ export default {
 </script>
 
 <style scoped>
+
+.no-content-wrapper{
+  animation: lds-dual-ring 3s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    background: red;
+  }
+  100% {
+    background: blue;
+  }
+}
+.image-wrapper{
+  overflow: hidden;
+}
+
+.scale-image:hover{
+ transition: 1s;
+ transform: scale(1.1);
+}
+
 
 .btn-gra{
   border-radius: 50px;
@@ -567,7 +197,8 @@ export default {
 
 .post-div{
   border-radius: 50px;
-  background-color: #ecf3fa !important;
+  background-color: #eeeeee !important;
+  cursor:pointer;
 }
 
 .post-div p{

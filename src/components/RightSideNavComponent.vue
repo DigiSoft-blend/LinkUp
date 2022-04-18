@@ -1,13 +1,13 @@
 <template>
-    <nav id="sidebarMenu" class="col-md-3 sidebar-right py-4 d-md-block  text-light collapse" style="background-color:#222">
+    <nav id="sidebarMenu" class="col-md-3 sidebar-right py-4 d-md-block  collapse" :class="backgroundModeParent">
       <div class="position-sticky pt-5">
        <ul class="nav flex-column mb-auto px-4">
-          <li class="nav-item">
+          <li class="nav-item item">
             <div class="d-flex  d-xl-flex justify-content-between">
-              <p class="Trend-text text-muted p-trending-post">Friends/contacts</p>
+              <p class="Trend-text text-muted p-trending-post ms-4">Friends/contacts</p>
                  <i class="mdi mdi-dots-horizontal"></i>
             </div>
-                 <div class="preview-list">
+                 <div class="preview-list preview-list-right-nav  ms-3">
                       <div class="preview-item">
                         <div class="img-div">
                         <div class="preview-thumbnail">
@@ -26,8 +26,8 @@
                       </div>
                  </div>
           </li>
-          <li class="nav-item">
-              <div class="preview-list">
+          <li class="nav-item item">
+              <div class="preview-list preview-list-right-nav ms-3">
                       <div class="preview-item">
                          <div class="img-div">
                         <div class="preview-thumbnail">
@@ -48,8 +48,8 @@
           </li>
          
           
-          <li class="nav-item">
-              <div class="preview-list">
+          <li class="nav-item item">
+              <div class="preview-list preview-list-right-nav ms-3">
                       <div class="preview-item">
                         <div class="img-div">
                         <div class="preview-thumbnail">
@@ -69,8 +69,8 @@
                 </div>
           </li>
 
-          <li class="nav-item">
-              <div class="preview-list">
+          <li class="nav-item item">
+              <div class="preview-list preview-list-right-nav ms-3">
                       <div class="preview-item">
                         <div class="img-div">
                         <div class="preview-thumbnail">
@@ -90,8 +90,8 @@
                 </div>
           </li>
 
-          <li class="nav-item">
-              <div class="preview-list">
+          <li class="nav-item item">
+              <div class="preview-list preview-list-right-nav ms-3">
                       <div class="preview-item">
                         <div class="img-div">
                         <div class="preview-thumbnail">
@@ -113,29 +113,45 @@
 
           
 
-          <li class="nav-item px-2">
+          <li class="nav-item px-2 ms-3">
             <p class="text-muted text-muted p-see-all">See all</p>
           </li>
         </ul>
 
 
-          <!-- <ul class="nav flex-column mb-auto px-4 mt-3 box-shadow bg-dark">
-          <li class="nav-item p-0 m-0">
-                <div class="d-flex justify-content-center py-5">
-              
-                 <h3>Adverts here</h3>
-             </div>
-          </li>
-        </ul> -->
-
-        
+      
       </div>
     </nav> 
 </template>
+
+
+<script>
+import { useStore } from "vuex"
+import { computed } from "@vue/reactivity"
+export default{
+ setup(){
+   const store = useStore()
+   const backgroundModeParent = computed(()=> store.getters.getParentBackgroundMode)
+   return{ backgroundModeParent }
+ }
+}
+</script>
 
 <style scoped>
   .preview-thumbnail img{
      width: 35px !important;
      height: 35px !important;
   }
+.preview-item{
+  margin:0;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.preview-list-right-nav{
+ padding: 3px;
+ border-radius: 10px;
+}
+
+  
 </style>
