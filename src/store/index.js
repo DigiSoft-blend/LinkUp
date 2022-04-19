@@ -134,10 +134,9 @@ export default createStore({
     return new Promise(( resolve, reject) => {  
       axios.get('/users')
       .then(response => {
-        const users = response.data
+        const users = response.data.users
         context.commit('setUsers', users)
         // context.commit('setPageLoader',false)
-        console.log(users)
         resolve(response)
       })
       .catch(error => {
@@ -204,8 +203,8 @@ export default createStore({
 
         signUp(context, credentials){
             
-            context.state.registrationError = ''
-            
+            context.state.registrationError = '',
+            context.state.loginError = ''
             context.commit('setLoader', true)
             axios.defaults.headers.common['Content-Type'] = 'application/json',
             axios.defaults.headers.common['Accept'] = 'application/json'

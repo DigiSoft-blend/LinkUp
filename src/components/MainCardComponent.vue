@@ -13,7 +13,7 @@
                         <div class="col-11 preview-item-content d-flex">
                          
                           <div @click="postEditorOpen" class="post-div col-11">
-                            <p class="text-center text-dark">What's on your mind Silas ?</p>
+                            <p class="text-center text-dark">Hey what's on your mind ? &#x1F353;</p>
                           </div>
                           <div>
                              <i class="fa fa-file-image mt-2 ms-3 text-danger" style="font-size:30px"></i>
@@ -96,19 +96,19 @@
           <div class="card-footer mt-4 py-3 border-top " :class="backgroundMode" style="border:none">
                <div class="row row-footer">
                   <div class="col-4">
-                    <div class="col-12 footer-div">
+                    <div class="col-12 footer-div" :class="backgroundModeParent">
                       <i class="mdi mdi-thumb-up-outline"></i>
                       <p>10k</p>
                     </div>
                  </div>
                  <div class="col-4">
-                     <div class="col-12 footer-div">
+                     <div class="col-12 footer-div" :class="backgroundModeParent">
                       <i class="mdi mdi-message-outline"></i>
                       <p>12</p>
                      </div>
                  </div>
                  <div class="col-4">
-                    <div class="col-12 footer-div">
+                    <div class="col-12 footer-div" :class="backgroundModeParent">
                         <i class="mdi mdi-share-outline"></i>
                         <p class="">4</p>
                     </div>
@@ -146,7 +146,9 @@ export default {
     
     const posts = computed(()=> store.getters.getPost)
     const postLoader = computed(()=> store.getters.getPostLoaderState)
-    return { getLikesCount, incrementLikes, postEditorOpen, backgroundMode, posts, postLoader }
+    const backgroundModeParent = computed(()=> store.getters.getParentBackgroundMode)
+
+    return { getLikesCount, incrementLikes, postEditorOpen, backgroundMode, backgroundModeParent, posts, postLoader }
 
     // const { Myname, changeName } = setName()
     // return { Myname, changeName }
@@ -157,6 +159,9 @@ export default {
 
 <style scoped>
 
+/* .footer-div{
+  background-color: #222;
+} */
 .no-content-wrapper{
   animation: lds-dual-ring 3s linear infinite;
 }

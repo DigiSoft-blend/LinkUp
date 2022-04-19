@@ -120,11 +120,11 @@ export default {
 
    const store = useStore() 
    const body = ref("")
-
+   const authUser = computed(()=>store.getters.getAuthUser)
    /* Tip Tap Config Start */
 ////////////////////////////////////////////////  
     const editor = useEditor({
-      content: "<h6>What's on your mind Silas ?</h6>",
+      content: "Hi " + authUser.value.name + " What's on your mind ?",
       extensions: [
         StarterKit,
         Link.configure({
