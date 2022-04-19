@@ -59,7 +59,7 @@
         <span class="ms-2 my-1">Uploading your post...</span>
      </div>
 
-<div v-if="posts.length"  class="m-0 p-0">
+<div v-if="false"  class="m-0 p-0">
     <div  v-for="post in posts" :key="post.id"  class="card mt-3 box-shadow p-0 m-0 mb-4" :class="backgroundMode">
             <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3" :class="backgroundMode">
                   <div class="preview-list">
@@ -117,8 +117,8 @@
           </div>
        </div>
 </div>
- <div  v-else class="container text-center mt-4  rounded-pill no-content-wrapper">
-       <div  class=" text-center p-5 rounded-pill" :class="backgroundMode">
+ <div  v-else class="container text-center mt-4  rounded no-content-wrapper">
+       <div  class=" text-center p-5 rounded" :class="backgroundMode">
          <h1>No contents yet  &#x1F554;</h1>
        </div>
  </div>

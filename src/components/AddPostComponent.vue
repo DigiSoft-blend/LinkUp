@@ -53,7 +53,7 @@
                         <span class="">Feeling</span>
                     </div>
                  </div>
-                 <div class="col-4 border-start border-end">
+                 <div class="col-4">
                      <div class="footer-div">
                       <i class="fa-solid fa-images text-primary mt-1 me-1"></i>
                       <span>Photo/video</span>
