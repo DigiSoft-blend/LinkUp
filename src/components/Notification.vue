@@ -11,7 +11,7 @@
                     <div class="spinner-grow text-success" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
-                     <span class="ms-2 my-1">Your post has been uploaded</span>
+                     <span class="ms-2 my-1">{{ text }}</span>
                      <i class="mdi mdi-check-circle ms-2" style="font-size:20px"></i>
                 </div>
               </div>
@@ -28,7 +28,8 @@ export default {
   setup(){ 
     const store = useStore()  
     const backgroundMode = computed(()=> store.getters.getBackgroundMode)
-    return{ backgroundMode}
+    const text = computed(()=> store.getters. getNotificationText)
+    return{ backgroundMode, text}
   },
 }
 </script>

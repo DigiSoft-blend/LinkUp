@@ -32,13 +32,13 @@
   color: rgb(6, 64, 255) !important;
 }
 
-.parent-dark .preview-list-right-nav:hover{
+/* .parent-dark .preview-list-right-nav:hover{
   background-color: rgb(51, 50, 50) !important; 
-}
+} */
 
-.parent-light .preview-list-right-nav:hover{
-  background-color:  rgb(192, 192, 192) !important; 
-  color: rgb(6, 64, 255);
+.preview-list-right-nav:hover{
+  /* background-color:  rgb(192, 192, 192) !important;  */
+  /* color: rgb(230, 228, 228); */
 }
 
 

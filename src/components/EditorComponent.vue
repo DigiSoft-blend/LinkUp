@@ -78,20 +78,26 @@
     <i class="control mdi mdi-link-variant-off text-muted" @click="editor.chain().focus().unsetLink().run()" :disabled="!editor.isActive('link')">
     </i>
   </div>
-  <div class="container-editor py-3  p-2">
+  <div class="container-editor py-3 p-2">
 
-  <form @submit="Post">
-     <editor-content 
-     :editor="editor"
-     v-model="body" 
-    />
-    <div class="container-fluid  px-3">
-      <div class="border add-to-post-con border-muted mt-2 d-flex justify-content-between">
-        <p class="my-3 mx-3 para" :class="backgroundMode">Add to your post</p>
-        <p class="para-down mx-3"><i class="mdi mdi-image text-danger image-mdi"></i></p>
-      </div>
-      <button class="btn btn-block mt-3 post-btn" type="submit">Post</button>
+  <form @submit="Comment" >
+   <div class="d-flex justify-content-between rounded-pill" :class="backgroundModeParent">
+    <div class="col-md-9 col-8">
+       <editor-content 
+        :editor="editor"
+        v-model="body" 
+        />
     </div>
+       
+       <div class="comment-btn-wrapper d-flex">
+                                 
+        <button type="submit" class="btn  send-icon   text-primary rounded-pill d-flex" :class="backgroundModeParent"> 
+          <div v-if="commentLoaderState" class="spinner-border-1 spinner-border mt-1 me-1"  role="status"></div>
+          <i class="mdi mdi-send"></i> 
+        </button>
+       </div>
+    
+    </div> 
   </form> 
   </div>
   
@@ -109,6 +115,7 @@ import suggestion from '@tiptap/suggestion'
 import { onMounted, onUnmounted, onUpdated, ref } from 'vue'
 import { useStore } from 'vuex'
 import { computed } from '@vue/reactivity'
+import Paragraph from '@tiptap/extension-paragraph'
 
 export default {
   components: {
@@ -119,14 +126,22 @@ export default {
   setup() {
 
    const store = useStore() 
+
    const body = ref("")
+  
    const authUser = computed(()=>store.getters.getAuthUser)
-   /* Tip Tap Config Start */
-////////////////////////////////////////////////  
+
+   /* Tip Tap Config Start */ 
     const editor = useEditor({
-      content: "Hi " + authUser.value.name + " What's on your mind ?",
+      content: "Write a comment...",
       extensions: [
         StarterKit,
+        Document,
+        Paragraph.configure({
+          HTMLAttributes:{
+            class: 'my-custom-paragraph',
+          }
+        }),
         Link.configure({
           openOnClick: false,
           autolink: true,
@@ -183,7 +198,6 @@ export default {
         .run()
   }
       /* Tip Tap Config End */
-////////////////////////////////////////////////
 
 onMounted(()=>{
   onUpdated(()=>{
@@ -192,24 +206,27 @@ onMounted(()=>{
 })
 
 
- const Post = (e)=> {
+ const Comment = (e)=> {
     e.preventDefault()
-    store.commit('setPostLoaderState', true)
-    store.dispatch('creatPost', {
-      body: body.value
+    const id = computed(()=> store.getters.getPostId)
+    store.commit('setCommentLoaderState', true)
+    store.dispatch('addComment', {
+      body: body.value,
+      id: id.value
     }).then(response => {
-       store.commit('setNotificationText', 'Your post has been uploaded')
-       store.dispatch("updatePost")
+       store.commit('setCommentBtnState', false) //close the comment editor 
+       store.commit('setCommentLoaderState', false) //stop comment loader 
+       store.commit('setNotificationText', 'Comment added')//set the dynamic text notification
+       store.dispatch("updatePost")//update posts 
     }).catch(error => {
       console.log(error)
     })
-    //close the post editor
-   store.commit('postBtnState', false)
   }
 
- const backgroundMode = computed(()=> store.getters.getBackgroundMode)
+ const backgroundModeParent = computed(()=> store.getters.getParentBackgroundMode)
+ const commentLoaderState = computed(()=> store.getters.getCommentLoaderState) // get comment loading state
 
-    return { editor, setLink, body, Post, backgroundMode }
+    return { editor, setLink, body, backgroundModeParent, Comment , commentLoaderState}
   },
 }
 </script>
@@ -218,6 +235,35 @@ onMounted(()=>{
 
 <style lang="scss">
 /* Basic editor styles */
+
+.spinner-border-1{
+  height: 15px;
+  width: 15px;
+  padding: 5px;
+}
+
+.my-custom-paragraph{
+  margin: 0;
+  padding: 0;
+}
+
+// .comment-btn-wrapper{
+//   //  margin-left: 2px;  
+// }
+
+@media(max-width: 765px){
+  .comment-btn-wrapper{
+     margin-left: 0px;
+  }
+}
+
+.send-icon{
+  font-size: 20px;
+}
+
+.send-icon:hover{
+  color: rgb(113, 113, 238) !important;
+}
 
 .image-mdi{
   font-size: 20px;
@@ -250,9 +296,12 @@ onMounted(()=>{
 }
 
 .ProseMirror{
-  height: 75px;
-  max-height: 75px;
+  height: fit-content;
+  max-height: 50px;
   overflow-y: scroll;
+  background-color: inherit;
+  border-radius: 30px !important;
+  padding: 10px;
 }
 
 .mention {
@@ -271,8 +320,6 @@ onMounted(()=>{
     border: none;
     outline: none !important;
     border: none !important;
-    // max-height: 80px;
-    // overflow-y: hidden;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
  }
 
@@ -293,6 +340,10 @@ onMounted(()=>{
   h5,
   h6 {
     line-height: 1.1;
+  }
+
+  p {
+   margin:  0;
   }
 
   code {

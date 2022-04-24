@@ -46,7 +46,7 @@ import { onMounted } from '@vue/runtime-core'
 
 <style scoped>
   .logout-content{
-    background-image: url("/assets/images/samples/Banner_bg.jpg");
+    background: #222;
     min-height: 100vh !important;
     background-position: center;
     background-size: cover;

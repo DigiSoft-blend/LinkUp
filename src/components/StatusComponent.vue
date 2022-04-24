@@ -27,7 +27,7 @@
                           <div class="active"></div>
                           </div>
                            <p class="username text-light">Melinda Cruise</p>
-                          <img src="/cars/33119.jpg" class="img-fluid rounded" alt="...">
+                          <img src="/cars/33120.jpg" class="img-fluid rounded" alt="...">
                         </div>
                     
                   </div>
@@ -39,7 +39,7 @@
                           <div class="active"></div>
                           </div>
                            <p class="username text-light">Johny Drill</p>
-                          <img src="/cars/33118.jpg" class="img-fluid rounded" alt="...">
+                          <img src="/cars/33120.jpg" class="img-fluid rounded" alt="...">
                         </div>
                       
                   </div>
@@ -51,7 +51,7 @@
                           <div class="active"></div>
                           </div>
                            <p class="username text-light">Stephanie Roberto</p>
-                        <img src="/cars/33117.jpg" class="img-fluid rounded" alt="..." height="200px">
+                        <img src="/cars/33120.jpg" class="img-fluid rounded" alt="..." height="200px">
                       </div>
                       
                   </div>

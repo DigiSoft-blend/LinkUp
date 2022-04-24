@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style scoped>
-.post-div{
+/* .post-div{
   border-radius: 50px;
   background-color: #ecf3fa !important;
   cursor:pointer
@@ -97,6 +97,19 @@ export default {
 .post-div p{
   font-size: 15px;
   margin-top: 21px;
+} */
+
+.post-div{
+  border-radius: 50px;
+  height: 40px;
+  margin-top: 7px;
+  background-color: #eeeeee !important;
+  cursor:pointer;
+}
+
+.post-div p{
+  font-size: 14px;
+  margin-top: 12px;
 }
 
 .status2{

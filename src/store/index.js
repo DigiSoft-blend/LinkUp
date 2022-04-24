@@ -29,9 +29,33 @@ export default createStore({
       textColor:'light',
       sideNav: 'class1',
       postLoader: false,
-      notification: false
+      notification: false,
+      likes: 0,
+      userId:'',
+      commentBtnState: false,
+      postId:'',
+      commentLoaderState: false,
+      notificationText:''
     },
     getters:{
+      getNotificationText(state){
+        return state.notificationText
+      },
+      getCommentLoaderState(state){
+        return state.commentLoaderState
+      },
+      getPostId(state){
+        return state.postId
+      },
+      getCommentBtnState(state){
+        return state.commentBtnState
+      },
+      getUserId(state){
+        return state.userId
+      },
+      getLikes(state){
+       return state.likes
+      },
       getNotificationState(state){
         return state.notification
       },
@@ -105,7 +129,7 @@ export default createStore({
      
       AuthUser(context){
         context.state.registrationError = ''
-        context.commit('setPageLoader', true)
+        // context.commit('setPageLoader', true)
         axios.defaults.headers.common['Content-Type'] = 'application/json',
         axios.defaults.headers.common['Accept'] = 'application/json'
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
@@ -115,11 +139,11 @@ export default createStore({
         .then(response => {
           const regUser = response.data
           context.commit('setAuthUser', regUser)
-          context.commit('setPageLoader',false)
+          // context.commit('setPageLoader',false)
           resolve(response)
         })
         .catch(error => {
-          context.commit('setPageLoader',false)
+          // context.commit('setPageLoader',false)
           reject(error)
         })
       })
@@ -147,6 +171,53 @@ export default createStore({
     })
   },
 
+  likePost(context, id){
+    return new Promise(( resolve, reject) => { 
+      axios.post('/like/'+id)
+      .then(response => {
+        const post = response.data.data
+        context.commit('updatePost', post)
+        resolve(response)
+      })
+      .catch(error => {
+        console.log(error)
+        reject(error)
+      })
+    }) 
+  },
+
+  
+  likeComment(context, id){
+    return new Promise(( resolve, reject) => { 
+      axios.post('/likecomment/'+id)
+      .then(response => {
+        const post = response.data.data
+        context.commit('updatePost', post)
+        resolve(response)
+      })
+      .catch(error => {
+        console.log(error)
+        reject(error)
+      })
+    }) 
+  },
+
+  getLikes(context, id){
+    return new Promise((resolve, reject) => {
+      axios.get('/likes/'+id)
+      .then(response => {
+        const likes = response.data
+        // context.commit("setLikes", likes)
+        console.log(likes)
+        resolve(response)
+      })
+      .catch(error => {
+        console.log(error)
+        reject(error)
+      })
+    })
+  },
+
 
     updatePost(context){
       axios.defaults.headers.common['Content-Type'] = 'application/json',
@@ -160,7 +231,7 @@ export default createStore({
         context.commit('updatePost', post)
         context.commit('setPostLoaderState', false)
         context.commit('setNotification', true)
-
+        
         setTimeout(()=>{
           context.commit("setNotification", false)
         },2000) 
@@ -188,17 +259,40 @@ export default createStore({
         const post = response.data.data
         context.commit('setPost', post)
         context.commit('setPageLoader', false)
-        context.commit('setPostLoaderState', false)
         resolve(response)
       })
       .catch(error => {
         context.commit('setPageLoader', false)
-        context.commit('setPostLoaderState', false)
-        console.log(error)
         reject(error)
       })
     })
   },
+
+ 
+  addComment(context, credentials){
+    // context.commit('setLoader', true)
+    // Tell axios the header you want
+    axios.defaults.headers.common['Content-Type'] = 'application/json',
+    axios.defaults.headers.common['Accept'] = 'application/json'
+ 
+     return new Promise(( resolve, reject) => {
+         axios.post('/comment', {
+          body: credentials.body,
+          id: credentials.id
+         })
+         .then(response => {
+         console.log(response)
+        //  context.commit('setLoader', false)
+         resolve(response) 
+         })
+         .catch(error => {
+           console.log(error)
+          // context.commit('setLoader',false)
+          reject(error)
+         })
+     })
+ },
+  
 
 
         signUp(context, credentials){
@@ -446,7 +540,25 @@ export default createStore({
        }, 
       setUsers(state, payLoad){
         state.users = payLoad
-      }
+      },
+      setLikes(state, payLoad){
+        state.likes = payLoad
+      },
+      setUserId(state, payLoad){
+        state.userId = payLoad
+      },
+      setCommentBtnState(state, payLoad){
+        state.commentBtnState = payLoad
+      },
+      setPostId(state, payLoad){
+        state.postId = payLoad
+      },
+      setCommentLoaderState(state, payload){
+        state.commentLoaderState = payload
+      },
+      setNotificationText(state, payLoad){
+        state.notificationText = payLoad
+      },
     }
 })
 
