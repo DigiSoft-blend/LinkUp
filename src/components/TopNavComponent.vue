@@ -12,7 +12,7 @@
 
 
     <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse mt-1" id="navbarSupportedContent">
      
        <img  v-if="backgroundMode === 'dark' " class="navbar-brand logo mx-4" src="/logo/default-monochrome-white.svg" alt="logo" />
        <img  v-if="backgroundMode === 'light' " class="navbar-brand logo mx-4" src="/logo/default-monochrome-black.svg" alt="logo" />   
@@ -34,7 +34,9 @@
          <router-link class="nav-link mdi mdi-email-variant nav-icon" to="/userdashboard" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mails"></router-link>
       </div>
        <div class="link-div">
-         <router-link class="nav-link mdi mdi-earth nav-icon" to="/userdashboard" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Events"></router-link>
+         <router-link class="nav-link mdi mdi-bell  position-relative nav-icon" to="/userdashboard" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Events">
+          <span class="position-absolute   translate-middle badge rounded-pill bg-danger fs-6">{{ notifications.length }}</span>
+         </router-link>
       </div>
 
     </div>
@@ -87,7 +89,7 @@
         </ul>
       </div>
 
-       <a class="text-reset me-2 nav-icon2" href="#">
+       <!-- <a class="text-reset me-2 nav-icon2" href="#">
         <i class="mdi mdi-plus iconn"></i>
       </a>
 
@@ -100,7 +102,7 @@
       </a>
        <a class="text-reset nav-icon2" href="#">
         <i class="mdi mdi-pocket iconn"></i>
-      </a>
+      </a> -->
 
       
     </div>
@@ -126,6 +128,7 @@ export default {
     const backgroundMode = computed(()=> store.getters.getBackgroundMode)
     const backgroundModeParent = computed(()=> store.getters.getParentBackgroundMode)
     const textColor = computed(()=> store.getters.getTextColor)
+    const notifications = computed(()=>store.getters.getbackEndNotifications)
 
     const setBackgroundMode = () => {
       if(backgroundMode.value === 'dark'){
@@ -147,7 +150,7 @@ export default {
         superToggle(mySidenav, 'class1');
       }; 
 
-    return { authUser, backgroundMode, setBackgroundMode, backgroundModeParent, textColor, toggleSideNav }
+    return { authUser, backgroundMode, setBackgroundMode, backgroundModeParent, textColor, toggleSideNav, notifications }
   }
 }
 </script>

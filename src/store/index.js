@@ -30,14 +30,32 @@ export default createStore({
       sideNav: 'class1',
       postLoader: false,
       notification: false,
-      likes: 0,
+      likes: [],
+      like: [],
       userId:'',
       commentBtnState: false,
       postId:'',
       commentLoaderState: false,
-      notificationText:''
+      notificationText:'',
+      morePost:false,
+      pageNumber: 1,
+      lastPage: 0,
+      currentPage: '',
+      backEndNotifications: []
     },
     getters:{
+      getbackEndNotifications(state){
+        return state.backEndNotifications
+      },
+      getLastPage(state){
+        return state.lastPage
+      },
+      getMorePost(state){
+        return state.morePost
+      },
+      getPageNumber(state){
+         return state.pageNumber
+      },
       getNotificationText(state){
         return state.notificationText
       },
@@ -56,6 +74,10 @@ export default createStore({
       getLikes(state){
        return state.likes
       },
+      getLike(state){
+        return state.like
+      }
+      ,
       getNotificationState(state){
         return state.notification
       },
@@ -126,6 +148,34 @@ export default createStore({
     },
    
     actions:{
+
+      
+      loadMorePost(context){
+        axios.defaults.headers.common['Content-Type'] = 'application/json',
+        axios.defaults.headers.common['Accept'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
+  
+      return new Promise(( resolve, reject) => {  
+        axios.get('getposts?page='+context.state.pageNumber)
+        .then(response => {
+           const post = response.data.data
+           const lastPage = response.data.meta.last_page
+          //  context.state.currentPage = response.data.meta.current_page
+           context.commit('setLastPage', lastPage)
+           context.commit("loadMorePost", post )
+           context.commit('setMorePost', false)
+         
+          resolve(response)
+        })
+        .catch(error => {
+          console.log(error)
+          reject(error)
+        })
+      })
+      },
+
+  
+     
      
       AuthUser(context){
         context.state.registrationError = ''
@@ -158,7 +208,7 @@ export default createStore({
     return new Promise(( resolve, reject) => {  
       axios.get('/users')
       .then(response => {
-        const users = response.data.users
+        const users = response.data.data
         context.commit('setUsers', users)
         // context.commit('setPageLoader',false)
         resolve(response)
@@ -171,30 +221,46 @@ export default createStore({
     })
   },
 
-  likePost(context, id){
-    return new Promise(( resolve, reject) => { 
-      axios.post('/like/'+id)
-      .then(response => {
-        const post = response.data.data
-        context.commit('updatePost', post)
-        resolve(response)
-      })
-      .catch(error => {
-        console.log(error)
-        reject(error)
-      })
-    }) 
+ 
+
+
+updateCurrentPost(context){
+   
+    axios.defaults.headers.common['Content-Type'] = 'application/json',
+    axios.defaults.headers.common['Accept'] = 'application/json'
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
+
+  return new Promise(( resolve, reject) => {  
+    // let req1 = axios.get('getposts?page='+context.state.currentPage);
+    // let req2 = axios.get('getposts?page='+context.state.currentPage);
+    // let req3 = axios.get('getposts?page='+context.state.currentPage);
+
+    axios.get('getposts?page='+context.state.currentPage)
+    .then(response => {
+      let post = response.data.data
+     context.state.posts = post
+      resolve(response)
+    })
+    .catch(error => {
+      console.log(error)
+      reject(error)
+    })
+  })
   },
 
   
+
+  
   likeComment(context, id){
-    return new Promise(( resolve, reject) => { 
-      axios.post('/likecomment/'+id)
-      .then(response => {
-        const post = response.data.data
-        context.commit('updatePost', post)
-        resolve(response)
-      })
+   return new Promise(( resolve, reject) => { 
+        let req1 =  axios.post('/likecomment/'+id);
+        let req2 = axios.get('getposts?page='+context.state.pageNumber);
+      axios.all([req1, req2])  
+      .then(axios.spread((...responses) =>{
+         const req2 = responses[1].data.data
+        context.commit("updatePost",req2)
+        resolve(responses)
+      }))
       .catch(error => {
         console.log(error)
         reject(error)
@@ -202,13 +268,64 @@ export default createStore({
     }) 
   },
 
-  getLikes(context, id){
+
+  likePost(context, id){
+    return new Promise(( resolve, reject) => { 
+      let req1 =  axios.post('/like/'+id);
+      let req2 = axios.get('getposts?page='+context.state.pageNumber);
+    axios.all([req1, req2])  
+    .then(axios.spread((...responses) =>{
+       const req2 = responses[1].data.data
+      context.commit("updatePost",req2)
+      resolve(responses)
+    }))
+    .catch(error => {
+      console.log(error)
+      reject(error)
+    })
+    }) 
+  },
+
+  getLike(context, id){
     return new Promise((resolve, reject) => {
-      axios.get('/likes/'+id)
+      axios.get('/like/'+id)
       .then(response => {
-        const likes = response.data
-        // context.commit("setLikes", likes)
-        console.log(likes)
+        const like = response.data
+        context.commit("setLike", like)
+        console.log(context.state.getLike)
+        resolve(response)
+      })
+      .catch(error => {
+        console.log(error)
+        reject(error)
+      })
+    })
+  },
+
+  
+
+  getNotifications(context){
+    return new Promise((resolve, reject) => {
+      axios.get('unreadNotifications')
+      .then(response => {
+        const notification = response.data
+        context.commit("setbackEndNotifications", notification)
+        console.log(notification)
+        resolve(response)
+      })
+      .catch(error => {
+        console.log(error)
+        reject(error)
+      })
+    })
+  },
+
+  loadLikes(context, id){
+    return new Promise((resolve, reject) => {
+      axios.get('/likes')
+      .then(response => {
+        const likes = response.data.data
+        context.commit("setLikes", likes)
         resolve(response)
       })
       .catch(error => {
@@ -220,22 +337,23 @@ export default createStore({
 
 
     updatePost(context){
+     
       axios.defaults.headers.common['Content-Type'] = 'application/json',
       axios.defaults.headers.common['Accept'] = 'application/json'
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
 
     return new Promise(( resolve, reject) => {  
-      axios.get('getposts')
+      axios.get('getposts?page='+context.state.pageNumber)
       .then(response => {
         const post = response.data.data
-        context.commit('updatePost', post)
+       
+        context.commit('updatePost',post)
         context.commit('setPostLoaderState', false)
         context.commit('setNotification', true)
-        
+       
         setTimeout(()=>{
           context.commit("setNotification", false)
         },2000) 
-    
         resolve(response)
       })
       .catch(error => {
@@ -254,11 +372,14 @@ export default createStore({
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
 
     return new Promise(( resolve, reject) => {  
-      axios.get('getposts')
+      axios.get('getposts?page='+context.state.pageNumber)
       .then(response => {
         const post = response.data.data
-        context.commit('setPost', post)
+        const lastPage = response.data.meta.last_page
+        context.commit('setLastPage', lastPage)
+        context.commit('setPost',post)
         context.commit('setPageLoader', false)
+       
         resolve(response)
       })
       .catch(error => {
@@ -270,26 +391,29 @@ export default createStore({
 
  
   addComment(context, credentials){
-    // context.commit('setLoader', true)
-    // Tell axios the header you want
+    
     axios.defaults.headers.common['Content-Type'] = 'application/json',
     axios.defaults.headers.common['Accept'] = 'application/json'
  
      return new Promise(( resolve, reject) => {
-         axios.post('/comment', {
-          body: credentials.body,
-          id: credentials.id
-         })
-         .then(response => {
-         console.log(response)
-        //  context.commit('setLoader', false)
-         resolve(response) 
-         })
-         .catch(error => {
-           console.log(error)
-          // context.commit('setLoader',false)
-          reject(error)
-         })
+        let req1 =  axios.post('/comment', {
+                      body: credentials.body,
+                      id: credentials.id
+                    });
+        let req2 = axios.get('getposts?page='+context.state.pageNumber);
+       axios.all([req1, req2])  
+      .then(axios.spread((...responses) =>{
+         const req2 = responses[1].data.data
+       
+        context.commit("updatePost",req2)
+        context.commit('setLoader', false)
+        resolve(responses)
+      }))
+      .catch(error => {
+        console.log(error)
+        context.commit('setLoader', false)
+        reject(error)
+      })
      })
  },
   
@@ -360,26 +484,30 @@ export default createStore({
      
      creatPost(context, credentials){
 
-      // context.commit('setLoader', true)
-      // Tell axios the header you want
+      // context.state.pageNumber=1
+    
       axios.defaults.headers.common['Content-Type'] = 'application/json',
       axios.defaults.headers.common['Accept'] = 'application/json'
    
        return new Promise(( resolve, reject) => {
-           axios.post('/createpost', {
-            body: credentials.body,
-           })
-           .then(response => {
-           console.log(response)
-          //  context.commit('setLoader', false)
-           resolve(response) 
-           })
-           .catch(error => {
-             console.log(error)
-            // context.commit('setLoader',false)
-            reject(error)
-           })
-       })
+          let req1 =   axios.post('/createpost', {
+                          body: credentials.body,
+                        })
+          let req2 = axios.get('getposts');
+          axios.all([req1, req2])  
+          .then(axios.spread((...responses) =>{
+          const req2 = responses[1].data.data
+          context.commit("createPost",req2)
+          context.commit('setPostLoaderState', false)
+          console.log(context.state.lastPage)
+          resolve(responses)
+          }))
+          .catch(error => {
+          console.log(error)
+          context.commit('setPostLoaderState', false)
+          reject(error)
+         })
+     })
    },
 
        
@@ -457,6 +585,10 @@ export default createStore({
 
     },
 
+
+
+
+
     mutations:{
       setPageLoader(state, payLoad){
          state.pageLoader = payLoad
@@ -533,7 +665,10 @@ export default createStore({
           state.postLoader = payLoad
         },
        updatePost(state, payLoad){
-         state.posts = payLoad
+        state.posts = payLoad;
+       },
+       createPost(state, payLoad){
+        state.posts = payLoad;
        },
        setNotification(state, payLoad){
          state.notification = payLoad
@@ -543,6 +678,9 @@ export default createStore({
       },
       setLikes(state, payLoad){
         state.likes = payLoad
+      },
+      setLike(state, payLoad){
+        state.like = payLoad
       },
       setUserId(state, payLoad){
         state.userId = payLoad
@@ -559,6 +697,24 @@ export default createStore({
       setNotificationText(state, payLoad){
         state.notificationText = payLoad
       },
+     setPageNumber(state){
+         state.pageNumber = state.pageNumber + 1
+     },
+
+     setMorePost(state, payLoad){
+       state.morePost = payLoad
+     },
+
+     loadMorePost(state, post){
+       state.posts = post
+     },
+
+     setLastPage(state, lastPage){
+       state.lastPage = lastPage
+     },
+     setbackEndNotifications(state, notifications){
+       state.backEndNotifications = notifications
+     },
     }
 })
 

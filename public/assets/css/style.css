@@ -1,3 +1,6 @@
+/* body{
+  font-family:'Courier New', Courier, monospace;
+} */
 
 .dark{
   background-color: #262626 !important;
@@ -13,7 +16,7 @@
 
 .parent-dark{
   background-color: #222222 !important;
-  color: #fbfbfb !important;
+  color: #f0f0f0 !important;
   transition: background 0.2s ease-in-out;
 }
 
@@ -22,7 +25,7 @@
 }
 
 .parent-light{
-  background-color: #eeeeee !important;
+  background-color: #f7f7f7 !important;
   color: #262626 !important;
   transition: background 0.2s ease-in-out;
 }

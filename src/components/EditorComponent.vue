@@ -115,7 +115,7 @@ import suggestion from '@tiptap/suggestion'
 import { onMounted, onUnmounted, onUpdated, ref } from 'vue'
 import { useStore } from 'vuex'
 import { computed } from '@vue/reactivity'
-import Paragraph from '@tiptap/extension-paragraph'
+import paragraph from '@tiptap/extension-paragraph'
 
 export default {
   components: {
@@ -137,7 +137,7 @@ export default {
       extensions: [
         StarterKit,
         Document,
-        Paragraph.configure({
+        paragraph.configure({
           HTMLAttributes:{
             class: 'my-custom-paragraph',
           }
@@ -216,8 +216,7 @@ onMounted(()=>{
     }).then(response => {
        store.commit('setCommentBtnState', false) //close the comment editor 
        store.commit('setCommentLoaderState', false) //stop comment loader 
-       store.commit('setNotificationText', 'Comment added')//set the dynamic text notification
-       store.dispatch("updatePost")//update posts 
+       store.commit('setNotificationText', 'Comment added')//set the dynamic text notification 
     }).catch(error => {
       console.log(error)
     })

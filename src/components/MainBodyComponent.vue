@@ -1,7 +1,7 @@
 <template>
 
 <div class="col-md-5  container">
-    <div class="row gy-2">
+    <div class="row gy-4">
         <MainCardComponent></MainCardComponent>  
     </div>
 </div>

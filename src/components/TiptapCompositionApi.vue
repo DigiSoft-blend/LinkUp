@@ -199,7 +199,7 @@ onMounted(()=>{
       body: body.value
     }).then(response => {
        store.commit('setNotificationText', 'Your post has been uploaded')
-       store.dispatch("updatePost")
+      //  store.dispatch("updatePost")
     }).catch(error => {
       console.log(error)
     })

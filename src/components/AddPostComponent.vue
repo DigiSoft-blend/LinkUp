@@ -1,5 +1,5 @@
 <template>
-    <div class="con1 status2 col-md-5 container" :class="backgroundMode">
+    <div class="status2 col-md-5 contain" :class="backgroundMode">
     <div class="row" :class="backgroundMode">
     <div class="box-shadow p-0 m-0" :class="backgroundMode">
    <div class="card-header  border-bottom d-flex  d-xl-flex justify-content-between p-0 m-0 p-2" :class="backgroundMode">
@@ -22,13 +22,11 @@
       </a>
           </div>
          
-            <div class="card-header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3" :class="backgroundMode">
+            <div class="header  d-flex  d-xl-flex justify-content-between p-0 m-0 px-3" :class="backgroundMode">
                   <div class="preview-list col-11">
                       <div class="preview-item">
-                         <div class="img-div">
                         <div class="preview-thumbnail">
                           <img src="/assets/images/faces/face2.jpg" alt="image" class="rounded-circle" />
-                         </div>
                         </div>
                         <div class="col-11 preview-item-content d-flex">
                          
@@ -45,7 +43,7 @@
                  </div>
           </div>
          
-          <div class="card-footer  py-3 border-top" :class="backgroundMode" style="border:none">
+          <div class="container mb-4 border-bottom py-2" :class="backgroundMode" style="border:none">
                <div class="row row-footer">
                   <div class="col-4">
                     <div class="footer-div">
