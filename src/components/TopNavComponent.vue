@@ -34,7 +34,7 @@
          <router-link class="nav-link mdi mdi-email-variant nav-icon" to="/userdashboard" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mails"></router-link>
       </div>
        <div class="link-div">
-         <router-link class="nav-link mdi mdi-bell  position-relative nav-icon" to="/userdashboard" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Events">
+         <router-link class="nav-link mdi mdi-bell  position-relative nav-icon" to="/notifications" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Events">
           <span class="position-absolute   translate-middle badge rounded-pill bg-danger fs-6">{{ notifications.length }}</span>
          </router-link>
       </div>

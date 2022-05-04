@@ -153,13 +153,13 @@
             <div v-for="comment in post.comments" :key="comment.id" class="col-11  container comment-container mb-2  border-start rounded-5 p-1">
                 <div class="d-flex animate__animated animate__fadeInRight">
                   <img src="/assets/images/faces/face4.jpg" alt="image" class="rounded-circle status comment-img ms-2" />
-                  <div class="card comment-wrapper p-1  m-0 px-2 ms-2 rounded" :class="backgroundModeParent">
+                  <div class="comment-wrapper p-1  m-0 px-2 ms-2 rounded" :class="backgroundModeParent">
                      <p class="user-name p-0 m-0">{{ comment.user.name }}</p>
                      <span class="comment" v-html="comment.body" ></span>
                   </div>
                 </div>
 
-            <div class="container col-11 comment-reaction-wrapper text-muted animate__animated animate__fadeInRight">
+            <div class="container col-11 comment-reaction-wrapper fs-6  text-muted animate__animated animate__fadeInRight" :class="backgroundMode">
                <div class="d-flex">
                 <span class="time">12 mins</span>
                  <div v-if="comment.id == commentId" class="spinner-border-2 spinner-border ms-2"  role="status"></div>
@@ -167,7 +167,7 @@
                 <span v-if="comment.authLiked != null"  @click="likeComment(comment.id)"  class="mx-3 text-secondary">Liked</span>
                 <span v-else  @click="likeComment(comment.id)" class="mx-3">Like</span>
                  <i class="mdi mdi-replay"></i> <span class="time">Reply</span>
-                 <i class="mdi mdi-thumb-up-outline ms-3 me-2 text-secondary"></i>
+                 <i class="mdi mdi-thumb-up-outline ms-3 me-2 "></i>
                  <span class="">{{ comment.likes }}</span>
               </div>
                      
@@ -181,7 +181,7 @@
            </div>
            
             
-         <div class="container comment-footer text-muted">
+         <div class="container comment-footer" :class="backgroundMode">
           <div class="d-flex justify-content-between">
           <p v-if="post.ran == 0 || post.comment - post.ran == 0" class="text-1 p-0 m-0">View all</p>
            <p v-if="post.comment > 2" class="text-2 p-0 m-0">{{ -(post.ran) }} of {{ post.comment }}  comments...</p>
@@ -394,12 +394,11 @@ export default {
 }
 .comment-wrapper{
   font-size: 15px;
-  border-radius: 10px !important;
+  border-radius: 18px !important;
   width: fit-content;
   height: fit-content;
   max-width: 270px;
   border: solid 1px #ecf3fa ;
-  /* box-shadow: 0px +3px 3px 2px rgba(185, 185, 185, 0.253); */
 }
 
 .comment-wrapper:hover{

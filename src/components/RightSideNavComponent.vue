@@ -4,7 +4,7 @@
        <ul class="user-ul card p-2 nav flex-column mb-auto animate__animated animate__fadeInRight" :class="backgroundModeParent">
          
             <div class="d-flex heading-wrapper  justify-content-between" :class="backgroundModeParent">
-              <p class="Trend-text  p-trending-post ms-1 fw-bold">Who to Follow</p>
+              <p class="Trend-text  p-trending-post ms-1 fw-bold">Suggestions For You</p>
               <i class="mdi mdi-dots-horizontal"></i>
             </div>      
          

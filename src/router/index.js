@@ -8,6 +8,7 @@ import ForgotPasswordView from '../views/ForgotPasswordView.vue'
 import RegistrationSuccessView from '../views/RegistrationSuccessView.vue'
 import LogoutView from '../views/LogoutView.vue'
 import UserDashboardView from '../views/UserDashboardView.vue'
+import BackEndNotification from '../views/BackEndNotifications.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -57,6 +58,11 @@ const router = createRouter({
       name: 'userdashboard',
       component: UserDashboardView
     },
+    {
+      path: '/notifications',
+      name: 'notifications',
+      component: BackEndNotification
+    }
   ]
 })
 
